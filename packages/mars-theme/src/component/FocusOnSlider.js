@@ -158,7 +158,7 @@ const FocusOnSlider = ({ deviceType, actions, libraries, state }) => {
                   </Text>
                 </Box>
                 {/* <motion.div whileHover={{ scale: 1.1 }}> */}
-                <Link link={item.slug} rel="prefetch">
+                <Link link={item.slug}>
                   <Box
                     w={"100%"}
                     overflow={"hidden"}

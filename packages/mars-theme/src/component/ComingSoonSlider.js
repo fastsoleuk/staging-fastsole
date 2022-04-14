@@ -144,7 +144,7 @@ const ComingSoonSlider = ({ deviceType, actions, libraries, state }) => {
                     {item.release_date} GMT{" "}
                   </Text>
 
-                  <Link rel="prefetch" link={item.slug}>
+                  <Link link={item.slug}>
                     <Box
                       w={"100%"}
                       overflow={"hidden"}
