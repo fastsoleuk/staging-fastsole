@@ -253,11 +253,11 @@ function Home({ state, actions, libraries }) {
               return (
                 item && (
                   <Box>
-                    <Link link={item.link}>
+                    <link rel="prefetch" href={item.link} >
                       <ImageViewFeatured id={item.featured_media} />
-                    </Link>
+                    </link>
 
-                    <Link link={item.link}>
+                    <link rel="prefetch" href={item.link}>
                       <Heading
                         as="h3"
                         mt={6}
@@ -271,7 +271,7 @@ function Home({ state, actions, libraries }) {
                       >
                         {<Html2React html={item.title.rendered} />}
                       </Heading>
-                    </Link>
+                    </link>
                     <Text
                       color={"#3E485D"}
                       display="flex"
@@ -283,12 +283,12 @@ function Home({ state, actions, libraries }) {
                       />
                     </Text>
                     <Box w="max-content">
-                      <Link link={item.link}>
+                      <link rel="prefetch" href={item.link}>
                         <Text color="red">
                           Read more
                           <Icon as={FaChevronRight} boxSize="2" color={"red"} />
                         </Text>
-                      </Link>
+                      </link>
                     </Box>
                   </Box>
                 )
