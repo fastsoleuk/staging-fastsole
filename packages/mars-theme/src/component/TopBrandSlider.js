@@ -73,7 +73,7 @@ function TopBrandSlider({ deviceType, actions, libraries, state }) {
 
             return (
               item && (
-                <Link rel="prefetch" link={slug} key={"topBrandSliderElement" + index}>
+                <Link link={slug} key={"topBrandSliderElement" + index} rel="prefetch">
                   <div rounded="lg">
                     <Box
                       mx={2}

@@ -186,7 +186,7 @@ const FocusOnSlider = ({ deviceType, actions, libraries, state }) => {
                 <Box
                 // h="20px"
                 >
-                  <Link link={item.slug} rel="prefetch">
+                  <Link link={item.slug}>
                     <Text
                       as="h3"
                       noOfLines={2}
@@ -203,7 +203,7 @@ const FocusOnSlider = ({ deviceType, actions, libraries, state }) => {
                 </Box>
 
                 <Box>
-                  <Link link={item.slug} rel="prefetch">
+                  <Link link={item.slug}>
                     <Text
                       // mt={5}
                       fontWeight="bold"
@@ -217,7 +217,7 @@ const FocusOnSlider = ({ deviceType, actions, libraries, state }) => {
                 </Box>
                 <Box>
                   {" "}
-                  <Link link={item.slug} rel="prefetch">
+                  <Link link={item.slug}>
                     <Button
                       rounded="3px"
                       lineHeight="22px"
