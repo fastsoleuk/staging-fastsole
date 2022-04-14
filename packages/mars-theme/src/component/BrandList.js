@@ -56,7 +56,7 @@ const BrandList = ({ state, libraries, actions }) => {
 
       {brandName.map((item) => {
         return (
-          <Link link={item.slug} rel="prefetch">
+          <Link link={item.slug}>
             {" "}
             <Box
               border="1px solid #D8DEE7"
