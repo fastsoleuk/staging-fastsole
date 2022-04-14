@@ -114,8 +114,7 @@ function TopBrandSlider({ deviceType, actions, libraries, state }) {
                           ml={1}
                           fontWeight="500"
                           color="black"
-                          fontSize={{ base: "xs", md: "sm" }}
-                        >
+                          fontSize={{ base: "xs", md: "sm" }}>
                           {item.title}
                         </Heading>
                       </Flex>

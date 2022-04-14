@@ -141,7 +141,7 @@ const ComingSoonSlider = ({ deviceType, actions, libraries, state }) => {
                     noOfLines={1}
                     whiteSpace="nowrap"
                   >
-                    {item.release_date} GMT{" "}
+                    {item.release_date} GMT
                   </Text>
 
                   <Link link={item.slug}>

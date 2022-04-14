@@ -5,7 +5,6 @@ import Link from "@frontity/components/link";
 
 const BrandList = ({ state, libraries, actions }) => {
   //  const searchSlug = `/searchresult-for/${inputValue}`;
-
   const brandName = [
     {
       slug: "/sneaker-release-dates/brands/nike",

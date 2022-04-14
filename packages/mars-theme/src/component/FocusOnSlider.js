@@ -72,7 +72,7 @@ const FocusOnSlider = ({ deviceType, actions, libraries, state }) => {
           } else if (item.sneaker_status == "coming_soon") {
             var status = (
               <Box>
-                {" "}
+                
                 <Text color="#FF6600" fontSize="xs" lineHeight="22px">
                   <Icon as={FaClock} boxSize="3" mr={1} color={"#FF6600"} />
                   Coming Soon
@@ -82,7 +82,7 @@ const FocusOnSlider = ({ deviceType, actions, libraries, state }) => {
           } else if (item.sneaker_status == "stockist_in_stock") {
             var status = (
               <Box>
-                {" "}
+                
                 <Text color="#FF6600" fontSize="xs" lineHeight="22px">
                   <Icon as={FaClock} boxSize="3" mr={1} color={"#FF6600"} />
                   Stocklist In Stock
@@ -92,7 +92,7 @@ const FocusOnSlider = ({ deviceType, actions, libraries, state }) => {
           } else if (item.sneaker_status == "restock") {
             var status = (
               <Box>
-                {" "}
+                
                 <Text color="#FF6600" fontSize="xs" lineHeight="22px">
                   <Icon as={FaClock} boxSize="3" mr={1} color={"#FF6600"} />
                   Re Stock
@@ -102,7 +102,7 @@ const FocusOnSlider = ({ deviceType, actions, libraries, state }) => {
           } else if (item.sneaker_status == "delayed") {
             var status = (
               <Box>
-                {" "}
+                
                 <Text color="#FF6600" fontSize="xs" lineHeight="22px">
                   <Icon as={FaClock} boxSize="3" mr={1} color={"#FF6600"} />
                   Delayed
@@ -112,7 +112,7 @@ const FocusOnSlider = ({ deviceType, actions, libraries, state }) => {
           } else if (item.sneaker_status == "sold_out") {
             var status = (
               <Box>
-                {" "}
+                
                 <Text color="#FF6600" fontSize="xs" lineHeight="22px">
                   <Icon as={FaClock} boxSize="3" mr={1} color={"#FF6600"} />
                   Sold Out
@@ -122,7 +122,7 @@ const FocusOnSlider = ({ deviceType, actions, libraries, state }) => {
           } else if (item.sneaker_status == "stockist_sold_out") {
             var status = (
               <Box>
-                {" "}
+                
                 <Text color="#FF6600" fontSize="xs" lineHeight="22px">
                   <Icon as={FaClock} boxSize="3" mr={1} color={"#FF6600"} />
                   Stocklist Sold Out
@@ -132,7 +132,7 @@ const FocusOnSlider = ({ deviceType, actions, libraries, state }) => {
           } else {
             var status = (
               <Box>
-                {" "}
+                
                 <Text color="#FF6600" fontSize="xs" lineHeight="22px">
                   <Icon as={FaClock} boxSize="3" mr={1} color={"#FF6600"} />
                   Nothing
@@ -154,7 +154,7 @@ const FocusOnSlider = ({ deviceType, actions, libraries, state }) => {
                     noOfLines={1}
                     whiteSpace="nowrap"
                   >
-                    {item.release_date} GMT{" "}
+                    {item.release_date} GMT
                   </Text>
                 </Box>
                 {/* <motion.div whileHover={{ scale: 1.1 }}> */}
@@ -216,7 +216,7 @@ const FocusOnSlider = ({ deviceType, actions, libraries, state }) => {
                   </Link>
                 </Box>
                 <Box>
-                  {" "}
+                  
                   <Link link={item.slug}>
                     <Button
                       rounded="3px"
@@ -256,484 +256,6 @@ const FocusOnSlider = ({ deviceType, actions, libraries, state }) => {
             </Box>
           );
         })}
-
-      {/* <div>
-        <Box m={2} p={3} border="1px solid #9DA7BE" rounded="lg">
-          <Text color="#525F7A" fontSize="xs" textAlign="center" mb={2}>
-            20 Feb 2021 8:00 AM GMT{" "}
-          </Text>
-          <motion.div whileHover={{ scale: 1.1 }}>
-            <Image
-              borderRadius="lg"
-              // w="100%"
-              mx="auto"
-              src="https://wptesting.thenwg.xyz/wp-content/uploads/2021/10/1-1d.png"
-            />
-          </motion.div>
-          <Text color="#FF6600" fontSize="xs" lineHeight="22px">
-            <Icon as={FaClock} boxSize="3" mr={1} color={"#FF6600"} />
-            Coming Soon
-          </Text>
-          <Text
-            fontWeight="600"
-            color="#3E485D"
-            fontSize="xs"
-            lineHeight="22px"
-            fontStyle="normal"
-          >
-            Nike Air Structure Triax 91 Neo Black CV3492-100
-          </Text>
-
-          <Text
-            fontWeight="bold"
-            color="#525F7A"
-            fontSize="xs"
-            lineHeight="22px"
-          >
-            $180.00{" "}
-          </Text>
-          <Link link="/productdetails">
-            <Button
-              lineHeight="22px"
-              size="xs"
-              color="#3E485D"
-              variant="unstyled"
-              border="1px solid #9DA7BE"
-              w={"full"}
-              h="30px"
-              my={2}
-              _hover={{ bg: "#525F7A", color: " white" }}
-            >
-              Buy Now
-            </Button>
-          </Link>
-        </Box>
-      </div>
-
-      <div>
-        <Box m={2} p={3} border="1px solid #9DA7BE" rounded="lg">
-          <Text color="#525F7A" fontSize="xs" textAlign="center" mb={2}>
-            20 Feb 2021 8:00 AM GMT{" "}
-          </Text>
-          <motion.div whileHover={{ scale: 1.1 }}>
-            <Image
-              borderRadius="lg"
-              // w="100%"
-              mx="auto"
-              src="https://wptesting.thenwg.xyz/wp-content/uploads/2021/10/1-1d.png"
-            />
-          </motion.div>
-          <Text color="#F12026" fontSize="xs" lineHeight="22px">
-            <Icon as={FaTimesCircle} boxSize="3" mr={1} color={"#F12026"} />
-            Sold Out
-          </Text>
-          <Text
-            fontWeight="600"
-            color="#3E485D"
-            fontSize="xs"
-            lineHeight="22px"
-            fontStyle="normal"
-          >
-            Nike Air Structure Triax 91 Neo Black CV3492-100
-          </Text>
-
-          <Text
-            fontWeight="bold"
-            color="#525F7A"
-            fontSize="xs"
-            lineHeight="22px"
-          >
-            $180.00{" "}
-          </Text>
-          <Link link="/productdetails">
-            <Button
-              lineHeight="22px"
-              size="xs"
-              color="#3E485D"
-              variant="unstyled"
-              border="1px solid #9DA7BE"
-              w={"full"}
-              h="30px"
-              my={2}
-              _hover={{ bg: "#525F7A", color: " white" }}
-            >
-              Buy Now
-            </Button>
-          </Link>
-        </Box>
-      </div>
-
-      <div>
-        <Box m={2} p={3} border="1px solid #9DA7BE" rounded="lg">
-          <Text color="#525F7A" fontSize="xs" textAlign="center" mb={2}>
-            20 Feb 2021 8:00 AM GMT{" "}
-          </Text>
-          <motion.div whileHover={{ scale: 1.1 }}>
-            <Image
-              borderRadius="lg"
-              // w="100%"
-              mx="auto"
-              src="https://wptesting.thenwg.xyz/wp-content/uploads/2021/10/1-1d.png"
-              lineHeight="22px"
-            />
-          </motion.div>
-          <Text color="#3EB75E" fontSize="xs" lineHeight="22px">
-            <Icon as={FaCheckCircle} boxSize="3" mr={1} color={"#3EB75E"} />
-            In Stock
-          </Text>
-
-          <Text
-            fontWeight="600"
-            color="#3E485D"
-            fontSize="xs"
-            lineHeight="22px"
-            fontStyle="normal"
-          >
-            Nike Air Structure Triax 91 Neo Black CV3492-100
-          </Text>
-
-          <Text
-            fontWeight="bold"
-            color="#525F7A"
-            fontSize="xs"
-            lineHeight="22px"
-          >
-            $180.00{" "}
-          </Text>
-
-          <Link link="/productdetails">
-            <Button
-              lineHeight="22px"
-              size="xs"
-              color="#3E485D"
-              variant="unstyled"
-              border="1px solid #9DA7BE"
-              w={"full"}
-              h="30px"
-              my={2}
-              _hover={{ bg: "#525F7A", color: " white" }}
-            >
-              Buy Now
-            </Button>
-          </Link>
-        </Box>
-      </div>
-
-      <div>
-        <Box m={2} p={3} border="1px solid #9DA7BE" rounded="lg">
-          <Text color="#525F7A" fontSize="xs" textAlign="center" mb={2}>
-            20 Feb 2021 8:00 AM GMT{" "}
-          </Text>
-          <Image
-            borderRadius="lg"
-            // w="100%"
-            mx="auto"
-            src="https://wptesting.thenwg.xyz/wp-content/uploads/2021/10/1-1d.png"
-            lineHeight="22px"
-          />
-          <Text color="#3EB75E" fontSize="xs" lineHeight="22px">
-            <Icon as={FaCheckCircle} boxSize="3" mr={1} color={"#3EB75E"} />
-            In Stock
-          </Text>
-
-          <Text
-            fontWeight="600"
-            color="#3E485D"
-            fontSize="xs"
-            lineHeight="22px"
-            fontStyle="normal"
-          >
-            Nike Air Structure Triax 91 Neo Black CV3492-100
-          </Text>
-
-          <Text
-            fontWeight="bold"
-            color="#525F7A"
-            fontSize="xs"
-            lineHeight="22px"
-          >
-            $180.00{" "}
-          </Text>
-
-          <Link link="/productdetails">
-            <Button
-              lineHeight="22px"
-              size="xs"
-              color="#3E485D"
-              variant="unstyled"
-              border="1px solid #9DA7BE"
-              w={"full"}
-              h="30px"
-              my={2}
-              _hover={{ bg: "#525F7A", color: " white" }}
-            >
-              Buy Now
-            </Button>
-          </Link>
-        </Box>
-      </div>
-
-      <div>
-        <Box m={2} p={3} border="1px solid #9DA7BE" rounded="lg">
-          <Text color="#525F7A" fontSize="xs" textAlign="center" mb={2}>
-            20 Feb 2021 8:00 AM GMT{" "}
-          </Text>
-          <Image
-            borderRadius="lg"
-            // w="100%"
-            mx="auto"
-            src="https://wptesting.thenwg.xyz/wp-content/uploads/2021/10/1-1d.png"
-            lineHeight="22px"
-          />
-          <Text color="#3EB75E" fontSize="xs" lineHeight="22px">
-            <Icon as={FaCheckCircle} boxSize="3" mr={1} color={"#3EB75E"} />
-            In Stock
-          </Text>
-
-          <Text
-            fontWeight="600"
-            color="#3E485D"
-            fontSize="xs"
-            lineHeight="22px"
-            fontStyle="normal"
-          >
-            Nike Air Structure Triax 91 Neo Black CV3492-100
-          </Text>
-
-          <Text
-            fontWeight="bold"
-            color="#525F7A"
-            fontSize="xs"
-            lineHeight="22px"
-          >
-            $180.00{" "}
-          </Text>
-
-          <Link link="/productdetails">
-            <Button
-              lineHeight="22px"
-              size="xs"
-              color="#3E485D"
-              variant="unstyled"
-              border="1px solid #9DA7BE"
-              w={"full"}
-              h="30px"
-              my={2}
-              _hover={{ bg: "#525F7A", color: " white" }}
-            >
-              Buy Now
-            </Button>
-          </Link>
-        </Box>
-      </div>
-
-      <div>
-        <Box m={2} p={3} border="1px solid #9DA7BE" rounded="lg">
-          <Text color="#525F7A" fontSize="xs" textAlign="center" mb={2}>
-            20 Feb 2021 8:00 AM GMT{" "}
-          </Text>
-          <Image
-            borderRadius="lg"
-            // w="100%"
-            mx="auto"
-            src="https://wptesting.thenwg.xyz/wp-content/uploads/2021/10/1-1d.png"
-            lineHeight="22px"
-          />
-          <Text color="#3EB75E" fontSize="xs" lineHeight="22px">
-            <Icon as={FaCheckCircle} boxSize="3" mr={1} color={"#3EB75E"} />
-            In Stock
-          </Text>
-
-          <Text
-            fontWeight="600"
-            color="#3E485D"
-            fontSize="xs"
-            lineHeight="22px"
-            fontStyle="normal"
-          >
-            Nike Air Structure Triax 91 Neo Black CV3492-100
-          </Text>
-
-          <Text
-            fontWeight="bold"
-            color="#525F7A"
-            fontSize="xs"
-            lineHeight="22px"
-          >
-            $180.00{" "}
-          </Text>
-
-          <Button
-            lineHeight="22px"
-            size="xs"
-            color="#3E485D"
-            variant="unstyled"
-            border="1px solid #9DA7BE"
-            w={"full"}
-            h="30px"
-            my={2}
-            _hover={{ bg: "#525F7A", color: " white" }}
-          >
-            Buy Now
-          </Button>
-        </Box>
-      </div>
-
-      <div>
-        <Box m={2} p={3} border="1px solid #9DA7BE" rounded="lg">
-          <Text color="#525F7A" fontSize="xs" textAlign="center" mb={2}>
-            20 Feb 2021 8:00 AM GMT{" "}
-          </Text>
-          <Image
-            borderRadius="lg"
-            // w="100%"
-            mx="auto"
-            src="https://wptesting.thenwg.xyz/wp-content/uploads/2021/10/1-1d.png"
-            lineHeight="22px"
-          />
-          <Text color="#3EB75E" fontSize="xs" lineHeight="22px">
-            <Icon as={FaCheckCircle} boxSize="3" mr={1} color={"#3EB75E"} />
-            In Stock
-          </Text>
-
-          <Text
-            fontWeight="600"
-            color="#3E485D"
-            fontSize="xs"
-            lineHeight="22px"
-            fontStyle="normal"
-          >
-            Nike Air Structure Triax 91 Neo Black CV3492-100
-          </Text>
-
-          <Text
-            fontWeight="bold"
-            color="#525F7A"
-            fontSize="xs"
-            lineHeight="22px"
-          >
-            $180.00{" "}
-          </Text>
-
-          <Button
-            lineHeight="22px"
-            size="xs"
-            color="#3E485D"
-            variant="unstyled"
-            border="1px solid #9DA7BE"
-            w={"full"}
-            h="30px"
-            my={2}
-            _hover={{ bg: "#525F7A", color: " white" }}
-          >
-            Buy Now
-          </Button>
-        </Box>
-      </div>
-
-      <div>
-        <Box m={2} p={3} border="1px solid #9DA7BE" rounded="lg">
-          <Text color="#525F7A" fontSize="xs" textAlign="center" mb={2}>
-            20 Feb 2021 8:00 AM GMT{" "}
-          </Text>
-          <Image
-            borderRadius="lg"
-            // w="100%"
-            mx="auto"
-            src="https://wptesting.thenwg.xyz/wp-content/uploads/2021/10/1-1d.png"
-            lineHeight="22px"
-          />
-          <Text color="#3EB75E" fontSize="xs" lineHeight="22px">
-            <Icon as={FaCheckCircle} boxSize="3" mr={1} color={"#3EB75E"} />
-            In Stock
-          </Text>
-
-          <Text
-            fontWeight="600"
-            color="#3E485D"
-            fontSize="xs"
-            lineHeight="22px"
-            fontStyle="normal"
-          >
-            Nike Air Structure Triax 91 Neo Black CV3492-100
-          </Text>
-
-          <Text
-            fontWeight="bold"
-            color="#525F7A"
-            fontSize="xs"
-            lineHeight="22px"
-          >
-            $180.00{" "}
-          </Text>
-
-          <Button
-            lineHeight="22px"
-            size="xs"
-            color="#3E485D"
-            variant="unstyled"
-            border="1px solid #9DA7BE"
-            w={"full"}
-            h="30px"
-            my={2}
-            _hover={{ bg: "#525F7A", color: " white" }}
-          >
-            Buy Now
-          </Button>
-        </Box>
-      </div>
-
-      <div>
-        <Box m={2} p={3} border="1px solid #9DA7BE" rounded="lg">
-          <Text color="#525F7A" fontSize="xs" textAlign="center" mb={2}>
-            20 Feb 2021 8:00 AM GMT{" "}
-          </Text>
-          <Image
-            borderRadius="lg"
-            // w="100%"
-            mx="auto"
-            src="https://wptesting.thenwg.xyz/wp-content/uploads/2021/10/1-1d.png"
-            lineHeight="22px"
-          />
-          <Text color="#3EB75E" fontSize="xs" lineHeight="22px">
-            <Icon as={FaCheckCircle} boxSize="3" mr={1} color={"#3EB75E"} />
-            In Stock
-          </Text>
-
-          <Text
-            fontWeight="600"
-            color="#3E485D"
-            fontSize="xs"
-            lineHeight="22px"
-            fontStyle="normal"
-          >
-            Nike Air Structure Triax 91 Neo Black CV3492-100
-          </Text>
-
-          <Text
-            fontWeight="bold"
-            color="#525F7A"
-            fontSize="xs"
-            lineHeight="22px"
-          >
-            $180.00{" "}
-          </Text>
-
-          <Button
-            lineHeight="22px"
-            size="xs"
-            color="#3E485D"
-            variant="unstyled"
-            border="1px solid #9DA7BE"
-            w={"full"}
-            h="30px"
-            my={2}
-            _hover={{ bg: "#525F7A", color: " white" }}
-          >
-            Buy Now
-          </Button>
-        </Box>
-      </div> */}
     </Carousel>
   );
 };
