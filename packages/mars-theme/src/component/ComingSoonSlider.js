@@ -144,7 +144,7 @@ const ComingSoonSlider = ({ deviceType, actions, libraries, state }) => {
                     {item.release_date} GMT{" "}
                   </Text>
 
-                  <Link link={item.slug}>
+                  <Link link={item.slug} rel="prefetch">
                     <Box
                       w={"100%"}
                       overflow={"hidden"}
@@ -169,7 +169,7 @@ const ComingSoonSlider = ({ deviceType, actions, libraries, state }) => {
 
                   {status}
 
-                  <Link link={item.slug}>
+                  <Link link={item.slug} rel="prefetch">
                     <Text
                       fontWeight="600"
                       color="#3E485D"
@@ -191,7 +191,7 @@ const ComingSoonSlider = ({ deviceType, actions, libraries, state }) => {
                   >
                     {/* {myslug} */}£{item.esc_price}
                   </Text>
-                  <Link link={item.slug}>
+                  <Link link={item.slug} rel="prefetch">
                     <Button
                       rounded="3px"
                       lineHeight="22px"

@@ -158,7 +158,7 @@ const FocusOnSlider = ({ deviceType, actions, libraries, state }) => {
                   </Text>
                 </Box>
                 {/* <motion.div whileHover={{ scale: 1.1 }}> */}
-                <Link link={item.slug}>
+                <Link link={item.slug} rel="prefetch">
                   <Box
                     w={"100%"}
                     overflow={"hidden"}
@@ -186,7 +186,7 @@ const FocusOnSlider = ({ deviceType, actions, libraries, state }) => {
                 <Box
                 // h="20px"
                 >
-                  <Link link={item.slug}>
+                  <Link link={item.slug} rel="prefetch">
                     <Text
                       as="h3"
                       noOfLines={2}
@@ -203,7 +203,7 @@ const FocusOnSlider = ({ deviceType, actions, libraries, state }) => {
                 </Box>
 
                 <Box>
-                  <Link link={item.slug}>
+                  <Link link={item.slug} rel="prefetch">
                     <Text
                       // mt={5}
                       fontWeight="bold"
@@ -217,7 +217,7 @@ const FocusOnSlider = ({ deviceType, actions, libraries, state }) => {
                 </Box>
                 <Box>
                   {" "}
-                  <Link link={item.slug}>
+                  <Link link={item.slug} rel="prefetch">
                     <Button
                       rounded="3px"
                       lineHeight="22px"

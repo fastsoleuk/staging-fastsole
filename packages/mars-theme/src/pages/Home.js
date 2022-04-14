@@ -357,11 +357,11 @@ function Home({ state, actions, libraries }) {
               return (
                 item && (
                   <Box>
-                    <Link link={item.link}>
+                    <Link link={item.link} rel="prefetch">
                       <ImageViewFeatured id={item.featured_media} />
                     </Link>
 
-                    <Link link={item.link}>
+                    <Link link={item.link} rel="prefetch">
                       <Heading
                         as="h3"
                         mt={6}
@@ -387,7 +387,7 @@ function Home({ state, actions, libraries }) {
                       />
                     </Text>
                     <Box w="max-content">
-                      <Link link={item.link}>
+                      <Link link={item.link} rel="prefetch">
                         <Text color="red">
                           Read more
                           <Icon as={FaChevronRight} boxSize="2" color={"red"} />
@@ -531,7 +531,7 @@ function Home({ state, actions, libraries }) {
                         borderRadius={"5px"}
                         border={"1px solid #C2C8D6"}
                       >
-                        <Link link={item.link} id="img-div2nd-height">
+                        <Link link={item.link} id="img-div2nd-height" rel="prefetch">
                           {" "}
                           <ImageViewFeatured id={item.featured_media} />
                         </Link>
@@ -582,7 +582,7 @@ function Home({ state, actions, libraries }) {
 
                         <Flex mt="2px" alignItems="center">
                           <Box w="max-content">
-                            <Link link={item.link}>
+                            <Link link={item.link} rel="prefetch">
                               <Text color="red">
                                 Read more{" "}
                                 <Icon
@@ -774,11 +774,11 @@ function Home({ state, actions, libraries }) {
               return (
                 item && (
                   <Box>
-                    <Link link={item.link}>
+                    <Link link={item.link} rel="prefetch">
                       <ImageViewFeatured id={item.featured_media} />
                     </Link>
 
-                    <Link link={item.link}>
+                    <Link link={item.link} rel="prefetch">
                       <Heading
                         as="h3"
                         mt={6}
@@ -804,7 +804,7 @@ function Home({ state, actions, libraries }) {
                       />
                     </Text>
                     <Box w="max-content">
-                      <Link link={item.link}>
+                      <Link link={item.link} rel="prefetch">
                         <Text color="red">
                           Read more
                           <Icon as={FaChevronRight} boxSize="2" color={"red"} />
@@ -840,13 +840,13 @@ function Home({ state, actions, libraries }) {
                         borderRadius={"5px"}
                         border={"1px solid #C2C8D6"}
                       >
-                        <Link link={items.link} id="img-div2nd-height">
+                        <Link link={items.link} id="img-div2nd-height" rel="prefetch">
                           {" "}
                           <ImageViewFeatured id={items.featured_media} />
                         </Link>
                       </Box>
                       <Box mt={{ base: 4, md: 0 }} ml={{ md: 4 }}>
-                        <Link link={items.link}>
+                        <Link link={items.link} rel="prefetch">
                           <Heading
                             as="h3"
                             display="block"
@@ -891,7 +891,7 @@ function Home({ state, actions, libraries }) {
 
                         <Flex mt="2px" alignItems="center">
                           <Box w="max-content">
-                            <Link link={items.link}>
+                            <Link link={items.link} rel="prefetch">
                               <Text color="red">
                                 Read more.....{" "}
                                 <Icon
