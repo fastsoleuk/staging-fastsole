@@ -357,11 +357,11 @@ function Home({ state, actions, libraries }) {
               return (
                 item && (
                   <Box>
-                    <Link link={item.link} rel="prefetch">
+                    <Link link={item.link}>
                       <ImageViewFeatured id={item.featured_media} />
                     </Link>
 
-                    <Link link={item.link} rel="prefetch">
+                    <Link link={item.link}>
                       <Heading
                         as="h3"
                         mt={6}
@@ -387,7 +387,7 @@ function Home({ state, actions, libraries }) {
                       />
                     </Text>
                     <Box w="max-content">
-                      <Link link={item.link} rel="prefetch">
+                      <Link link={item.link}>
                         <Text color="red">
                           Read more
                           <Icon as={FaChevronRight} boxSize="2" color={"red"} />
