@@ -95,12 +95,12 @@ const Footer = ({ state, libraries, actions }) => {
           >
             <Box color="#3E485D" mb="20px">
               <Stack alignItems="flex-start">
-                <Box>
+              <Box>
                   {/* <Logo color={useColorModeValue('gray.700', 'white')} /> */}
                   <Link
-                    href="/"
-                    _focus={{ boxShadow: "none" }}
-                    display={{ base: "block", md: "inline-flex" }}
+                    link="/"
+                    // _focus={{ boxShadow: "none" }}
+                    // display={{ base: "block", md: "inline-flex" }}
                     mb="15px"
                   >
                     <img
@@ -108,8 +108,7 @@ const Footer = ({ state, libraries, actions }) => {
                       src={Logo}
                       width="100% !important"
                       height="30px !important"
-                      alt={state}
-                      alt={state.frontity.company_name + " logo"}
+                      alt={state.frontity.company_name + " staging_logo"}
                     />
                   </Link>
                 </Box>
