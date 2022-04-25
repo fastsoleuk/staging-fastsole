@@ -61,7 +61,7 @@ function TopBrandSlider({ deviceType, actions, libraries, state }) {
       {!state.topBrands.isLoading
         ? state.topBrands.postData &&
           state.topBrands.postData.slice(0, 8).map((item, index) => {
-            //console.log("topBrands ", item);
+            // console.log("topBrands ", item);
 
             const title = item.title;
             let result = title.split(" ").join("-");
@@ -69,7 +69,7 @@ function TopBrandSlider({ deviceType, actions, libraries, state }) {
 
             // const slug="";
             const slug = `/sneaker-release-dates/brands/${result}`;
-            console.log("giveus", slug);
+            //console.log("giveus", slug);
 
             return (
               item && (
