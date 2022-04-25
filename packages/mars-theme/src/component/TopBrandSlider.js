@@ -45,11 +45,11 @@ function TopBrandSlider({ deviceType, actions, libraries, state }) {
     actions.topBrands.toggleLoading();
     actions.topBrands.updatePostData(result);
   };
-  //console.log("topbrand", state.topBrands.postData);
+  console.log("topbrand", state.topBrands.postData);
   if (state.topBrands.postData) {
   }
   const tempArr = [1, 2, 3, 4, 5, 6, 7, 8];
-  //console.log("first", state.topBrands.postData);
+  console.log("first", state.topBrands.postData);
 
   return (
     <Carousel
@@ -69,7 +69,7 @@ function TopBrandSlider({ deviceType, actions, libraries, state }) {
 
             // const slug="";
             const slug = `/sneaker-release-dates/brands/${result}`;
-            //console.log("giveus", slug);
+            console.log("giveus", slug);
 
             return (
               item && (
