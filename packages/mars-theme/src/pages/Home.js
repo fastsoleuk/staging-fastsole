@@ -28,7 +28,7 @@ import { connect, Head, loadable } from "frontity";
 //import ComingSoonSlider from "../component/ComingSoonSlider";
 //import FocusOnSlider from "../component/FocusOnSlider";
 //import TopBrandSlider from "../component/TopBrandSlider";
-import FooterComponent from "../component/FooterComponent";
+//import FooterComponent from "../component/FooterComponent";
 import Link from "@frontity/components/link";
 import HomeMobileBanner from "../component/HomeMobileBanner";
 import dayjs from "dayjs";
@@ -48,6 +48,7 @@ const ComingSoonSlider = loadable(() => import('../component/ComingSoonSlider'))
 const FocusOnSlider = loadable(() => import('../component/FocusOnSlider'))
 const TopBrandSlider = loadable(() => import('../component/TopBrandSlider'))
 const BrandList = loadable(() => import('../component/BrandList'))
+const FooterComponent = loadable(() => import('../component/FooterComponent'))
 
 const ViewAllbtn = loadable(() => import('../component/ViewAllbtn'))
 const ViewAllMobile = loadable(() => import('../component/ViewAllMobile'))
