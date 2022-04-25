@@ -27,7 +27,7 @@ import {
 import { connect, Head, loadable } from "frontity";
 //import ComingSoonSlider from "../component/ComingSoonSlider";
 //import FocusOnSlider from "../component/FocusOnSlider";
-import TopBrandSlider from "../component/TopBrandSlider";
+//import TopBrandSlider from "../component/TopBrandSlider";
 import FooterComponent from "../component/FooterComponent";
 import Link from "@frontity/components/link";
 import HomeMobileBanner from "../component/HomeMobileBanner";
@@ -39,13 +39,15 @@ import { css } from "frontity";
 // import Slider1 from "../component/slider/slider1";
 // import Link from "@frontity/components/link";
 import ImageViewFeatured from "../../src/Utils/ImageViewFeatured";
-import BrandList from "../component/BrandList";
+//import BrandList from "../component/BrandList";
 import ViewAllbtn from "../component/ViewAllbtn";
 import ViewAllMobile from "../component/ViewAllMobile";
 import Skbrand from "../component/Skeleton/skbrand";
 
 const ComingSoonSlider = loadable(() => import('../component/ComingSoonSlider'))
 const FocusOnSlider = loadable(() => import('../component/FocusOnSlider'))
+const TopBrandSlider = loadable(() => import('../component/TopBrandSlider'))
+const BrandList = loadable(() => import('../component/BrandList'))
 
 
 
