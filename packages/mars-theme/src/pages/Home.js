@@ -45,7 +45,7 @@ import ViewAllMobile from "../component/ViewAllMobile";
 import Skbrand from "../component/Skeleton/skbrand";
 
 const ComingSoonSlider = loadable(() => import('../component/ComingSoonSlider'))
-//const FocusOnSlider = loadable(() => import('../component/FocusOnSlider'))
+const FocusOnSlider = loadable(() => import('../component/FocusOnSlider'))
 //const TopBrandSlider = loadable(() => import('../component/TopBrandSlider'))
 
 
