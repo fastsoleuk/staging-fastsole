@@ -45,11 +45,11 @@ function TopBrandSlider({ deviceType, actions, libraries, state }) {
     actions.topBrands.toggleLoading();
     actions.topBrands.updatePostData(result);
   };
-  console.log("topbrand", state.topBrands.postData);
+  //console.log("topbrand", state.topBrands.postData);
   if (state.topBrands.postData) {
   }
   const tempArr = [1, 2, 3, 4, 5, 6, 7, 8];
-  console.log("first", state.topBrands.postData);
+  //console.log("first", state.topBrands.postData);
 
   return (
     <Carousel
@@ -61,7 +61,7 @@ function TopBrandSlider({ deviceType, actions, libraries, state }) {
       {!state.topBrands.isLoading
         ? state.topBrands.postData &&
           state.topBrands.postData.slice(0, 8).map((item, index) => {
-            // console.log("topBrands ", item);
+            //console.log("topBrands ", item);
 
             const title = item.title;
             let result = title.split(" ").join("-");
@@ -114,7 +114,8 @@ function TopBrandSlider({ deviceType, actions, libraries, state }) {
                           ml={1}
                           fontWeight="500"
                           color="black"
-                          fontSize={{ base: "xs", md: "sm" }}>
+                          fontSize={{ base: "xs", md: "sm" }}
+                        >
                           {item.title}
                         </Heading>
                       </Flex>
