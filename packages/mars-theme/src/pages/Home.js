@@ -25,7 +25,7 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 import { connect, Head, loadable } from "frontity";
-import ComingSoonSlider from "../component/ComingSoonSlider";
+//import ComingSoonSlider from "../component/ComingSoonSlider";
 import FocusOnSlider from "../component/FocusOnSlider";
 import TopBrandSlider from "../component/TopBrandSlider";
 import FooterComponent from "../component/FooterComponent";
@@ -43,6 +43,10 @@ import BrandList from "../component/BrandList";
 import ViewAllbtn from "../component/ViewAllbtn";
 import ViewAllMobile from "../component/ViewAllMobile";
 import Skbrand from "../component/Skeleton/skbrand";
+
+const ComingSoonSlider = loadable(() => import('../component/ComingSoonSlider'))
+
+
 
 function useHover() {
   const [hovering, setHovering] = useState(false);
