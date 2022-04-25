@@ -26,7 +26,7 @@ import {
 } from "react-icons/fa";
 import { connect, Head, loadable } from "frontity";
 //import ComingSoonSlider from "../component/ComingSoonSlider";
-import FocusOnSlider from "../component/FocusOnSlider";
+//import FocusOnSlider from "../component/FocusOnSlider";
 import TopBrandSlider from "../component/TopBrandSlider";
 import FooterComponent from "../component/FooterComponent";
 import Link from "@frontity/components/link";
@@ -45,6 +45,7 @@ import ViewAllMobile from "../component/ViewAllMobile";
 import Skbrand from "../component/Skeleton/skbrand";
 
 const ComingSoonSlider = loadable(() => import('../component/ComingSoonSlider'))
+const FocusOnSlider = loadable(() => import('../component/FocusOnSlider'))
 
 
 
