@@ -134,7 +134,7 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
     setCurrentPage(1);
   };
 
-  console.log("stock value :", stockValue);
+  //console.log("stock value :", stockValue);
 
   const brandChange = (e) => {
     var value = parseInt(e);
@@ -207,7 +207,7 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
   let totalCount = state.sneakerReleaseDates.postData.totalPost;
 
   // pagination component start
-  var dataLimit = 20;
+  var dataLimit = 12;
   if (totalCount >= 26) {
     var pageLimit = 3;
   } else if (totalCount >= 12 && totalCount < 25) {
