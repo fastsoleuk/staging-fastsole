@@ -89,7 +89,7 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
 
   const [stockValue, setStockValue] = useState({
     brandId: itemId,
-    totalProduct: 20,
+    totalProduct: 12,
     priceMin: 0,
     priceMax: 500,
     status: tempType,
