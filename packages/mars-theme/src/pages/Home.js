@@ -30,7 +30,7 @@ import { connect, Head, loadable } from "frontity";
 //import TopBrandSlider from "../component/TopBrandSlider";
 //import FooterComponent from "../component/FooterComponent";
 import Link from "@frontity/components/link";
-import HomeMobileBanner from "../component/HomeMobileBanner";
+//import HomeMobileBanner from "../component/HomeMobileBanner";
 import dayjs from "dayjs";
 import FeaturedMedia from "../Utils/FeaturedMedia";
 import ImageView from "../Utils/ImageView";
@@ -38,7 +38,7 @@ import { motion } from "framer-motion";
 import { css } from "frontity";
 // import Slider1 from "../component/slider/slider1";
 // import Link from "@frontity/components/link";
-import ImageViewFeatured from "../../src/Utils/ImageViewFeatured";
+//import ImageViewFeatured from "../../src/Utils/ImageViewFeatured";
 //import BrandList from "../component/BrandList";
 //import ViewAllbtn from "../component/ViewAllbtn";
 //import ViewAllMobile from "../component/ViewAllMobile";
@@ -53,6 +53,8 @@ const FooterComponent = loadable(() => import('../component/FooterComponent'))
 const ViewAllbtn = loadable(() => import('../component/ViewAllbtn'))
 const ViewAllMobile = loadable(() => import('../component/ViewAllMobile'))
 
+const ImageViewFeatured = loadable(() => import('../../src/Utils/ImageViewFeatured'))
+const HomeMobileBanner = loadable(() => import('../component/HomeMobileBanner'))
 
 
 function useHover() {
@@ -99,7 +101,7 @@ function Home({ state, actions, libraries }) {
           data-rh="true"
           data-rh="true"
           name="thumbnail"
-          content="https://version2.fastsole.co.uk/wp-content/uploads/2016/09/FastSole-Fev-01.png"
+          content="https://dev2.fastsole.co.uk/wp-content/uploads/2016/09/FastSole-Fev-01.png"
           data-reactroot=""
         />
         <meta
@@ -210,7 +212,7 @@ function Home({ state, actions, libraries }) {
         {`{
           "@context": "https://schema.org",
           "@type": "Organization",
-          url: "https://version2.fastsole.co.uk",
+          url: "https://dev2.fastsole.co.uk",
           sameAs: [
             "https://www.facebook.com/fastsole/",
             "https://www.instagram.com/fastsole/",
@@ -245,9 +247,9 @@ function Home({ state, actions, libraries }) {
               contactType: "Sales and advertising",
             },
           ],
-          "@id": "https://version2.fastsole.co.uk/#organization",
+          "@id": "https://dev2.fastsole.co.uk/#organization",
           name: "Fast sole",
-          logo: "https://version2.fastsole.co.uk/wp-content/themes/fs/img/logo.png",
+          logo: "https://dev2.fastsole.co.uk/wp-content/themes/fs/img/logo.png",
         }`}
       </script>
 
