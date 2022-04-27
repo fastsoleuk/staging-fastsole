@@ -60,7 +60,7 @@ function TopBrandSlider({ deviceType, actions, libraries, state }) {
     >
       {!state.topBrands.isLoading
         ? state.topBrands.postData &&
-          state.topBrands.postData.slice(0, 8).map((item, index) => {
+          state.topBrands.postData.slice(0, 25).map((item, index) => {
             // console.log("topBrands ", item);
 
             const title = item.title;
