@@ -74,7 +74,7 @@ const SneakersDataForBrand = ({
 }) => {
   const [stockValue, setStockValue] = useState({
     brandId: itemId,
-    totalProduct: 20,
+    totalProduct: 32,
     priceMin: 0,
     priceMax: 500,
     status: "instock",
@@ -212,10 +212,10 @@ const SneakersDataForBrand = ({
   let totalCount = state.sneakerReleaseDates.postData.totalPost;
 
   // pagination component start
-  var dataLimit = 12;
-  if (totalCount >= 26) {
+  var dataLimit = 32;
+  if (totalCount >= 66) {
     var pageLimit = 3;
-  } else if (totalCount >= 12 && totalCount < 25) {
+  } else if (totalCount >= 32 && totalCount < 65) {
     var pageLimit = 2;
   } else {
     var pageLimit = 1;
@@ -223,7 +223,7 @@ const SneakersDataForBrand = ({
 
   const [pages] = useState(Math.ceil(totalCount / dataLimit));
 
-  const [dataLength, setDataLength] = useState({ min: 0, max: 12 });
+  const [dataLength, setDataLength] = useState({ min: 0, max: 32 });
 
   const doubleRight = () => {
     setCurrentPage(pages);
@@ -259,7 +259,7 @@ const SneakersDataForBrand = ({
   ]);
 
   const updateIndex = async () => {
-    setDataLength({ min: 0, max: 12 });
+    setDataLength({ min: 0, max: 32 });
     setCurrentPage(1);
   };
 
