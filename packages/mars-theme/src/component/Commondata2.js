@@ -80,7 +80,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
 
   const [stockValue, setStockValue] = useState({
     brandId: 0,
-    totalProduct: 12,
+    totalProduct: 32,
     priceMin: 0,
     priceMax: 2000,
     status: "instock",
@@ -148,7 +148,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
 
   const convertDate = (event) => {
     const tempDate = JSON.stringify(event);
-    const finalDate = tempDate.slice(1, 11);
+    const finalDate = tempDate.slice(1, 32);
     var intDate = finalDate.split("-").join("");
     return intDate;
   };
@@ -222,10 +222,10 @@ const Commondata2 = ({ state, actions, libraries }) => {
   let totalCount = state.sneakerReleaseDates.postData.totalPost;
 
   // pagination component start
-  var dataLimit = 12;
-  if (totalCount >= 36) {
+  var dataLimit = 32;
+  if (totalCount >= 66) {
     var pageLimit = 3;
-  } else if (totalCount >= 12 && totalCount < 36) {
+  } else if (totalCount >= 32 && totalCount < 65) {
     var pageLimit = 2;
   } else {
     var pageLimit = 1;
@@ -233,7 +233,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
 
   const [pages] = useState(Math.ceil(totalCount / dataLimit));
   const [currentPage, setCurrentPage] = useState(1);
-  const [dataLength, setDataLength] = useState({ min: 0, max: 12 });
+  const [dataLength, setDataLength] = useState({ min: 0, max: 32 });
 
   const [resetClick, setresetClick] = useState(false);
 
@@ -271,7 +271,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
   ]);
 
   const updateIndex = async () => {
-    setDataLength({ min: 0, max: 12 });
+    setDataLength({ min: 0, max: 32 });
     setCurrentPage(1);
   };
 
@@ -404,7 +404,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
     };
     setStockValue(tempArr);
 
-    setDataLength({ min: 0, max: 12 });
+    setDataLength({ min: 0, max: 32 });
 
     setBrand("");
     setchoosedate("--");
