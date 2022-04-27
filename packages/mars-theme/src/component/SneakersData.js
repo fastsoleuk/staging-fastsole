@@ -68,7 +68,7 @@ import NoProduct from "./NoProduct";
 const SneakersData = ({ state, actions, libraries, itemId }) => {
   const [stockValue, setStockValue] = useState({
     brandId: itemId,
-    totalProduct: 20,
+    totalProduct: 32,
     priceMin: 0,
     priceMax: 500,
     status: "instock",
@@ -100,7 +100,7 @@ const SneakersData = ({ state, actions, libraries, itemId }) => {
 
   const convertDate = (event) => {
     const tempDate = JSON.stringify(event);
-    const finalDate = tempDate.slice(1, 11);
+    const finalDate = tempDate.slice(1, 32);
     var intDate = finalDate.split("-").join("");
     return intDate;
   };
@@ -201,10 +201,10 @@ const SneakersData = ({ state, actions, libraries, itemId }) => {
   let totalCount = state.sneakerReleaseDates.postData.totalPost;
 
   // pagination component start
-  var dataLimit = 12;
-  if (totalCount >= 26) {
+  var dataLimit = 32;
+  if (totalCount >= 66) {
     var pageLimit = 3;
-  } else if (totalCount >= 12 && totalCount < 25) {
+  } else if (totalCount >= 32 && totalCount < 65) {
     var pageLimit = 2;
   } else {
     var pageLimit = 1;
@@ -212,7 +212,7 @@ const SneakersData = ({ state, actions, libraries, itemId }) => {
 
   const [pages] = useState(Math.ceil(totalCount / dataLimit));
 
-  const [dataLength, setDataLength] = useState({ min: 0, max: 12 });
+  const [dataLength, setDataLength] = useState({ min: 0, max: 32 });
 
   const doubleRight = () => {
     setCurrentPage(pages);
@@ -248,7 +248,7 @@ const SneakersData = ({ state, actions, libraries, itemId }) => {
   ]);
 
   const updateIndex = async () => {
-    setDataLength({ min: 0, max: 12 });
+    setDataLength({ min: 0, max: 32 });
     setCurrentPage(1);
   };
 
