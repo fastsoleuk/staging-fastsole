@@ -138,7 +138,7 @@ const Header = ({ state, libraries, actions }) => {
     // Get the input's value
     const searchString = inputValue.trim();
     // inputRef.current.value;
-    console.log("checksearch=", searchString);
+    //aureate_console.log("checksearch=", searchString);
 
     // If the typed search string is not empty
     // Better to trim write spaces as well
@@ -233,7 +233,7 @@ const Header = ({ state, libraries, actions }) => {
 
   menus[1].submenu = perentMenu;
 
-  console.log("menu data :", menus[2]);
+  //aureate_console.log("menu data :", menus[2]);
 
   return (
     <Box

@@ -118,7 +118,7 @@ const News = ({ state, actions, libraries }) => {
   const pageData = state.source.get(state.router.link);
   // const schemaData = pageData.schemaData && pageData.schemaData;
 
-  console.log("schemadataa", state.router.link);
+  //aureate_console.log("schemadataa", state.router.link);
   const [readMore, setreadMore] = useState(false);
   const [schemaData, setschemaData] = useState(false);
 
@@ -142,7 +142,7 @@ const News = ({ state, actions, libraries }) => {
     fetchData();
   }, [dataLoaded]); //update by santosh
 
-  console.log("checkschema", state.newsSchema.postData);
+  //aureate_console.log("checkschema", state.newsSchema.postData);
 
   return (
     <>
@@ -338,7 +338,7 @@ const News = ({ state, actions, libraries }) => {
                 <VStack alignItems="normal" justifyContent={"space-between"}>
                   {data.items.slice(2, 5).map(({ type, id }) => {
                     const item = state.source[type][id];
-                    console.log("myhomepage", item);
+                    //aureate_console.log("myhomepage", item);
 
                     if (item.status == "instock") {
                       var status = (
@@ -672,7 +672,7 @@ const News = ({ state, actions, libraries }) => {
                 </span>
                 {
                   /* show page numbers */
-                  console.log("current page new:", currentPageClick)
+                  //aureate_console.log("current page new:", currentPageClick)
                 }
                 {getPaginationGroup().map((item, index) => (
                   <Circle

@@ -67,7 +67,7 @@ const Singlenews = ({ state, actions, libraries }) => {
   const newsData = state.source[type][id];
   const post_link = state.frontity.url + "/" + newsData.link.slice(1);
   const media = newsData && state.source.attachment[newsData.featured_media];
-  console.log("checkmedia", newsData.featured_media);
+  //aureate_console.log("checkmedia", newsData.featured_media);
 
   const slug = newsData.slug;
 
@@ -85,7 +85,7 @@ const Singlenews = ({ state, actions, libraries }) => {
     const response = await libraries.source.api.get({
       endpoint: `/wl/v1/sneaker-news/page/${slug}/`,
     });
-    console.log("category post", `/wl/v1/sneaker-news/page/${slug}/`);
+    //aureate_console.log("category post", `/wl/v1/sneaker-news/page/${slug}/`);
     const newsPost = await response.json();
     actions.sneakerNewsRecent.toggleLoading();
     actions.sneakerNewsRecent.updatePostData(newsPost);

@@ -13,9 +13,9 @@ import {
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
 const Breadcrumb = ({ breadcrumb, state, libraries }) => {
-  console.log("bread crumb :", breadcrumb);
+  //aureate_console.log("bread crumb :", breadcrumb);
   let data = breadcrumb.split("/");
-  console.log("data items :", data);
+  //aureate_console.log("data items :", data);
 
   var text = [];
   var url = "";

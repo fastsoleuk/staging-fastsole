@@ -107,7 +107,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
   const demoArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   const rangeSlider = (range) => {
-    console.log("rangeslider", true);
+    //aureate_console.log("rangeslider", true);
     var min = range[0];
     var max = range[1];
     var temp = {
@@ -127,7 +127,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
     setStockValue(tempArr);
     setPriceRange(temp);
     setCurrentPage(1);
-    console.log("rangeslider", false);
+    //aureate_console.log("rangeslider", false);
   };
 
   // Mon Jan 03 2022 15:51:22 GMT+0530 (India Standard Time)
@@ -154,7 +154,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
   };
 
   const exactDate = (startdate, enddate) => {
-    console.log("finaldate", startdate, enddate);
+    //aureate_console.log("finaldate", startdate, enddate);
     setchoosedate("");
     const firstdate = convertDate(startdate);
     const secdate = convertDate(enddate);
@@ -207,12 +207,12 @@ const Commondata2 = ({ state, actions, libraries }) => {
   const fetchData = async () => {
     // console.log("items available for post =", stockValue)
     // state.sneakerReleaseDates.isLoading = true;
-    console.log("slugdata=", slug);
+    //aureate_console.log("slugdata=", slug);
     actions.sneakerReleaseDates.notoggleLoading();
     const response = await libraries.source.api.get({
       endpoint: `/wl/v1/sneaker-release-dates-test/${slug}`,
     });
-    console.log("endpoint :", `/wl/v1/sneaker-release-dates-test/${slug}`);
+    //aureate_console.log("endpoint :", `/wl/v1/sneaker-release-dates-test/${slug}`);
     const result = await response.json();
     actions.sneakerReleaseDates.toggleLoading();
     actions.sneakerReleaseDates.updatePostData(result);
@@ -278,7 +278,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
   const getPaginationData = async () => {
     const startIndex = currentPage * dataLimit - dataLimit;
     const endIndex = startIndex + dataLimit;
-    console.log("curret page :", startIndex, endIndex);
+    //aureate_console.log("curret page :", startIndex, endIndex);
     const tempArr = {
       brandId: stockValue.brandId,
       totalProduct: endIndex,
@@ -298,7 +298,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
     return new Array(pageLimit).fill().map((_, idx) => start + idx + 1);
   };
   const stockChange = (value) => {
-    console.log("filter array", filter);
+    //aureate_console.log("filter array", filter);
     var tempFilter = {
       sneaker_status: value,
       color: "",
@@ -323,7 +323,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
 
   // get input data from release calendar
   let shortDropDown = (value) => {
-    console.log("drop down value :", value);
+    //aureate_console.log("drop down value :", value);
     setDropdown(value);
 
     const tempArr = {
@@ -344,7 +344,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
       endpoint: `/wl/v1/footwear-brands`,
     });
 
-    console.log("checkres", response);
+    //aureate_console.log("checkres", response);
 
     const result = await response.json();
     actions.brandsData.toggleLoading();
@@ -389,7 +389,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
   const [selectColor, setSelectColor] = useState("");
 
   const reset = () => {
-    console.log("rangeslider", true);
+    //aureate_console.log("rangeslider", true);
     setresetClick(true);
     setPriceRange({ min: 0, max: 500 });
     const tempArr = {
@@ -446,7 +446,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
     // console.log("sub brands :", result);
     setSubBrand(result);
   };
-  console.log("sub brands :", subBrand);
+  //aureate_console.log("sub brands :", subBrand);
 
   if (!state.sneakerReleaseDates.isLoading) {
     $(document).scrollTop(0);
@@ -478,7 +478,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
                   const firstdate = date[0].startDate;
                   const enddatedate = date[0].endDate;
                   exactDate(firstdate, enddatedate);
-                  console.log("getdatafrom", firstdate, enddatedate);
+                  //aureate_console.log("getdatafrom", firstdate, enddatedate);
                   onDateClose();
                   window.scrollTo(0, 0);
                 }}
@@ -1348,12 +1348,12 @@ const Commondata2 = ({ state, actions, libraries }) => {
                       gap={4}
                       mb="10"
                     >
-                      {console.log("items data ", filterItems)}
+                      {/* {//aureate_console.log("items data ", filterItems)} */}
 
                       {Object.values(filterItems)
                         .slice(dataLength.min, dataLength.max)
                         .map((item) => {
-                          console.log("dataget", item);
+                          //aureate_console.log("dataget", item);
                           if (item.sneaker_status === "instock") {
                             var status = (
                               <Text
@@ -1682,7 +1682,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
                     </span>
                     {
                       /* show page numbers */
-                      console.log("current page new:", currentPage)
+                      //aureate_console.log("current page new:", currentPage)
                     }
                     {getPaginationGroup().map((item, index) => {
                       return (

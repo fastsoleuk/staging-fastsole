@@ -4,7 +4,7 @@ import connect from "@frontity/connect";
 import Link from "@frontity/components/link";
 
 const Bannerslider = ({ children, coverImage, state, libraries }) => {
-  console.log("checkcover", coverImage);
+  //aureate_console.log("checkcover", coverImage);
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -29,7 +29,7 @@ const Bannerslider = ({ children, coverImage, state, libraries }) => {
       <Carousel responsive={responsive}>
         {children
           ? children.map((item) => {
-              console.log("create", item);
+              //aureate_console.log("create", item);
               if (item.brandImage !== null) {
                 return (
                   <Box mx="3">

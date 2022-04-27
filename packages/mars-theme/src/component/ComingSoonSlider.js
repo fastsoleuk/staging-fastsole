@@ -56,7 +56,7 @@ const ComingSoonSlider = ({ deviceType, actions, libraries, state }) => {
     setprodData(state.comingSoon.postData);
   };
 
-  console.log("comingsoon", state.comingSoon.postData);
+  //aureate_console.log("comingsoon", state.comingSoon.postData);
   const tempList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (

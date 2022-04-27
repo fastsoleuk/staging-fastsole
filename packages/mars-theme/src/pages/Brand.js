@@ -78,15 +78,15 @@ const Brand = ({ state, libraries, actions }) => {
   // const slug = `/brands/le-coq-sportif`
   const fetchData = async (slugName) => {
     const slug = `/brands/${slugName}`;
-    console.log("slug name new :", slugName);
-    console.log("objectsss", slug);
+    //aureate_console.log("slug name new :", slugName);
+    //aureate_console.log("objectsss", slug);
     const response = await libraries.source.api.get({
       endpoint: `/wl/v1${slug}`,
     });
 
     const result = await response.json();
 
-    console.log("result data :", result);
+    //aureate_console.log("result data :", result);
 
     actions.brandItems.toggleLoading();
     actions.brandItems.updatePostData(result);
@@ -117,7 +117,7 @@ const Brand = ({ state, libraries, actions }) => {
 
       var tempSlug = linkurl.split("/");
       var brandName = tempSlug[tempSlug.length - 2];
-      console.log("link url data :", brandName);
+      //aureate_console.log("link url data :", brandName);
 
       var tempStr = "";
       for (var i = 0; i < categoryInfo.length; i++) {
@@ -130,7 +130,7 @@ const Brand = ({ state, libraries, actions }) => {
       tempStr = linkurl.replace(brandName + "/", tempStr);
 
       setSlugUrl(tempStr);
-      console.log("temp str data :", tempStr);
+      //aureate_console.log("temp str data :", tempStr);
     }
 
     // var tempItemId = termId
@@ -142,7 +142,7 @@ const Brand = ({ state, libraries, actions }) => {
 
   const [readMore, setreadMore] = useState(false);
   {
-    console.log("mydata", state.brandItems.postData);
+    //aureate_console.log("mydata", state.brandItems.postData);
   }
 
   return !state.brandItems.isLoading ? (

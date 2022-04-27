@@ -60,7 +60,7 @@ const DeskMultiMenus = ({ menus }) => {
   const [activeMenus, setActiveMenus] = useState([]);
 
   const handleMenuClick = (data) => {
-    console.log(data);
+    //aureate_console.log(data);
   };
 
   const handleArrowClick = (menuName) => {
@@ -77,7 +77,7 @@ const DeskMultiMenus = ({ menus }) => {
 
     setActiveMenus(newActiveMenus);
   };
-  console.log("data", menus);
+  //aureate_console.log("data", menus);
   const ListMenu = ({ dept, data, hasSubMenu, menuName, menuIndex }) => (
     <LI>
       <Popover trigger={"hover"} placement={"right-end"}>

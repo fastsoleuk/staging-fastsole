@@ -146,7 +146,7 @@ const SneakersData = ({ state, actions, libraries, itemId }) => {
     setCurrentPage(1);
   };
 
-  console.log("stock value :", stockValue);
+  //aureate_console.log("stock value :", stockValue);
 
   const brandChange = (e) => {
     var value = parseInt(e);
@@ -175,14 +175,14 @@ const SneakersData = ({ state, actions, libraries, itemId }) => {
     brandDataFetch();
     fetchData(slug);
 
-    console.log("slug data : ", slug);
+    //aureate_console.log("slug data : ", slug);
   }, [stockValue, choosedate]);
 
   useEffect(() => {
     var slug = `${itemId}-${stockValue.totalProduct}-${stockValue.priceMin}-${stockValue.priceMax}-${stockValue.status}-${stockValue.date}-${stockValue.sortBy}-${stockValue.color}-${choosedate}`;
     fetchData(slug);
     setCurrentPage(1);
-    console.log("slug data : ", slug);
+    //aureate_console.log("slug data : ", slug);
   }, [itemId, choosedate]);
 
   const fetchData = async (slug) => {
@@ -190,7 +190,7 @@ const SneakersData = ({ state, actions, libraries, itemId }) => {
     const response = await libraries.source.api.get({
       endpoint: `/wl/v1/sneaker-release-dates-test/${slug}`,
     });
-    console.log(`/wl/v1/sneaker-release-dates-test/${slug}`);
+    //aureate_console.log(`/wl/v1/sneaker-release-dates-test/${slug}`);
 
     const result = await response.json();
     actions.sneakerReleaseDates.toggleLoading();
@@ -255,7 +255,7 @@ const SneakersData = ({ state, actions, libraries, itemId }) => {
   const getPaginationData = async () => {
     const startIndex = currentPage * dataLimit - dataLimit;
     const endIndex = startIndex + dataLimit;
-    console.log("curret page :", startIndex, endIndex);
+    //aureate_console.log("curret page :", startIndex, endIndex);
     const tempArr = {
       brandId: stockValue.brandId,
       totalProduct: endIndex,
@@ -275,7 +275,7 @@ const SneakersData = ({ state, actions, libraries, itemId }) => {
     return new Array(pageLimit).fill().map((_, idx) => start + idx + 1);
   };
   const stockChange = (value) => {
-    console.log("filter array", filter);
+    //aureate_console.log("filter array", filter);
     var tempFilter = {
       sneaker_status: value,
       color: "",
@@ -1440,7 +1440,7 @@ const SneakersData = ({ state, actions, libraries, itemId }) => {
                     </span>
                     {
                       /* show page numbers */
-                      console.log("current page new:", pages)
+                      //aureate_console.log("current page new:", pages)
                     }
                     {getPaginationGroup().map(
                       (item, index) =>

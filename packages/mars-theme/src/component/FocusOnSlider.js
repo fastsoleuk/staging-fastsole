@@ -42,12 +42,12 @@ const FocusOnSlider = ({ deviceType, actions, libraries, state }) => {
 
     const categoryTabPostData = await response.json();
 
-    console.log("category tab post = ", categoryTabPostData);
+    //aureate_console.log("category tab post = ", categoryTabPostData);
 
     actions.onFocus.toggleLoading();
     actions.onFocus.updatePostData(categoryTabPostData);
   };
-  console.log("onfocus ", state.onFocus.postData);
+  //aureate_console.log("onfocus ", state.onFocus.postData);
   const tempList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (

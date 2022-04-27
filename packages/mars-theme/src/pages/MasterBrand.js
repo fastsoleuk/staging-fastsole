@@ -13,7 +13,7 @@ const MasterBrand = ({ actions, state, libraries }) => {
   useEffect(() => {
     fetchData();
   }, [state.router.link]);
-  console.log("yescheck", link);
+  //aureate_console.log("yescheck", link);
 
   const fetchData = async () => {
     const response = await libraries.source.api.get({
@@ -24,7 +24,7 @@ const MasterBrand = ({ actions, state, libraries }) => {
     actions.allBrandItems.toggleLoading();
     actions.allBrandItems.updatePostData(postData);
 
-    console.log("postData:", postData);
+    //aureate_console.log("postData:", postData);
     var tempBrand = [];
     var tempSubBrand = [];
     for (var i = 0; i < postData.length; i++) {
@@ -36,8 +36,8 @@ const MasterBrand = ({ actions, state, libraries }) => {
       }
     }
 
-    console.log("tempBrand", tempBrand);
-    console.log("tempSubBrand", tempSubBrand);
+    //aureate_console.log("tempBrand", tempBrand);
+    //aureate_console.log("tempSubBrand", tempSubBrand);
     var type = "";
     if (tempBrand.includes(link)) {
       type = "brand";
@@ -45,7 +45,7 @@ const MasterBrand = ({ actions, state, libraries }) => {
       type = "subbrand";
     }
 
-    console.log("brandType :", type);
+    //aureate_console.log("brandType :", type);
     setBrandType(type);
   };
 
@@ -53,7 +53,7 @@ const MasterBrand = ({ actions, state, libraries }) => {
 
   const seoData = pageData.schemaData && pageData.schemaData;
 
-  console.log("omgdata", seoData.schema);
+  //aureate_console.log("omgdata", seoData.schema);
   return (
     <>
       {seoData !== undefined && seoData !== null ? (

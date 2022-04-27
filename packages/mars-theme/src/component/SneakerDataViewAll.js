@@ -192,13 +192,13 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
   }, [itemId, choosedate]);
 
   const fetchData = async (slug) => {
-    console.log("items available for post =", slug);
+    //aureate_console.log("items available for post =", slug);
     actions.sneakerReleaseDates.notoggleLoading();
 
     const response = await libraries.source.api.get({
       endpoint: `/wl/v1/On-focus-items/${slug}`,
     });
-    console.log("endpoint :", `/wl/v1/On-focus-items/${slug}`);
+    //aureate_console.log("endpoint :", `/wl/v1/On-focus-items/${slug}`);
     const result = await response.json();
     actions.sneakerReleaseDates.toggleLoading();
     actions.sneakerReleaseDates.updatePostData(result);
@@ -262,7 +262,7 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
   const getPaginationData = async () => {
     const startIndex = currentPage * dataLimit - dataLimit;
     const endIndex = startIndex + dataLimit;
-    console.log("curret page :", startIndex, endIndex);
+    //aureate_console.log("curret page :", startIndex, endIndex);
     const tempArr = {
       brandId: stockValue.brandId,
       totalProduct: endIndex,
@@ -308,7 +308,7 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
 
   // get input data from release calendar
   let shortDropDown = (value) => {
-    console.log("drop down value :", value);
+    //aureate_console.log("drop down value :", value);
     setDropdown(value);
     const tempArr = {
       brandId: stockValue.brandId,
@@ -1558,7 +1558,7 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
                     </span>
                     {
                       /* show page numbers */
-                      console.log("current page new:", currentPage)
+                      //aureate_console.log("current page new:", currentPage)
                     }
                     {getPaginationGroup().map((item, index) => (
                       <Circle

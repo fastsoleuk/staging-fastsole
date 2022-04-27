@@ -39,7 +39,7 @@ function Phoneslider({ state, props, libraries }) {
         display={{ base: "block", md: "block", lg: "none" }}
       >
         {props.map((items) => {
-          console.log("propscheck", props);
+          //aureate_console.log("propscheck", props);
           const id = items.id;
           const type = items.type;
           const item = state.source[type][id];

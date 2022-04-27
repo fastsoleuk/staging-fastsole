@@ -37,7 +37,7 @@ const RecentNews = ({ state, libraries, actions }) => {
         {recentNews &&
           recentNews.slice(0, 3).map((item) => {
             const slug = item.post_name && `/sneaker-news/${item.post_name}`;
-            console.log("omgdata", item);
+            //aureate_console.log("omgdata", item);
             return (
               item && (
                 <Link link={slug}>

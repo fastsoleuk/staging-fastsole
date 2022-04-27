@@ -311,7 +311,7 @@ function Home({ state, actions, libraries }) {
               <VStack alignItems="normal" justifyContent={"space-between"}>
                 {data.slice(2, 5).map(({ type, id }) => {
                   const item = state.source[type][id];
-                  console.log("myhomepage", item);
+                  //aureate_console.log("myhomepage", item);
 
                   if (item.status == "instock") {
                     var status = (
