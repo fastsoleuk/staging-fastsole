@@ -32,7 +32,6 @@ import {
 } from "react-icons/fa";
 import FocusOnSlider from "../component/FocusOnSlider";
 import Link from "@frontity/components/link";
-import Moment from "moment";
 import connect from "@frontity/connect";
 import Breadcrumb from "../component/Breadcrumb";
 import { css } from "frontity";

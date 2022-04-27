@@ -38,7 +38,6 @@
     "framer-motion": "^4.1.17",
     "frontity": "^1.17.1",
     "jquery": "^3.6.0",
-    "moment": "^2.29.1",
     "react-date-range": "^1.4.0",
     "react-icons": "^4.3.1",
     "react-lazyload": "^3.2.0",

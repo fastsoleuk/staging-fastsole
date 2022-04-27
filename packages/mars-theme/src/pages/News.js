@@ -41,7 +41,6 @@ import connect from "@frontity/connect";
 import ImageViewFeatured from "../../src/Utils/ImageViewFeatured";
 import Breadcrumb from "../component/Breadcrumb";
 
-import Moment from "moment";
 import dayjs from "dayjs";
 import { ArrowDownIcon, ArrowUpIcon } from "@chakra-ui/icons";
 
