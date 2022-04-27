@@ -80,7 +80,7 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
     onClose: onDateClose,
     isOpen: isDateOpen,
   } = useDisclosure();
-  const demoArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const demoArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32];
   if (type == "comingsoon") {
     var tempType = "comingsoon";
   } else {
@@ -89,7 +89,7 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
 
   const [stockValue, setStockValue] = useState({
     brandId: itemId,
-    totalProduct: 12,
+    totalProduct: 32,
     priceMin: 0,
     priceMax: 500,
     status: tempType,
@@ -159,7 +159,7 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
 
   const convertDate = (event) => {
     const tempDate = JSON.stringify(event);
-    const finalDate = tempDate.slice(1, 11);
+    const finalDate = tempDate.slice(1, 32);
     var intDate = finalDate.split("-").join("");
     return intDate;
   };
@@ -207,10 +207,10 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
   let totalCount = state.sneakerReleaseDates.postData.totalPost;
 
   // pagination component start
-  var dataLimit = 12;
-  if (totalCount >= 26) {
+  var dataLimit = 32;
+  if (totalCount >= 66) {
     var pageLimit = 3;
-  } else if (totalCount >= 12 && totalCount < 25) {
+  } else if (totalCount >= 32 && totalCount < 65) {
     var pageLimit = 2;
   } else {
     var pageLimit = 1;
@@ -218,7 +218,7 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
 
   const [pages] = useState(Math.round(totalCount / dataLimit));
   const [currentPage, setCurrentPage] = useState(1);
-  const [dataLength, setDataLength] = useState({ min: 0, max: 12 });
+  const [dataLength, setDataLength] = useState({ min: 0, max: 32 });
 
   const doubleRight = () => {
     setCurrentPage(pages);
@@ -254,7 +254,7 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
   ]);
 
   const updateIndex = async () => {
-    setDataLength({ min: 0, max: 12 });
+    setDataLength({ min: 0, max: 32 });
     setCurrentPage(1);
   };
 
