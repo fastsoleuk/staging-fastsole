@@ -51,13 +51,19 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+import { loadable } from "frontity";
 import Link from "@frontity/components/link";
 import Logo from "../images/logo.png";
-import MobileMultiMenus from "../component/Mobile-Multi-Menu";
-import DeskMultiMenus from "../component/Desk-Multi-Menu";
+//import MobileMultiMenus from "../component/Mobile-Multi-Menu";
+//import DeskMultiMenus from "../component/Desk-Multi-Menu";
 import connect from "@frontity/connect";
-import MobileSearchModel from "../component/MobileSearchModel";
+//import MobileSearchModel from "../component/MobileSearchModel";
 import { SubMenu } from "../model/SubMenu";
+
+
+const MobileMultiMenus = loadable(() => import('../component/Mobile-Multi-Menu'))
+const DeskMultiMenus = loadable(() => import('../component/Desk-Multi-Menu'))
+const MobileSearchModel = loadable(() => import('../component/MobileSearchModel'))
 
 const Header = ({ state, libraries, actions }) => {
   const parse = libraries.source.parse(state.router.link);
