@@ -12,6 +12,7 @@ import {
   Button,
   VStack,
 } from "@chakra-ui/react";
+import { loadable } from "frontity";
 import { Image } from "@chakra-ui/image";
 import {
   FaArrowDown,
@@ -35,14 +36,19 @@ import {
   PageGroup,
   usePaginator,
 } from "chakra-paginator";
-import Phoneslider from "../component/Phoneslider";
+//import Phoneslider from "../component/Phoneslider";
 import Link from "@frontity/components/link";
 import connect from "@frontity/connect";
-import ImageViewFeatured from "../../src/Utils/ImageViewFeatured";
-import Breadcrumb from "../component/Breadcrumb";
+//import ImageViewFeatured from "../../src/Utils/ImageViewFeatured";
+//import Breadcrumb from "../component/Breadcrumb";
 
 import dayjs from "dayjs";
 import { ArrowDownIcon, ArrowUpIcon } from "@chakra-ui/icons";
+
+
+const Phoneslider = loadable(() => import('../component/Phoneslider'))
+const ImageViewFeatured = loadable(() => import('../../src/Utils/ImageViewFeatured'))
+const Breadcrumb = loadable(() => import('../component/Breadcrumb'))
 
 const News = ({ state, actions, libraries }) => {
   const Html2React = libraries.html2react.Component;
