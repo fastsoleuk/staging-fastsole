@@ -19,9 +19,9 @@ const tagHandler = {
       });
       // // Parse the JSON to get the object
       result = await response.json();
-      console.log("checkdata", result);
+      //aureate_console.log("checkdata", result);
     } catch (err) {
-      console.log("checkdata", err);
+      //aureate_console.log("checkdata", err);
     }
 
     // console.log("PARAMS:", result);

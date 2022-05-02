@@ -67,13 +67,13 @@ const Commonproductdata = ({ state, actions, libraries, items }) => {
 
   // get input data from release calendar
   let shortDropDown = (value) => {
-    console.log("drop down value :", value);
+    //aureate_console.log("drop down value :", value);
     setDropdown(value);
   };
 
   function handleChange(event) {
     setOption(event.target.value);
-    console.log("options:", option);
+    //aureate_console.log("options:", option);
   }
 
   const stockClick = (e) => {
@@ -137,19 +137,19 @@ const Commonproductdata = ({ state, actions, libraries, items }) => {
       return a.price - b.price;
     });
 
-    console.log("final avl dataasdas:", items);
+    //aureate_console.log("final avl dataasdas:", items);
   } else if (dropDown === "high_to_low") {
     items.sort(function (a, b) {
       return b.price - a.price;
     });
 
-    console.log("final avl dataasdas:", items);
+    //aureate_console.log("final avl dataasdas:", items);
   } else if (dropDown === "order_by_release_date") {
     items.sort(function (a, b) {
       return a.release_date_int - b.release_date_int;
     });
 
-    console.log("final avl dataasdas:", items);
+    //aureate_console.log("final avl dataasdas:", items);
   } else if (dropDown === "release_this_week") {
   } else {
   }
@@ -202,7 +202,7 @@ const Commonproductdata = ({ state, actions, libraries, items }) => {
     "Ultra boost",
   ];
 
-  console.log("commondatatimage", items);
+  //aureate_console.log("commondatatimage", items);
 
   return (
     <>

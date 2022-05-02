@@ -5,7 +5,7 @@ import Cookies from 'universal-cookie';
 
 const PromptComponent = () => {
     const cookies = new Cookies();
-    console.log("cookies prompt ", cookies)
+    //aureate_console.log("cookies prompt ", cookies)
     const closePrompt = () => {
 
     }

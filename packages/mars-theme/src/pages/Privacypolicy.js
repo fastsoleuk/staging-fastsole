@@ -24,7 +24,7 @@ const Privacypolicy = ({ state, actions, libraries }) => {
   const path = state.router.link;
 
   {
-    console.log("pageId", pageData);
+    //aureate_console.log("pageId", pageData);
   }
   return (
     <>

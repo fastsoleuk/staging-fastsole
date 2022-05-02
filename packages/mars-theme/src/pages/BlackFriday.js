@@ -25,7 +25,7 @@ const BlackFriday = ({ state, libraries, actions }) => {
   const breadCrumbData = data && data.link;
 
   const path = state.router.link;
-  console.log("this is data", path);
+  //aureate_console.log("this is data", path);
   let [isClick, setIsClick] = useState(false);
 
   return (
@@ -63,7 +63,7 @@ const BlackFriday = ({ state, libraries, actions }) => {
             const type = item.type;
 
             const data = item && state.source[type][id];
-            console.log("heavy", data);
+            //aureate_console.log("heavy", data);
             return (
               data && (
                 <Box

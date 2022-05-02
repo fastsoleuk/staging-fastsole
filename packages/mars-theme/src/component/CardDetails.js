@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Text, VStack } from "@chakra-ui/layout";
 
 const CardDetails = ({ title, props }) => {
-  console.log("hicard", title);
+  //aureate_console.log("hicard", title);
   return (
     props && (
       <Box rounded="lg" bg="#F8F8F8" my={5} py={3}>

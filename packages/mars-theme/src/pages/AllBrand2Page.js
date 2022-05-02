@@ -37,7 +37,7 @@ function AllBrand2Page({ state, libraries, actions }) {
     actions.allBrandItems.updatePostData(postData);
   };
 
-  console.log("brand data new:", state.allBrandItems.postData);
+  //aureate_console.log("brand data new:", state.allBrandItems.postData);
 
   const linkUrl = state.router.link;
 

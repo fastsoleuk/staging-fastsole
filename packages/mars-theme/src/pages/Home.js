@@ -745,7 +745,7 @@ function Home({ state, actions, libraries }) {
                           lg: "50%",
                           xl: "47%",
                         }}
-                        height={"95%"}
+                        //height={"95%"}
                         borderRadius={"5px"}
                         border={"1px solid #C2C8D6"}
                       >

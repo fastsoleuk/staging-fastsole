@@ -23,13 +23,13 @@ import Link from "@frontity/components/link";
 import { connect, Head } from "frontity";
 
 const CanBuy = ({ prodData }) => {
-  console.log("product data export", prodData);
+  //aureate_console.log("product data export", prodData);
   return (
     <Box>
       {/* start stock products */}
       {prodData.buyFromHere &&
         Object.values(prodData.buyFromHere).map((item, index) => {
-          console.log("wheretobuyy", item);
+          //aureate_console.log("wheretobuyy", item);
 
           if (item.stockStatus === "In Stock") {
             var status = (
