@@ -40,7 +40,7 @@ const Productdetails = ({ state, libraries, actions }) => {
   const [isMobile] = useMediaQuery("(max-width: 400px)");
   const pageData = state.source.get(state.router.link);
   const seoData = pageData.schemaData && pageData.schemaData;
-  console.log("chekcec", pageData);
+  //console.log("chekcec", pageData);
 
   // all custom state
 
@@ -75,7 +75,7 @@ const Productdetails = ({ state, libraries, actions }) => {
   // jquery part
 
   if (isLoad) {
-    console.log("Javascript Testing ", "page loaded");
+    //aureate_console.log("Javascript Testing ", "page loaded");
 
     const arr_products_tags = Array();
     const arr_products_this = Array();

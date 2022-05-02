@@ -1,4 +1,4 @@
-import { Image } from "@chakra-ui/image";
+//import { Image } from "@chakra-ui/image";
 import {
   Box,
   Flex,
@@ -12,41 +12,41 @@ import React, { useState, useEffect } from "react";
 import { css } from "frontity";
 import { FaClock, FaTimesCircle } from "react-icons/fa";
 
-import { Button } from "@chakra-ui/button";
+//import { Button } from "@chakra-ui/button";
 import TopBrandSlider from "../component/TopBrandSlider";
 import Icon from "@chakra-ui/icon";
 import {
-  FaAngleRight,
   FaCheckCircle,
-  FaChevronRight,
-  FaCircle,
-  FaFacebook,
   FaFacebookF,
-  FaLinkedin,
   FaLinkedinIn,
   FaPinterestP,
-  FaPrint,
-  FaShoePrints,
   FaTwitter,
+  /* FaChevronRight,
+  FaCircle,
+  FaFacebook,
+  FaLinkedin,
+  FaAngleRight,
+  FaPrint,
+  FaShoePrints, */
 } from "react-icons/fa";
 import { FiCalendar } from "react-icons/fi";
 import connect from "@frontity/connect";
-import ImageViewFeatured from "../../src/Utils/ImageViewFeatured";
+//import ImageViewFeatured from "../../src/Utils/ImageViewFeatured";
 import Link from "@frontity/components/link";
 import dayjs from "dayjs";
-import Breadcrumb from "../component/Breadcrumb";
+//import Breadcrumb from "../component/Breadcrumb";
 import {
   FacebookShareButton,
   TwitterShareButton,
-  TelegramShareButton,
+  PinterestShareButton,
   LinkedinShareButton,
+  /* TelegramShareButton,
   TumblrShareButton,
   WhatsappShareButton,
-  PinterestShareButton,
-  EmailShareButton,
+  EmailShareButton, */
 } from "react-share";
 
-import {
+/* import {
   FacebookIcon,
   LinkedinIcon,
   TelegramIcon,
@@ -54,7 +54,7 @@ import {
   TwitterIcon,
   WhatsappIcon,
   PinterestIcon,
-} from "react-share";
+} from "react-share"; */
 import { AiTwotoneFolderOpen } from "react-icons/ai";
 import { BsFillTagsFill } from "react-icons/bs";
 
@@ -71,7 +71,7 @@ const Singlenews = ({ state, actions, libraries }) => {
 
   const slug = newsData.slug;
 
-  const author = newsData && state.source.author[newsData.author];
+  //const author = newsData && state.source.author[newsData.author];
   // console.log("postlink", newsData.author);
 
   const [dataLoaded, setDataLoaded] = useState(false);
@@ -114,7 +114,7 @@ const Singlenews = ({ state, actions, libraries }) => {
 
   const sneakerNewsRecent = state.sneakerNewsRecent.postData;
   // const data = state.source.get(state.router.link);
-  let breadCrumData = data.link;
+  //let breadCrumData = data.link;
 
   // news tage and categories
 
@@ -373,7 +373,7 @@ const Singlenews = ({ state, actions, libraries }) => {
                           borderRadius="3px"
                         >
                           <Box display="flex" alignItems="center" mr="2">
-                            {" "}
+                            
                             <FaTwitter size={14} color="#1DA1F2" />
                           </Box>
 
@@ -398,7 +398,7 @@ const Singlenews = ({ state, actions, libraries }) => {
                           borderRadius="3px"
                         >
                           <Box display="flex" alignItems="center" mr="2">
-                            {" "}
+                            
                             <FaLinkedinIn size={14} color="#0A66C2" />
                           </Box>
 
@@ -693,7 +693,7 @@ const Singlenews = ({ state, actions, libraries }) => {
             >
               Top Brands
             </Text>
-            {/* view */}{" "}
+            {/* view */}
             <Box
               display={{ base: "none", md: "block" }}
               border="1px solid #525F7A"
@@ -708,7 +708,7 @@ const Singlenews = ({ state, actions, libraries }) => {
               verticalAlign="sub"
               // display={{ md: "block", base: "none" }}
             >
-              {" "}
+              
               <Link
                 link="/brands"
                 css={css`
@@ -751,7 +751,7 @@ const Singlenews = ({ state, actions, libraries }) => {
               verticalAlign="sub"
               // display={{ md: "block", base: "none" }}
             >
-              {" "}
+              
               <Link
                 link="/brands"
                 css={css`
