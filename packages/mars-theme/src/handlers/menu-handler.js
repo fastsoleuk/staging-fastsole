@@ -5,7 +5,7 @@ const menuHandler = {
     priority: 10,
     pattern: "/menu/:slug",
     func: async ({ link, params, state, libraries }) => {
-        console.log("PARAMS:", params);
+        //aureate_console.log("PARAMS:", params);
         const { slug } = params;
 
         // Fetch the menu data from the endpoint

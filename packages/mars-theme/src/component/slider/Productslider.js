@@ -43,7 +43,7 @@ function Productslider({ prodData, state, actions, libraries }) {
           >
             {prodData.productImagesMain &&
               prodData.productImagesMain.map((image, index) => {
-                console.log("product image = ", image);
+                //aureate_console.log("product image = ", image);
                 return (
                   image && (
                     <Box

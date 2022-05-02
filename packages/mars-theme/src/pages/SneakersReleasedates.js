@@ -41,7 +41,7 @@ const SneakersReleasedates = ({ state, actions, libraries }) => {
 
   const schemaData = postData.schemaData && postData.schemaData;
 
-  console.log("snakerdataapi", schemaData);
+  //aureate_console.log("snakerdataapi", schemaData);
 
   return (
     <>

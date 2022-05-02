@@ -24,7 +24,7 @@ import { ChevronLeftIcon } from "@chakra-ui/icons";
 import { connect } from "frontity";
 
 const Paginationfront = ({ prop, state, libraries, stockValue }) => {
-  console.log("stock value ", stockValue);
+  //aureate_console.log("stock value ", stockValue);
   const Html2React = libraries.html2react.Component;
 
   if (prop.length !== 0) {
@@ -33,7 +33,7 @@ const Paginationfront = ({ prop, state, libraries, stockValue }) => {
     var allPost = 100;
   }
 
-  console.log("testing=", prop);
+  //aureate_console.log("testing=", prop);
   let numberPost = Math.ceil(allPost / 12);
 
   let numberPostArr = [];
@@ -49,7 +49,7 @@ const Paginationfront = ({ prop, state, libraries, stockValue }) => {
   const [firstLoop, setFirstLoop] = useState(numberPostArr);
   const [secondLoop, setSecondLoop] = useState(secondNumber);
 
-  console.log("secondLoo", secondNumber);
+  //aureate_console.log("secondLoo", secondNumber);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [postIndex, setPostIndex] = useState({ min: 1, max: 13 });
@@ -74,8 +74,8 @@ const Paginationfront = ({ prop, state, libraries, stockValue }) => {
       setFirstLoop(temp);
     }
   };
-  console.log("post index", postIndex);
-  console.log("firstLoop", firstLoop);
+  //aureate_console.log("post index", postIndex);
+  //aureate_console.log("firstLoop", firstLoop);
 
   const [posts, setPosts] = useState(allPost);
   return (

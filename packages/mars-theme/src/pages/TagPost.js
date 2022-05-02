@@ -70,7 +70,7 @@ const TagPost = ({ state, libraries, actions }) => {
     });
 
     const tagResult = await tagIdRes.json();
-    console.log("calltagapi", tagResult[0]["id"]);
+    //aureate_console.log("calltagapi", tagResult[0]["id"]);
 
     const response = await libraries.source.api.get({
       endpoint: `/wp/v2/posts?tags=${tagResult[0]["id"]}&per_page=9&page=${currentPage}`,
@@ -87,7 +87,7 @@ const TagPost = ({ state, libraries, actions }) => {
 
     actions.tagPost.toggleLoading();
     actions.tagPost.updatePostData(result);
-    console.log("callapi", state.tagPost.postData);
+    //aureate_console.log("callapi", state.tagPost.postData);
   };
 
   // const setSlug = `/sneaker-news/tag/${data.path}/page/${currentPage}/`;
@@ -124,7 +124,7 @@ const TagPost = ({ state, libraries, actions }) => {
           state.tagPost.postData.map((item) => {
             // const id = items.id;
             // const type = items.type;
-            console.log("checkmytag=", item);
+            //aureate_console.log("checkmytag=", item);
 
             // const item = state.source[type][id];
 
@@ -186,7 +186,7 @@ const TagPost = ({ state, libraries, actions }) => {
         )}
         {
           /* show page numbers */
-          console.log("current page new:", currentPage)
+          //aureate_console.log("current page new:", currentPage)
         }
 
         <span>

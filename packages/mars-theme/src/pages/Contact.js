@@ -39,7 +39,7 @@ function Contact({ state, libraries, actions }) {
 
     const categoryTabPostData = await response.json();
 
-    console.log("category tab post = ", categoryTabPostData);
+    //aureate_console.log("category tab post = ", categoryTabPostData);
 
     actions.onFocus.toggleLoading();
     actions.onFocus.updatePostData(categoryTabPostData);

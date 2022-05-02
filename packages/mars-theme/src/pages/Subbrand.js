@@ -76,21 +76,21 @@ function Subbrand({ state, libraries, actions, slug }) {
     const response = await libraries.source.api.get({
       endpoint: `/wl/v1/brands/${slug}`,
     });
-    console.log("checksubbrand /wl/v1/brands/", slug);
+    //aureate_console.log("checksubbrand /wl/v1/brands/", slug);
     const result = await response.json();
 
     actions.brandItems.toggleLoading();
     actions.brandItems.updatePostData(result);
     setPostData(state.brandItems.postData);
 
-    console.log("data from api :", state.brandItems.postData);
+    //aureate_console.log("data from api :", state.brandItems.postData);
 
     if (state.brandItems.postData.categories != undefined) {
       var categoryInfo = state.brandItems.postData.categories;
 
       var tempSlug = path.split("/");
       var brandName = tempSlug[tempSlug.length - 2];
-      console.log("link url data :", brandName);
+      //aureate_console.log("link url data :", brandName);
 
       var tempStr = "";
       for (var i = 0; i < categoryInfo.length; i++) {
@@ -103,7 +103,7 @@ function Subbrand({ state, libraries, actions, slug }) {
       tempStr = path.replace(brandName + "/", tempStr);
 
       setSlugUrl(tempStr);
-      console.log("temp str data :", tempStr);
+      //aureate_console.log("temp str data :", tempStr);
     }
   };
 
@@ -141,11 +141,11 @@ function Subbrand({ state, libraries, actions, slug }) {
           }
         }
       } else {
-        console.log("subbrand", "data is none", relatedpost);
+        //aureate_console.log("subbrand", "data is none", relatedpost);
       }
     }
   }
-  console.log("finalsubbrand", postData);
+  //aureate_console.log("finalsubbrand", postData);
 
   // .releatedItems;
   // .post;
