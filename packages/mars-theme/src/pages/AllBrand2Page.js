@@ -38,6 +38,7 @@ function AllBrand2Page({ state, libraries, actions }) {
   };
 
   //aureate_console.log("brand data new:", state.allBrandItems.postData);
+  console.log("brand data new:", state.allBrandItems.postData);
 
   const linkUrl = state.router.link;
 
@@ -194,6 +195,7 @@ function AllBrand2Page({ state, libraries, actions }) {
             textColor="white"
             gap={6}
           >
+          {/* {console.log('bbbbbbbb',state.allBrandItems.postData)} */}
             {state.allBrandItems.postData.map((item) => {
               return (
                 <Box

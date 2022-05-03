@@ -588,8 +588,9 @@ const Productdetails = ({ state, libraries, actions }) => {
                       justifyContent="flex-start"
                     >
                       {status}
-                      {seoData.main.releaseTimeDate != null &&
-                        seoData.main.releaseTimeDate != undefined ? (
+
+                      {/* {seoData.main.releaseTimeDate != null ? seoData.main.releaseTimeDate.date : seoData.main.releaseTimeDate == "01 Jan 1970" ? "TBC" : "fdsf"} */}
+                      {seoData.main.releaseTimeDate != null && seoData.main.releaseTimeDate != undefined ? (
                         <Text
                           color="#7887A5"
                           fontSize="sm"
@@ -597,7 +598,7 @@ const Productdetails = ({ state, libraries, actions }) => {
                           mr="2"
                           ml="2"
                         >
-                          {seoData.main.releaseTimeDate.date}
+                          {seoData.main.releaseTimeDate.date} {seoData.main.releaseTimeDate.time}
                         </Text>
                       ) : (
                         <Text
@@ -626,7 +627,7 @@ const Productdetails = ({ state, libraries, actions }) => {
                         seoData.main.releaseTimeDate.styleCode != undefined ? (
                         <Text color="#7887A5" mr="2" fontSize="sm" mb="2">
                           Style Code:
-                          {seoData.main.releaseTimeDate.styleCode}
+                          {` ${seoData.main.releaseTimeDate.styleCode}`}
                         </Text>
                       ) : (
                         <Text
@@ -697,6 +698,13 @@ const Productdetails = ({ state, libraries, actions }) => {
                   </Stack>
                 )}
               </Box>
+
+              <Box>
+                <Text color="#3E485D" fontSize="md" mt={2} mb={2}>
+                  When you buy something from links on this page we may earn a commission. <Link link="/terms-conditions" style={{ fontWeight: 'bold', textDecoration: 'underline' }}>Learn More</Link>
+                </Text>
+              </Box>
+
               {/* for large devices */}
               <Box display={{ base: "none", md: "block" }}>
                 {seoData.main.content && (
@@ -705,11 +713,12 @@ const Productdetails = ({ state, libraries, actions }) => {
                     lineHeight={"26px"}
                     className="product-details detpage"
                   >
+
                     <Html2React html={seoData.main.content} />
                   </Text>
                 )}
               </Box>
-                   
+
               {/* add card componenet here */}
               {seoData.main.releseInfo && (
                 <CardDetails

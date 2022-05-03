@@ -189,7 +189,7 @@ const CanBuy = ({ prodData }) => {
                       )}
                     </Box>
                     <Box alignItems="baseline">
-                      <Link link={item.affiliateUrl}>
+                      <Link link={item.affiliateUrl} target="_blank">
                         <Button
                           px="4"
                           size="sm"

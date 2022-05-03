@@ -170,7 +170,7 @@ export const FooterSupportModel = {
       xfn: "",
       slug: "privacy-policy",
     },
-    {
+    /* {
       ID: 156114,
       post_author: "30",
       post_date: "2021-11-17 10:31:00",
@@ -209,6 +209,6 @@ export const FooterSupportModel = {
       classes: [""],
       xfn: "",
       slug: "black-friday-2016",
-    },
+    }, */
   ],
 };

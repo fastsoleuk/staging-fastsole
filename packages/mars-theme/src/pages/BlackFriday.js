@@ -45,7 +45,7 @@ const BlackFriday = ({ state, libraries, actions }) => {
           color="#3E485D"
           textAlign="center"
         >
-          Black friday 2020
+          Offer and Discount
         </Heading>
         {path && <Breadcrumb breadcrumb={path} />}
         {/* {breadCrumbData && <Breadcrumb breadcumbs={breadCrumbData} />} */}

@@ -342,7 +342,7 @@ const News = ({ state, actions, libraries }) => {
               })}
               <Box display="flex">
                 <VStack alignItems="normal" justifyContent={"space-between"}>
-                  {data.items.slice(2, 5).map(({ type, id }) => {
+                  {data.items.slice(1, 4).map(({ type, id }) => {
                     const item = state.source[type][id];
                     //aureate_console.log("myhomepage", item);
 
@@ -566,7 +566,7 @@ const News = ({ state, actions, libraries }) => {
                 gap={8}
                 mb="12"
               >
-                {data.items.slice(4).map((items) => {
+                {data.items.slice(4,10).map((items) => {
                   const id = items.id;
                   const type = items.type;
 

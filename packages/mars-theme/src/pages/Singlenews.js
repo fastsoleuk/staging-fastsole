@@ -256,7 +256,11 @@ const Singlenews = ({ state, actions, libraries }) => {
                   </Link>
                 )}
               </Box>
-
+              <Box>
+                <Text color="#3E485D" fontSize="md" mt={3} mb={2}>
+                  When you buy something from links on this page we may earn a commission. <Link link="/terms-conditions" style={{ fontWeight: 'bold', textDecoration: 'underline' }}>Learn More</Link>
+                </Text>
+              </Box>
               <Text
                 color="#3E485D"
                 fontFamily="Open Sans"
