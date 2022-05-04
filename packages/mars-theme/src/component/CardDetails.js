@@ -35,7 +35,7 @@ const CardDetails = ({ title, props }) => {
               fontSize="sm"
               fontWeight="normal"
             >
-              {props.releaseDate}
+              {props.releaseDate == "Thu, 01 Jan 1970 GMT" ? "TBC" : props.releaseDate}
             </Text>
           </Box>
           <Box display="flex">

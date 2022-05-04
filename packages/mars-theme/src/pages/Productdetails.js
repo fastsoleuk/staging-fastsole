@@ -598,7 +598,7 @@ const Productdetails = ({ state, libraries, actions }) => {
                           mr="2"
                           ml="2"
                         >
-                          {seoData.main.releaseTimeDate.date} {seoData.main.releaseTimeDate.time}
+                          {seoData.main.releaseTimeDate.date == "Thu, 01 Jan 1970 GMT" ? "TBC" : seoData.main.releaseTimeDate.date} {seoData.main.releaseTimeDate.time ? seoData.main.releaseTimeDate.time : "TBC"}
                         </Text>
                       ) : (
                         <Text
@@ -650,7 +650,6 @@ const Productdetails = ({ state, libraries, actions }) => {
                   color="#3E485D"
                   fontSize="lg"
                   fontWeight="600"
-                  fontWeight="bold"
                   mt={2}
                 >
                   £{seoData.main.releaseTimeDate.price}

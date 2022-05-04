@@ -283,7 +283,7 @@ position: relative;
 }
 .notfound {
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 70px;
 }
 .notfound .notfound-404 h1 {
   color: #222;
@@ -293,6 +293,7 @@ position: relative;
   font-weight: 700;
   text-shadow: 2px 2px 0px #c9c9c9, -2px -2px 0px #c9c9c9;
   font-family: "Open Sans";
+  line-height: 240px;
 }
 .notfound .notfound-404 h1>span {
   font-family: "Open Sans";
