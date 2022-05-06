@@ -44,6 +44,7 @@
     "react-multi-carousel": "^2.6.5",
     "react-share": "^4.4.0",
     "react-window": "^1.8.6",
+    "reload": "^3.2.0",
     "styled-components": "^5.3.3",
     "universal-cookie": "^4.0.4"
   }
