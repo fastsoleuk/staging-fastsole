@@ -215,7 +215,7 @@ const Commonproductdata = ({ state, actions, libraries, items }) => {
           }}
         >
           <Select
-            placeholder="Short By"
+            placeholder="Sort By"
             fontSize="xs"
             colorScheme="#9DA7BE"
             color="#3E485D"

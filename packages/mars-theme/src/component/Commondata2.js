@@ -502,7 +502,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
             my={2}
           >
             <Select
-              placeholder="Short By"
+              placeholder="Sort By"
               fontSize="xs"
               colorScheme="#9DA7BE"
               color="#3E485D"

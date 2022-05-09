@@ -456,7 +456,7 @@ const SearchResult = ({ state, actions, libraries, searchString }) => {
             }}
           >
             <Select
-              placeholder="Short By"
+              placeholder="Sort By"
               fontSize="xs"
               colorScheme="#9DA7BE"
               color="#3E485D"

@@ -467,7 +467,7 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
             }}
           >
             <Select
-              placeholder="Short By"
+              placeholder="Sort By"
               fontSize="xs"
               colorScheme="#9DA7BE"
               color="#3E485D"
