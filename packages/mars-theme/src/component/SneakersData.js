@@ -100,7 +100,7 @@ const SneakersData = ({ state, actions, libraries, itemId }) => {
 
   const convertDate = (event) => {
     const tempDate = JSON.stringify(event);
-    const finalDate = tempDate.slice(1, 32);
+    const finalDate = tempDate.slice(1, 11);
     var intDate = finalDate.split("-").join("");
     return intDate;
   };
@@ -109,11 +109,12 @@ const SneakersData = ({ state, actions, libraries, itemId }) => {
     const firstdate = convertDate(startdate);
     const secdate = convertDate(enddate);
     const comparedate = `${firstdate}-${secdate}`;
+
     setchoosedate(comparedate);
-
-    // console.log("finaldate", stockValue.date);
+    setCurrentPage(1);
+    console.log("finaldateeeee", comparedate);
   };
-
+  
   // end
 
   const [filter, setFilter] = useState({
@@ -171,7 +172,7 @@ const SneakersData = ({ state, actions, libraries, itemId }) => {
   const totalPost = 5;
 
   useEffect(() => {
-    var slug = `${stockValue.brandId}-${stockValue.totalProduct}-${stockValue.priceMin}-${stockValue.priceMax}-${stockValue.status}-${stockValue.date}-${stockValue.sortBy}-${stockValue.color}-${choosedate}`;
+    var slug = `xx-${stockValue.brandId}-${stockValue.totalProduct}-${stockValue.priceMin}-${stockValue.priceMax}-${stockValue.status}-${stockValue.date}-${stockValue.sortBy}-${stockValue.color}-${choosedate}`;
     brandDataFetch();
     fetchData(slug);
 
@@ -179,7 +180,7 @@ const SneakersData = ({ state, actions, libraries, itemId }) => {
   }, [stockValue, choosedate]);
 
   useEffect(() => {
-    var slug = `${itemId}-${stockValue.totalProduct}-${stockValue.priceMin}-${stockValue.priceMax}-${stockValue.status}-${stockValue.date}-${stockValue.sortBy}-${stockValue.color}-${choosedate}`;
+    var slug = `mm-${itemId}-${stockValue.totalProduct}-${stockValue.priceMin}-${stockValue.priceMax}-${stockValue.status}-${stockValue.date}-${stockValue.sortBy}-${stockValue.color}-${choosedate}`;
     fetchData(slug);
     setCurrentPage(1);
     //aureate_console.log("slug data : ", slug);
