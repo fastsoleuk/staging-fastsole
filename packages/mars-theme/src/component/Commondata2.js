@@ -69,13 +69,7 @@ import NoProduct from "./NoProduct";
 import $ from "jquery";
 
 const Commondata2 = ({ state, actions, libraries }) => {
-  const [date, setDate] = useState([
-    {
-      startDate: new Date(),
-      endDate: addDays(new Date(), 7),
-      key: "selection",
-    },
-  ]);
+
   let [countpost, setCountPost] = useState();
 
   const [stockValue, setStockValue] = useState({
@@ -104,6 +98,18 @@ const Commondata2 = ({ state, actions, libraries }) => {
     paricemax: 500,
   });
 
+  const [date, setDate] = useState([
+    {
+      startDate: new Date(),
+      endDate: addDays(new Date(), 7),
+      key: "selection",
+    },
+  ]);
+  const {
+    onOpen: OnDateOpen,
+    onClose: onDateClose,
+    isOpen: isDateOpen,
+  } = useDisclosure();
   const demoArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   const rangeSlider = (range) => {
@@ -143,19 +149,17 @@ const Commondata2 = ({ state, actions, libraries }) => {
   // 20190402;
 
   // for choose date from calender start
-  const [choosedate, setchoosedate] = useState("--");
-  var tempArr = [];
+  const [choosedate, setchoosedate] = useState(0);
+  //var tempArr = [];
 
   const convertDate = (event) => {
     const tempDate = JSON.stringify(event);
-    const finalDate = tempDate.slice(1, 32);
+    const finalDate = tempDate.slice(1, 11);
     var intDate = finalDate.split("-").join("");
     return intDate;
   };
 
   const exactDate = (startdate, enddate) => {
-    //aureate_console.log("finaldate", startdate, enddate);
-    setchoosedate("");
     const firstdate = convertDate(startdate);
     const secdate = convertDate(enddate);
     const comparedate = `${firstdate}-${secdate}`;
@@ -188,12 +192,8 @@ const Commondata2 = ({ state, actions, libraries }) => {
     // alert(type)
   };
 
+
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const {
-    onOpen: OnDateOpen,
-    onClose: onDateClose,
-    isOpen: isDateOpen,
-  } = useDisclosure();
   const btnRef = React.useRef();
 
   useEffect(() => {
@@ -491,7 +491,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
 
         <Stack
           id="filter-header"
-          // {isOpen == true ? "abc" : "filter-header"}
+        // {isOpen == true ? "abc" : "filter-header"}
         >
           <Flex
             justifyContent={{
@@ -510,7 +510,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
               w={100}
               variant="outline"
               onChange={(event) => shortDropDown(event.target.value)}
-              // display={{ base: "none", md: "none", lg: "block" }}
+            // display={{ base: "none", md: "none", lg: "block" }}
             >
               <option value="priceLowToHigh">Price low to high</option>
               <option value="priceHighToLow">High to low</option>
@@ -1335,7 +1335,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
               <Box>
                 {!state.sneakerReleaseDates.isLoading ? (
                   (filterItems && filterItems.length === 0) ||
-                  filterItems === undefined ? (
+                    filterItems === undefined ? (
                     <Center>
                       <NoProduct />
                     </Center>
@@ -1613,8 +1613,8 @@ const Commondata2 = ({ state, actions, libraries }) => {
 
                 {/* loadmore icon */}
                 {(filterItems && filterItems.length === 0) ||
-                filterItems === undefined ||
-                filterItems === "" ? (
+                  filterItems === undefined ||
+                  filterItems === "" ? (
                   <div></div>
                 ) : (
                   <Box display={{ base: "block", md: "none" }}>
@@ -1648,8 +1648,8 @@ const Commondata2 = ({ state, actions, libraries }) => {
 
                 {/* Pagination start */}
                 {(filterItems && filterItems.length === 0) ||
-                filterItems === undefined ||
-                filterItems === "" ? (
+                  filterItems === undefined ||
+                  filterItems === "" ? (
                   <div></div>
                 ) : (
                   <Box
