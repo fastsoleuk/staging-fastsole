@@ -67,19 +67,9 @@ import NoProduct from "./NoProduct";
 
 const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
   let [countpost, setCountPost] = useState();
-  const [date, setDate] = useState([
-    {
-      startDate: new Date(),
-      endDate: addDays(new Date(), 7),
-      key: "selection",
-    },
-  ]);
+  
 
-  const {
-    onOpen: OnDateOpen,
-    onClose: onDateClose,
-    isOpen: isDateOpen,
-  } = useDisclosure();
+  
   const demoArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   //const demoArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32];
   if (type == "comingsoon") {
@@ -110,7 +100,35 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
     priceMin: 0,
     paricemax: 500,
   });
+  const [date, setDate] = useState([
+    {
+      startDate: new Date(),
+      endDate: addDays(new Date(), 7),
+      key: "selection",
+    },
+  ]);
+  const {
+    onOpen: OnDateOpen,
+    onClose: onDateClose,
+    isOpen: isDateOpen,
+  } = useDisclosure();
+  const [choosedate, setchoosedate] = useState(0);
 
+  const convertDate = (event) => {
+    const tempDate = JSON.stringify(event);
+    const finalDate = tempDate.slice(1, 11);
+    var intDate = finalDate.split("-").join("");
+    return intDate;
+  };
+
+  const exactDate = (startdate, enddate) => {
+    const firstdate = convertDate(startdate);
+    const secdate = convertDate(enddate);
+    const comparedate = `${firstdate}-${secdate}`;
+
+    setchoosedate(comparedate);
+    setCurrentPage(1);
+  };
   const rangeSlider = (range) => {
     // console.log("rangeslider", range) range slider
     var min = range[0];
@@ -156,22 +174,7 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
   };
 
   // for choose date from calender start
-  const [choosedate, setchoosedate] = useState("");
-
-  const convertDate = (event) => {
-    const tempDate = JSON.stringify(event);
-    const finalDate = tempDate.slice(1, 32);
-    var intDate = finalDate.split("-").join("");
-    return intDate;
-  };
-
-  const exactDate = (startdate, enddate) => {
-    const firstdate = convertDate(startdate);
-    const secdate = convertDate(enddate);
-    const comparedate = `${firstdate}-${secdate}`;
-    setchoosedate(comparedate);
-    setCurrentPage(1);
-  };
+  
 
   // end
 
@@ -181,13 +184,13 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
   const totalPost = 5;
 
   useEffect(() => {
-    var slug = `${stockValue.brandId}-${stockValue.totalProduct}-${stockValue.priceMin}-${stockValue.priceMax}-${stockValue.status}-${stockValue.date}-${stockValue.type}-${stockValue.sortBy}-${stockValue.color}-${choosedate}`;
+    var slug = `ii-${stockValue.brandId}-${stockValue.totalProduct}-${stockValue.priceMin}-${stockValue.priceMax}-${stockValue.status}-${stockValue.date}-${stockValue.type}-${stockValue.sortBy}-${stockValue.color}-${choosedate}`;
     brandDataFetch();
     fetchData(slug);
   }, [stockValue, choosedate]);
 
   useEffect(() => {
-    var slug = `${itemId}-${stockValue.totalProduct}-${stockValue.priceMin}-${stockValue.priceMax}-${stockValue.status}-${stockValue.date}-${stockValue.type}-${stockValue.sortBy}-${stockValue.color}-${choosedate}`;
+    var slug = `00-${itemId}-${stockValue.totalProduct}-${stockValue.priceMin}-${stockValue.priceMax}-${stockValue.status}-${stockValue.date}-${stockValue.type}-${stockValue.sortBy}-${stockValue.color}-${choosedate}`;
     fetchData(slug);
   }, [itemId, choosedate]);
 
