@@ -184,13 +184,13 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
   const totalPost = 5;
 
   useEffect(() => {
-    var slug = `ii-${stockValue.brandId}-${stockValue.totalProduct}-${stockValue.priceMin}-${stockValue.priceMax}-${stockValue.status}-${stockValue.date}-${stockValue.type}-${stockValue.sortBy}-${stockValue.color}-${choosedate}`;
+    var slug = `${stockValue.brandId}-${stockValue.totalProduct}-${stockValue.priceMin}-${stockValue.priceMax}-${stockValue.status}-${stockValue.date}-${stockValue.type}-${stockValue.sortBy}-${stockValue.color}-${choosedate}`;
     brandDataFetch();
     fetchData(slug);
   }, [stockValue, choosedate]);
 
   useEffect(() => {
-    var slug = `00-${itemId}-${stockValue.totalProduct}-${stockValue.priceMin}-${stockValue.priceMax}-${stockValue.status}-${stockValue.date}-${stockValue.type}-${stockValue.sortBy}-${stockValue.color}-${choosedate}`;
+    var slug = `${itemId}-${stockValue.totalProduct}-${stockValue.priceMin}-${stockValue.priceMax}-${stockValue.status}-${stockValue.date}-${stockValue.type}-${stockValue.sortBy}-${stockValue.color}-${choosedate}`;
     fetchData(slug);
   }, [itemId, choosedate]);
 
