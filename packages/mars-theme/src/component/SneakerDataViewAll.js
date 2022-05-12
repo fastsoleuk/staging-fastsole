@@ -201,7 +201,8 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
     const response = await libraries.source.api.get({
       endpoint: `/wl/v1/On-focus-items/${slug}`,
     });
-    //aureate_console.log("endpoint :", `/wl/v1/On-focus-items/${slug}`);
+    //aureate_console.log("endpoint :", `/wl/v1/On-focus-items/${slug}`)
+    
     const result = await response.json();
     actions.sneakerReleaseDates.toggleLoading();
     actions.sneakerReleaseDates.updatePostData(result);
@@ -904,13 +905,16 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
                     fontWeight="normal"
                     colorScheme="blue"
                   >
+                  {console.log("988999898989",state.router.link)}
+                    {state.router.link != '/sneaker-release-dates/status/coming-soon/' ?
                     <Radio
                       size="sm"
                       value="instock"
                       onChange={(event) => stockChange(event.target.value)}
                     >
                       In Stock
-                    </Radio>
+                    </Radio> : null }
+                    
                     <Radio
                       size="sm"
                       value="comingsoon"
@@ -918,13 +922,14 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
                     >
                       Coming soon
                     </Radio>
+                    {state.router.link != '/sneaker-release-dates/status/coming-soon/' ?
                     <Radio
                       size="sm"
                       value="soldout"
                       onChange={(event) => stockChange(event.target.value)}
                     >
                       Sold out
-                    </Radio>
+                    </Radio> : null }
                   </VStack>
                 </RadioGroup>
 
