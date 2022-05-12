@@ -905,7 +905,7 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
                     fontWeight="normal"
                     colorScheme="blue"
                   >
-                  {console.log("988999898989",state.router.link)}
+                 
                     {state.router.link != '/sneaker-release-dates/status/coming-soon/' ?
                     <Radio
                       size="sm"
