@@ -370,7 +370,7 @@ const About = ({ state, libraries, actions }) => {
                       </AccordionButton>
                     </h2>
                     <AccordionPanel pb={4} color="#666666" fontSize="sm">
-                    Our team will find any sneaker if it has been released in Europe and is currently available. Just mail us: info@fastsole.co.uk or give us a shout on our social media pages.
+                    Our team will find any sneaker if it has been released in Europe and is currently available. Just mail us: <a href="mailto: info@fastsole.co.uk">info@fastsole.co.uk</a> or give us a shout on our social media pages.
                     </AccordionPanel>
                   </>
                 )}
