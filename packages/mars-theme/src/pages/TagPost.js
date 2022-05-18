@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { connect } from "frontity";
 import React, { useEffect, useState } from "react";
-import ImageViewFeatured from "../Utils/ImageViewFeatured";
+//import ImageViewFeatured from "../Utils/ImageViewFeatured";
 import Link from "@frontity/components/link";
 import dayjs from "dayjs";
 import {
@@ -33,7 +33,7 @@ const TagPost = ({ state, libraries, actions }) => {
   const [currentPage, setCurrentPage] = useState(1);
   // []
   {
-    data && console.log("datacheck", data.path);
+    //data && console.log("datacheck", data.path);
   }
 
   // useEffect(() => {
@@ -77,11 +77,11 @@ const TagPost = ({ state, libraries, actions }) => {
     });
 
     const result = await response.json();
-    console.log(
+    /* console.log(
       "tagapislug=",
       `/wp/v2/tags?search=${data.path}`,
       `/wp/v2/posts?tags=${tagResult[0]["id"]}&per_page=12&page=${currentPage}`
-    );
+    ); */
 
     // // result.headers["x-wp-totalpages"];
 
@@ -120,6 +120,7 @@ const TagPost = ({ state, libraries, actions }) => {
         gap={8}
         mb="12"
       >
+      
         {state.tagPost.postData &&
           state.tagPost.postData.map((item) => {
             // const id = items.id;
@@ -131,9 +132,15 @@ const TagPost = ({ state, libraries, actions }) => {
             return (
               item && (
                 <Link link={item.link}>
-                  <Box>
+                  
                     <Box>
-                      <ImageViewFeatured id={item.featured_media} />
+                      {/* <ImageViewFeatured id={item.featured_media} /> */}
+                      <img 
+                        src={item.yoast_head_json.og_image[0].url}
+                        height="100%"
+                        width="100%"
+                        loading="lazy"
+                      />
 
                       <Box mt="2">
                         <Text as="span" color="#7887A5" fontSize="sm">
@@ -153,7 +160,7 @@ const TagPost = ({ state, libraries, actions }) => {
                         </Text>
                       </Box>
                     </Box>
-                  </Box>
+                 
                 </Link>
               )
             );
