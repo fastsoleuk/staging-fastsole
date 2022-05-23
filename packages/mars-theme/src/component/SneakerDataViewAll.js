@@ -67,9 +67,7 @@ import NoProduct from "./NoProduct";
 
 const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
   let [countpost, setCountPost] = useState();
-  
 
-  
   const demoArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   //const demoArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32];
   if (type == "comingsoon") {
@@ -174,7 +172,6 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
   };
 
   // for choose date from calender start
-  
 
   // end
 
@@ -202,7 +199,7 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
       endpoint: `/wl/v1/On-focus-items/${slug}`,
     });
     //aureate_console.log("endpoint :", `/wl/v1/On-focus-items/${slug}`)
-    
+
     const result = await response.json();
     actions.sneakerReleaseDates.toggleLoading();
     actions.sneakerReleaseDates.updatePostData(result);
@@ -586,7 +583,7 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
                           fontStyle="normal"
                           lineHeight="19px"
                         >
-                          <Radio
+                          {/* <Radio
                             size="sm"
                             value="instock"
                             onChange={(event) => {
@@ -615,7 +612,41 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
                             }}
                           >
                             Sold out
+                          </Radio> */}
+                          {state.router.link !=
+                          "/sneaker-release-dates/status/coming-soon/" ? (
+                            <Radio
+                              size="sm"
+                              value="instock"
+                              onChange={(event) =>
+                                stockChange(event.target.value)
+                              }
+                            >
+                              In Stock
+                            </Radio>
+                          ) : null}
+
+                          <Radio
+                            size="sm"
+                            value="comingsoon"
+                            onChange={(event) =>
+                              stockChange(event.target.value)
+                            }
+                          >
+                            Coming soon
                           </Radio>
+                          {state.router.link !=
+                          "/sneaker-release-dates/status/coming-soon/" ? (
+                            <Radio
+                              size="sm"
+                              value="soldout"
+                              onChange={(event) =>
+                                stockChange(event.target.value)
+                              }
+                            >
+                              Sold out
+                            </Radio>
+                          ) : null}
                         </VStack>
                       </RadioGroup>
 
@@ -905,16 +936,17 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
                     fontWeight="normal"
                     colorScheme="blue"
                   >
-                 
-                    {state.router.link != '/sneaker-release-dates/status/coming-soon/' ?
-                    <Radio
-                      size="sm"
-                      value="instock"
-                      onChange={(event) => stockChange(event.target.value)}
-                    >
-                      In Stock
-                    </Radio> : null }
-                    
+                    {state.router.link !=
+                    "/sneaker-release-dates/status/coming-soon/" ? (
+                      <Radio
+                        size="sm"
+                        value="instock"
+                        onChange={(event) => stockChange(event.target.value)}
+                      >
+                        In Stock
+                      </Radio>
+                    ) : null}
+
                     <Radio
                       size="sm"
                       value="comingsoon"
@@ -922,14 +954,16 @@ const SneakersDataViewAll = ({ state, actions, libraries, itemId, type }) => {
                     >
                       Coming soon
                     </Radio>
-                    {state.router.link != '/sneaker-release-dates/status/coming-soon/' ?
-                    <Radio
-                      size="sm"
-                      value="soldout"
-                      onChange={(event) => stockChange(event.target.value)}
-                    >
-                      Sold out
-                    </Radio> : null }
+                    {state.router.link !=
+                    "/sneaker-release-dates/status/coming-soon/" ? (
+                      <Radio
+                        size="sm"
+                        value="soldout"
+                        onChange={(event) => stockChange(event.target.value)}
+                      >
+                        Sold out
+                      </Radio>
+                    ) : null}
                   </VStack>
                 </RadioGroup>
 

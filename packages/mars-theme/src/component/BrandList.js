@@ -28,7 +28,7 @@ const BrandList = ({ state, libraries, actions }) => {
         "https://wptesting.thenwg.xyz/wp-content/uploads/2021/11/Rectangle-421-1.png",
     },
     {
-      slug: "/sneaker-release-dates/brands/adidas",
+      slug: "/sneaker-release-dates/brands/converse/",
       image:
         "https://wptesting.thenwg.xyz/wp-content/uploads/2021/11/Rectangle-420-1.png",
     },

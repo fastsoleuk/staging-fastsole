@@ -142,7 +142,7 @@ const Brand = ({ state, libraries, actions }) => {
 
   const [readMore, setreadMore] = useState(false);
   {
-    //aureate_console.log("mydata", state.brandItems.postData);
+    //console.log("mydata", state.brandItems.postData);
   }
 
   return !state.brandItems.isLoading ? (
@@ -224,7 +224,6 @@ const Brand = ({ state, libraries, actions }) => {
                       bg="#F3F4F7"
                       px={2}
                       py={1}
-                      borderRadius="md"
                       borderRadius="md"
                       fontSize="13px"
                     >
