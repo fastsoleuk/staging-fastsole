@@ -712,14 +712,14 @@ const Productdetails = ({ state, libraries, actions }) => {
               {/* for large devices */}
               <Box display={{ base: "none", md: "block" }}>
                 {seoData.main.content && (
-                  <Text
+                  <Box
                     color="#666666"
                     lineHeight={"26px"}
                     className="product-details detpage"
                   >
 
                     <Html2React html={seoData.main.content} />
-                  </Text>
+                  </Box>
                 )}
               </Box>
 
