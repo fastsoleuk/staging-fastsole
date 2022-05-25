@@ -666,7 +666,7 @@ const Productdetails = ({ state, libraries, actions }) => {
               {/* for mobile  */}
               <Box display={{ base: "block", md: "none" }}>
                 {seoData.main.content && (
-                  <Text color="#666666" className="product-details">
+                  <Box color="#666666" className="product-details">
                     <Html2React
                       html={
                         show
@@ -674,7 +674,7 @@ const Productdetails = ({ state, libraries, actions }) => {
                           : seoData.main.content.substring(0, 400)
                       }
                     />
-                  </Text>
+                  </Box>
                 )}
 
                 {seoData.main.content && seoData.main.content.length > 400 && (
