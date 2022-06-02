@@ -53,7 +53,7 @@ const FooterComponent = loadable(() => import('../component/FooterComponent'))
 const ViewAllbtn = loadable(() => import('../component/ViewAllbtn'))
 const ViewAllMobile = loadable(() => import('../component/ViewAllMobile'))
 
-const ImageViewFeatured = loadable(() => import('../../src/Utils/ImageViewFeatured'))
+//const ImageViewFeatured = loadable(() => import('../../src/Utils/ImageViewFeatured'))
 const HomeMobileBanner = loadable(() => import('../component/HomeMobileBanner'))
 
 
@@ -283,7 +283,7 @@ function Home({ state, actions, libraries }) {
                 post && (
                   <Box key={index}>
                     <Link link={post.link}>
-                      <Image src={post.fimg_url} loading="lazy" className="newhomeImage"/>
+                      <Image src={post.fimg_url} loading="lazy" className="newhomeImage" />
                       {/* <ImageViewFeatured id={item.featured_media} /> */}
                     </Link>
 
@@ -324,11 +324,11 @@ function Home({ state, actions, libraries }) {
                 )
               )
             })}
-            
+
             <Box display="flex">
               <VStack alignItems="normal" justifyContent={"space-between"}>
                 {/* {data.slice(1, 4).map(({ type, id }) => { */}
-                  {posts.slice(1, 4).map((post, index) => {
+                {posts.slice(1, 4).map((post, index) => {
                   //const item = state.source[type][id];
 
                   if (post.status == "instock") {
@@ -459,7 +459,7 @@ function Home({ state, actions, libraries }) {
                         border={"1px solid #C2C8D6"}
                       >
                         <Link link={post.link} id="img-div2nd-height">
-                        <Image src={post.fimg_url} loading="lazy" className="newhomeImage"/>
+                          <Image src={post.fimg_url} loading="lazy" className="newhomeImage" />
                           {/* <Image src={item.yoast_head_json.og_image[0].url} alt={item.title.rendered} height="auto" width="100%" max-width="100%" max-height="100%" loading="lazy" /> */}
                         </Link>
                       </Box>
@@ -694,18 +694,19 @@ function Home({ state, actions, libraries }) {
             textColor="white"
             gap={4}
           >
-            {data.slice(0, 1).map(({ type, id }) => {
-              const item = state.source[type][id];
+            {posts.slice(0, 1).map((post, index) => {
+              //const item = state.source[type][id];
 
               return (
-                item && (
-                  <Box>
-                    <Link link={item.link}>
+                post && (
+                  <Box key={index}>
+                    <Link link={post.link}>
                       {/* <ImageViewFeatured id={item.featured_media} /> */}
-                      <Image src={item.yoast_head_json.og_image[0].url} alt={item.title.rendered} height="auto" width="100%" max-width="100%" max-height="100%" loading="lazy" />
+                      <Image src={post.fimg_url} loading="lazy" className="newhomeImage" />
+                      {/* <Image src={item.yoast_head_json.og_image[0].url} alt={item.title.rendered} height="auto" width="100%" max-width="100%" max-height="100%" loading="lazy" /> */}
                     </Link>
 
-                    <Link link={item.link}>
+                    <Link link={post.link}>
                       <Heading
                         as="h3"
                         mt={6}
@@ -717,7 +718,7 @@ function Home({ state, actions, libraries }) {
                         lineHeight="normal"
                         mb="10px"
                       >
-                        {<Html2React html={item.title.rendered} />}
+                        {<Html2React html={post.title.rendered} />}
                       </Heading>
                     </Link>
                     <Text
@@ -727,11 +728,11 @@ function Home({ state, actions, libraries }) {
                       fontSize={{ base: "md", md: "md", lg: "sm", xl: "md" }}
                     >
                       <Html2React
-                        html={`${item.excerpt.rendered.substring(0, 100)}  ...`}
+                        html={`${post.excerpt.rendered.substring(0, 100)}  ...`}
                       />
                     </Text>
                     <Box w="max-content">
-                      <Link link={item.link}>
+                      <Link link={post.link}>
                         <Text color="red">
                           Read more
                           <Icon as={FaChevronRight} boxSize="2" color={"red"} />
@@ -745,15 +746,16 @@ function Home({ state, actions, libraries }) {
 
             <Box display="flex">
               <VStack alignItems="normal" justifyContent={"space-between"}>
-                {data.slice(1, 4).map(({ type, id }) => {
-                  const items = state.source[type][id];
-                  const date = dayjs(items.date_gmt).format("DD MMMM YYYY");
+                {posts.slice(1, 4).map((post, index) => {
+                  //const items = state.source[type][id];
+                  const date = dayjs(post.date_gmt).format("DD MMMM YYYY");
                   return (
                     <Box
                       display={{ md: "flex" }}
                       // mb="5px "
                       alignItems="center"
                       h={"100%"}
+                      key={index}
                     >
                       <Box
                         flexShrink={0}
@@ -767,13 +769,14 @@ function Home({ state, actions, libraries }) {
                         borderRadius={"5px"}
                         border={"1px solid #C2C8D6"}
                       >
-                        <Link link={items.link} id="img-div2nd-height">
+                        <Link link={post.link} id="img-div2nd-height">
                           {/* <ImageViewFeatured id={items.featured_media} /> */}
-                          <Image src={items.yoast_head_json.og_image[0].url} alt={items.title.rendered} height="auto" width="100%" max-width="100%" max-height="100%" loading="lazy" />
+                          <Image src={post.fimg_url} loading="lazy" className="newhomeImage" />
+                          {/* <Image src={items.yoast_head_json.og_image[0].url} alt={items.title.rendered} height="auto" width="100%" max-width="100%" max-height="100%" loading="lazy" /> */}
                         </Link>
                       </Box>
                       <Box mt={{ base: 4, md: 0 }} ml={{ md: 4 }}>
-                        <Link link={items.link}>
+                        <Link link={post.link}>
                           <Heading
                             as="h3"
                             display="block"
@@ -787,7 +790,7 @@ function Home({ state, actions, libraries }) {
                             lineHeight="normal"
                             noOfLines={2}
                           >
-                            {<Html2React html={items.title.rendered} />}
+                            {<Html2React html={post.title.rendered} />}
                           </Heading>
                         </Link>
                         <Box>
@@ -807,7 +810,7 @@ function Home({ state, actions, libraries }) {
                           >
                             {
                               <Html2React
-                                html={`${items.excerpt.rendered.substring(
+                                html={`${post.excerpt.rendered.substring(
                                   0,
                                   50
                                 )}  ...`}
@@ -818,7 +821,7 @@ function Home({ state, actions, libraries }) {
 
                         <Flex mt="2px" alignItems="center">
                           <Box w="max-content">
-                            <Link link={items.link}>
+                            <Link link={post.link}>
                               <Text color="red">
                                 Read more.....{" "}
                                 <Icon
