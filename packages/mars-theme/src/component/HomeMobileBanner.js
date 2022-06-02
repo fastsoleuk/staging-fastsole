@@ -42,8 +42,8 @@ const HomeMobileBanner = ({ state, actions, libraries, props }) => {
           return (
             <Link link={postss.link}>
               <Box mx="3" rounded="xl" border="1px solid #D8DEE7">
-                <Box flexShrink={0}>
-                <Image src={postss.fimg_url} loading="lazy" />
+                <Box flexShrink={0} className="newsMobile">
+                  <Image src={postss.fimg_url} loading="lazy" />
                   {/* <ImageViewFeatured id={item.featured_media} /> */}
                 </Box>
                 <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }} m="4">
