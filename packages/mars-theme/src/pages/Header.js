@@ -723,7 +723,7 @@ const Header = ({ state, libraries, actions }) => {
           onToggleDrawer
         />
       </Collapse>
-      {/* <div className="searchDataWrapper">
+       <div className="searchDataWrapper">
         <span className="closeIcon" onClick={closePopup}> Close </span>
         <div className="relatedSearchData">
           <UnorderedList>
@@ -783,7 +783,7 @@ const Header = ({ state, libraries, actions }) => {
         <Button colorScheme='teal' size='md'>
             View All
         </Button>
-      </div> */}
+      </div> 
     </Box>
   );
 };

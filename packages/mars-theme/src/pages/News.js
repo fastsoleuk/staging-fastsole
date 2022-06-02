@@ -47,7 +47,7 @@ import { ArrowDownIcon, ArrowUpIcon } from "@chakra-ui/icons";
 
 
 const Phoneslider = loadable(() => import('../component/Phoneslider'))
-const ImageViewFeatured = loadable(() => import('../../src/Utils/ImageViewFeatured'))
+//const ImageViewFeatured = loadable(() => import('../../src/Utils/ImageViewFeatured'))
 const Breadcrumb = loadable(() => import('../component/Breadcrumb'))
 
 const News = ({ state, actions, libraries }) => {
@@ -287,9 +287,9 @@ const News = ({ state, actions, libraries }) => {
                       <Link link={item.link}>
                         {item.fimg_url && (
                           <>
-                          <Image src={item.fimg_url} loading="lazy" className="newhomeImage" />
-                          {/* <ImageViewFeatured id={item.featured_media} /> */}
-                          {/* <Image src={item.yoast_head_json.og_image[0].url} alt={item.title.rendered} height="auto" width="100%" max-width="100%" max-height="100%" loading="lazy" /> */}
+                            <Image src={item.fimg_url} loading="lazy" className="newhomeImage" />
+                            {/* <ImageViewFeatured id={item.featured_media} /> */}
+                            {/* <Image src={item.yoast_head_json.og_image[0].url} alt={item.title.rendered} height="auto" width="100%" max-width="100%" max-height="100%" loading="lazy" /> */}
                           </>
                         )}
                       </Link>
@@ -479,10 +479,10 @@ const News = ({ state, actions, libraries }) => {
                           <Link link={item.link} id="img-div2nd-height">
                             {item.fimg_url && (
                               <>
-                              
-                              <Image src={item.fimg_url} loading="lazy" className="newhomeImage" />
-                              {/* <ImageViewFeatured id={item.featured_media} /> */}
-                              {/* <Image src={item.yoast_head_json.og_image[0].url} alt={item.title.rendered} height="auto" width="100%" max-width="100%" max-height="100%" loading="lazy" /> */}
+
+                                <Image src={item.fimg_url} loading="lazy" className="newhomeImage" />
+                                {/* <ImageViewFeatured id={item.featured_media} /> */}
+                                {/* <Image src={item.yoast_head_json.og_image[0].url} alt={item.title.rendered} height="auto" width="100%" max-width="100%" max-height="100%" loading="lazy" /> */}
                               </>
                             )}
                           </Link>
@@ -572,7 +572,7 @@ const News = ({ state, actions, libraries }) => {
                 gap={8}
                 mb="12"
               >
-                {data.items.slice(4,10).map((items) => {
+                {data.items.slice(4, 10).map((items) => {
                   const id = items.id;
                   const type = items.type;
 
@@ -583,9 +583,11 @@ const News = ({ state, actions, libraries }) => {
                         <Box className="newslist">
                           {item.fimg_url && (
                             <>
-                            <Image src={item.fimg_url} loading="lazy" className="newhomeImage" />
-                            {/* <ImageViewFeatured id={item.featured_media} /> */}
-                            {/* <Image src={item.yoast_head_json.og_image[0].url} alt={item.title.rendered} height="auto" width="100%" max-width="100%" max-height="100%" loading="lazy" /> */}
+                              <Box className="news_imgbox">
+                                <Image src={item.fimg_url} loading="lazy" className="newhomeImage" />
+                              </Box>
+                              {/* <ImageViewFeatured id={item.featured_media} /> */}
+                              {/* <Image src={item.yoast_head_json.og_image[0].url} alt={item.title.rendered} height="auto" width="100%" max-width="100%" max-height="100%" loading="lazy" /> */}
                             </>
                           )}
 
@@ -601,7 +603,7 @@ const News = ({ state, actions, libraries }) => {
                               color={"#3E485D"}
                               noOfLines={2}
                               mt="2"
-                              // lineHeight="normal"
+                            // lineHeight="normal"
                             >
                               {<Html2React html={item.title.rendered} />}
                             </Text>
