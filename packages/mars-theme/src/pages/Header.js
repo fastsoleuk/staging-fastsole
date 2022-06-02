@@ -41,6 +41,9 @@ import {
   DrawerContent,
   DrawerCloseButton,
   Heading,
+  SimpleGrid,
+  ListItem,
+  UnorderedList
   // Link
 } from "@chakra-ui/react";
 import { FaUser, FaSearch } from "react-icons/fa";
@@ -66,6 +69,8 @@ const DeskMultiMenus = loadable(() => import('../component/Desk-Multi-Menu'))
 const MobileSearchModel = loadable(() => import('../component/MobileSearchModel'))
 
 const Header = ({ state, libraries, actions }) => {
+  const algoliaFilterData = [];
+  const algoliaRelatedData = [];
   const parse = libraries.source.parse(state.router.link);
   const searchQuery = parse.query["s"];
 
@@ -92,6 +97,11 @@ const Header = ({ state, libraries, actions }) => {
   const [inputValue, setinputValue] = useState(" ");
   const [showValue, setshowValue] = useState("Search here.");
   const [headerValue, setheaderValue] = useState(" ");
+
+  const [algoliaAlldata, setalgoliaAlldata] = useState([]);
+  const [algoliaRelatedSearchdata, setalgoliaRelatedSearchdata] = useState([]);
+  const [openDiv, setOpenDiv] = useState("close");
+
 
   // var inputValue = "";
   const [dataLoaded, setDataLoaded] = useState(false);
@@ -165,6 +175,61 @@ const Header = ({ state, libraries, actions }) => {
     }
   };
 
+  const algolidaData = async (event) => {
+    console.log('event', event);
+    const algoliasearch = require("algoliasearch");
+    const client = algoliasearch('YZTG39ONR6', 'b2f2580375535fe8b3bd2b978582358b');
+    const POST_SNEAKER = client.initIndex('wp_posts_sneaker');  
+    const RELATED_SNEAKER = client.initIndex('wp_posts_sneaker_query_suggestions');  
+    await POST_SNEAKER
+    .search(event)
+    .then(({ hits }) => {
+      hits.map(item => {
+        const data = {
+          title: item.post_title,
+          image: item?.images?.thumbnail?.url
+        }
+        algoliaFilterData.push(data);  
+        setalgoliaAlldata(algoliaFilterData);
+      })
+    })
+    .catch(err => {
+      console.log(err);
+    });
+
+    // related search data
+    await RELATED_SNEAKER
+    .search(event)
+    .then(({ hits }) => {
+      hits.map(item => {
+        const data = {
+          title: item.objectID,
+        }
+        algoliaRelatedData.push(data);  
+        setalgoliaRelatedSearchdata(algoliaRelatedData);
+      })
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
+
+  const closePopup = () => {
+    setOpenDiv("close");
+  }
+
+  useEffect(() => {
+    fetchData();
+    setDataLoaded(true);
+  }, [dataLoaded]); //update by santosh
+
+  const fetchData = async () => {
+    const response = await libraries.source.api.get({
+      endpoint: "/wl/v1/on-focus",
+    });
+    const categoryTabPostData = await response.json();
+  };
+  
   // levele wise menu code
   const itemsMenu = SubMenu.items;
   // state.source.get(`/menu/${state.theme.menuUrl}/`).items;
@@ -172,7 +237,7 @@ const Header = ({ state, libraries, actions }) => {
   itemsMenu.map((item) => {
     if (item.ID === 27490 && item.post_name === "brands") {
       menuReleaseDate.push(item.child_items);
-    }
+    }0
   });
   // console.log("items data menu = ", menuReleaseDate);
 
@@ -242,6 +307,7 @@ const Header = ({ state, libraries, actions }) => {
   //aureate_console.log("menu data :", menus[2]);
 
   return (
+    
     <Box
       id="sticky-header"
       px={{ base: "6", md: "16", lg: "40" }}
@@ -587,8 +653,12 @@ const Header = ({ state, libraries, actions }) => {
                     color="#9DA7BE"
                     placeholder={showValue}
                     value={inputValue}
+                    onFocus={(event) => {
+                      setOpenDiv("open");
+                    }}
                     onChange={(event) => {
                       event.preventDefault();
+                      algolidaData(event.target.value)
                       setshowValue(event.target.value);
                       setinputValue(event.target.value);
                     }}
@@ -653,6 +723,67 @@ const Header = ({ state, libraries, actions }) => {
           onToggleDrawer
         />
       </Collapse>
+      <div className="searchDataWrapper">
+        <span className="closeIcon" onClick={closePopup}> Close </span>
+        <div className="relatedSearchData">
+          <UnorderedList>
+            {
+              algoliaRelatedSearchdata.length > 0 ? 
+                algoliaRelatedSearchdata.map((item,index) => {
+                  return ( <ListItem key={index}> {item.title} </ListItem> );
+                })
+              : ''
+            }
+            
+          </UnorderedList>
+        </div>
+        { openDiv === 'open' && algoliaAlldata.length > 0 ? 
+            (algoliaAlldata.slice(0, 15)).map((item,index) => {
+              return(
+                <SimpleGrid columns={[2, null, 3]} spacing='40px' key={index}>
+                  <Box>
+                    <div className="imageWrapper">
+                      <Image 
+                        boxSize='100px'
+                        objectFit='cover' 
+                        src={item.image}
+                        alt='Dan Abramov'/>
+                    </div>
+                    <div className="contentRight">
+                        <h3>{item.title}</h3>
+                        <p>$30.00</p>
+                    </div>
+                  </Box>  
+                </SimpleGrid>  
+              )
+            })
+          : 
+          (state.onFocus.postData).map((item,index) => {
+            return(
+              <SimpleGrid columns={[2, null, 3]} spacing='40px' key={index}>
+                <Box>
+                  <div className="imageWrapper">
+                    <Image 
+                      boxSize='100px'
+                      objectFit='cover' 
+                      src={item?.featured_image?.thumbnail}
+                      alt='Dan Abramov'/>
+                  </div>
+                  <div className="contentRight">
+                      <h3>{item.post_title}</h3>
+                      <p>${item.price}</p>
+                  </div>
+                </Box>  
+              </SimpleGrid>  
+            )
+          })
+          
+        }
+        
+        <Button colorScheme='teal' size='md'>
+            View All
+        </Button>
+      </div>
     </Box>
   );
 };
