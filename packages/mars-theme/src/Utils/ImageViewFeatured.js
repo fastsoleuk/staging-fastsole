@@ -8,7 +8,7 @@ const ImageViewFeatured = ({ state, id }) => {
 
   if (!media) return null;
 
-  const srcset =
+   const srcset =
     Object.values(media.media_details.sizes)
       // Get the url and width of each size.
       .map((item) => [item.source_url, item.width])
@@ -19,19 +19,16 @@ const ImageViewFeatured = ({ state, id }) => {
             `${current.join(" ")}w${index !== array.length - 1 ? ", " : ""}`
           ),
         ""
-      ) || null;
+      ) || null; 
 
   return (
-
     <StyledImage
       alt={media.title.rendered}
       src={media.media_details.sizes.full.source_url}
       srcSet={srcset}
       height="100%"
       width="100%"
-      loading="lazy"
     />
-
   );
 };
 

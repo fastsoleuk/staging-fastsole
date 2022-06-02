@@ -136,7 +136,7 @@ position: relative;
 
 /* trisha */
 
-#nthchild-div:nth-last-child(1) {
+#nthchild-div:nth-last-of-type(1) {
   margin-bottom: unset !important;
 }
 
@@ -323,4 +323,10 @@ position: relative;
 }
 .product-details ul {
   margin-left: 20px;
+}
+.newhomeImage{
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
