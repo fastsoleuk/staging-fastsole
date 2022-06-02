@@ -96,7 +96,7 @@ function Home({ state, actions, libraries }) {
 
 
   const fetchPosts = async () => {
-    const res = await fetch("https://fastsole.co.uk/wp-json/wp/v2/posts");
+    const res = await fetch("https://aws.fastsole.co.uk/wp-json/wp/v2/posts");
     const data = await res.json();
     try {
       setPosts(data);
@@ -116,20 +116,17 @@ function Home({ state, actions, libraries }) {
       <Head>
         <meta
           data-rh="true"
-          data-rh="true"
           name="thumbnail"
           content="https://dev2.fastsole.co.uk/wp-content/uploads/2016/09/FastSole-Fev-01.png"
           data-reactroot=""
         />
         <meta
           data-rh="true"
-          data-rh="true"
           name="viewport"
           content="width=device-width, initial-scale=1"
           data-reactroot=""
         />
         <meta
-          data-rh="true"
           data-rh="true"
           property="fb:app_id"
           content=""
@@ -138,13 +135,11 @@ function Home({ state, actions, libraries }) {
         <meta data-rh="true" data-rh="true" charset="utf-8" data-reactroot="" />
         <meta
           data-rh="true"
-          data-rh="true"
           property="og:locale"
           content="en_GB"
           data-reactroot=""
         />
         <meta
-          data-rh="true"
           data-rh="true"
           property="og:type"
           content="website"
@@ -152,13 +147,11 @@ function Home({ state, actions, libraries }) {
         />
         <meta
           data-rh="true"
-          data-rh="true"
           property="og:site_name"
           content="Fastsole"
           data-reactroot=""
         />
         <meta
-          data-rh="true"
           data-rh="true"
           name="twitter:card"
           content="summary"
@@ -166,13 +159,11 @@ function Home({ state, actions, libraries }) {
         />
         <meta
           data-rh="true"
-          data-rh="true"
           name="twitter:site"
           content="@Fastsole"
           data-reactroot=""
         />
         <meta
-          data-rh="true"
           data-rh="true"
           name="twitter:creator"
           content="@Fastsole"
@@ -180,13 +171,11 @@ function Home({ state, actions, libraries }) {
         />
         <meta
           data-rh="true"
-          data-rh="true"
           name="description"
           content="Find the latest sneaker news, release dates, prices and where to buy. Fastsole keeps you up to date with the latest footwear rumours and releases."
           data-reactroot=""
         />
         <meta
-          data-rh="true"
           data-rh="true"
           property="og:title"
           content="Sneaker Release Dates 2022 | Sneaker News UK 2022 | Fastsole "
@@ -194,13 +183,11 @@ function Home({ state, actions, libraries }) {
         />
         <meta
           data-rh="true"
-          data-rh="true"
           property="og:description"
           content="Find the latest sneaker news, release dates, prices and where to buy. Fastsole keeps you up to date with the latest footwear rumours and releases."
           data-reactroot=""
         />
         <meta
-          data-rh="true"
           data-rh="true"
           property="og:url"
           content="Fastsole"
@@ -208,13 +195,11 @@ function Home({ state, actions, libraries }) {
         />
         <meta
           data-rh="true"
-          data-rh="true"
           name="twitter:title"
           content="Sneaker Release Dates 2022 | Sneaker News UK 2022 | Fastsole "
           data-reactroot=""
         />
         <meta
-          data-rh="true"
           data-rh="true"
           name="twitter:description"
           content="Find the latest sneaker news, release dates, prices and where to buy. Fastsole keeps you up to date with the latest footwear rumours and releases."
@@ -222,7 +207,7 @@ function Home({ state, actions, libraries }) {
         />
 
         <title data-rh="true">
-          Sneaker Release Dates 2022 | Sneaker News UK 2022 | Fastsole{" "}
+          Sneaker Release Dates 2022 | Sneaker News UK 2022 | Fastsole
         </title>
       </Head>
       <script data-rh="true" type="application/ld+json">
@@ -482,7 +467,6 @@ function Home({ state, actions, libraries }) {
                           </Heading>
                         </Link>
                         <Box>
-                          {" "}
                           <Text
                             as="span"
                             color="#3E485D"
@@ -511,7 +495,7 @@ function Home({ state, actions, libraries }) {
                           <Box w="max-content">
                             <Link link={post.link}>
                               <Text color="red">
-                                Read more{" "}
+                                Read more
                                 <Icon
                                   as={FaChevronRight}
                                   boxSize="2"
@@ -794,7 +778,6 @@ function Home({ state, actions, libraries }) {
                           </Heading>
                         </Link>
                         <Box>
-                          {" "}
                           <Text
                             as="span"
                             color="#3E485D"
@@ -823,7 +806,7 @@ function Home({ state, actions, libraries }) {
                           <Box w="max-content">
                             <Link link={post.link}>
                               <Text color="red">
-                                Read more.....{" "}
+                                Read more.....
                                 <Icon
                                   as={FaChevronRight}
                                   boxSize="2"
