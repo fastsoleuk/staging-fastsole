@@ -308,9 +308,6 @@ const Header = ({ state, libraries, actions }) => {
 
   return (
     <>
-    <Head>
-    <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html" />
-    </Head>
     <Box
       id="sticky-header"
       px={{ base: "6", md: "16", lg: "40" }}
