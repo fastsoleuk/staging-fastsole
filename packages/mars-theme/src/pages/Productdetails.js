@@ -41,7 +41,7 @@ const Productdetails = ({ state, libraries, actions }) => {
   const [isMobile] = useMediaQuery("(max-width: 400px)");
   const pageData = state.source.get(state.router.link);
   const seoData = pageData.schemaData && pageData.schemaData;
-  //console.log("chekcec", pageData);
+  console.log("SneakersPage", pageData);
 
   // all custom state
 

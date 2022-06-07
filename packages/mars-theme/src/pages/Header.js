@@ -54,7 +54,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-import { loadable } from "frontity";
+import { Head, loadable } from "frontity";
 import Link from "@frontity/components/link";
 import Logo from "../images/logo.png";
 //import MobileMultiMenus from "../component/Mobile-Multi-Menu";
@@ -307,7 +307,10 @@ const Header = ({ state, libraries, actions }) => {
   //aureate_console.log("menu data :", menus[2]);
 
   return (
-    
+    <>
+    <Head>
+    <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html" />
+    </Head>
     <Box
       id="sticky-header"
       px={{ base: "6", md: "16", lg: "40" }}
@@ -497,7 +500,6 @@ const Header = ({ state, libraries, actions }) => {
                                                                 >
                                                                     Brand Names
                                                                 </Heading>
-
                                                                 <Grid
                                                                     templateColumns={{
                                                                         md: "2fr 4fr  ",
@@ -535,7 +537,6 @@ const Header = ({ state, libraries, actions }) => {
                                                                                 );
                                                                             })}
                                                                         </Box>
-
                                                                         <Box ml={5}>
                                                                             {brandListSubItems.map((data, index) => {
                                                                                 return (
@@ -561,7 +562,6 @@ const Header = ({ state, libraries, actions }) => {
                                                                 >
                                                                     New Release
                                                                 </Heading>
-
                                                                 {brandList.slice(0, 6).map((data) => {
                                                                     return (
                                                                         <Stack direction="row" mb="15px !important">
@@ -620,7 +620,6 @@ const Header = ({ state, libraries, actions }) => {
                                                                         </Stack>
                                                                     );
                                                                 })}
-
                                                                 <Box>
                                                                     <Button variant="outline" size="sm">
                                                                         <Text fontWeight="normal" fontSize="12px">
@@ -785,6 +784,7 @@ const Header = ({ state, libraries, actions }) => {
         </Button>
       </div> 
     </Box>
+    </>
   );
 };
 

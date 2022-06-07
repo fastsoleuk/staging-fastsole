@@ -62,12 +62,14 @@ const Singlenews = ({ state, actions, libraries }) => {
   const Html2React = libraries.html2react.Component;
   const data = state.source.get(state.router.link);
 
+  
   const id = data.id;
   const type = data.type;
   const newsData = state.source[type][id];
   const post_link = state.frontity.url + "/" + newsData.link.slice(1);
   const media = newsData && state.source.attachment[newsData.featured_media];
   //aureate_console.log("checkmedia", newsData.featured_media);
+  console.log("Newspage", newsData)
 
   const slug = newsData.slug;
 
