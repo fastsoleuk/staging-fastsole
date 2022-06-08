@@ -471,9 +471,12 @@ textarea.wpcf7-form-control.wpcf7-textarea:focus-visible {
   display: none;
 }
 .search__box_inner {
-  padding: 10px 10px 0px;
+  /* padding: 10px 10px 0px; */
   border-radius: 10px;
   border: 1px solid #ccc;
+}
+.search__wrap {
+  display: flex;
 }
 input.chakra-input.search_input {
   margin-left: 10px;
@@ -484,6 +487,12 @@ input.chakra-input.search_input {
 .search__wrap svg {
   width: 17px;
   height: 17px;
+  margin-top: 17px;
+  margin-left: 5px;
+}
+.search__wrap button {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .search_image {
@@ -521,5 +530,11 @@ input.chakra-input.search_input {
   }
   .search__form_main {
     width: 155px;
+  }
+  .search__wrap svg {
+    margin-top: 9px;
+  }
+  .search__wrap .search_input {
+    margin-top: 8px;
   }
 }

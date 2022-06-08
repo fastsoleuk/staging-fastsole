@@ -687,9 +687,10 @@ const Header = ({ state, libraries, actions }) => {
                       variant="unstyled"
                       w={{ md: "50", lg: "60" }}
                     />
-                    {/* <Center>
-                        <Button
+                    <Center>
+                      <Button
                         type="submit"
+                        display={{ base: "none", md: "block" }}
                         onClick={(e) => handleSubmit(e)}
                         bg="#3E485D"
                         colorScheme="#3E485D"
@@ -703,9 +704,7 @@ const Header = ({ state, libraries, actions }) => {
                           Find Item
                         </Text>
                       </Button>
-                      </Center> */}
-
-
+                    </Center>
                   </Box>
 
                   {/* </Link> */}
