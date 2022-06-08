@@ -358,6 +358,9 @@ textarea.wpcf7-form-control.wpcf7-textarea:focus-visible {
   margin-right: 10px;
   display: flex;
 }
+.search_imageWrapper a{
+  display: flex;
+}
 .search_mainCol {
   display: flex;
 }
@@ -494,6 +497,30 @@ input.chakra-input.search_input {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
 }
+.relatedSearchData {
+  display: flex;
+  flex-wrap: wrap;
+}
+.relatedSearchData .search_pro_wrap{
+  width: 33.33%;
+}
+p.chakra_text_soon {
+  display: inline-block;
+  color: rgb(255, 102, 0);
+  display: flex;}
+p.chakra_text_soon svg{
+  margin-right: 5px;
+}
+p.chakra_text_stock {
+  display: inline-block;
+  color: rgb(62, 183, 94);
+  display: flex;}
+p.chakra_text_stock svg{
+  margin-right: 5px;
+}
+p.chakra_text_soon span, p.chakra_text_stock span {
+  margin-top: -5px;
+}
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .search_image {
     object-fit: contain;
@@ -536,5 +563,8 @@ input.chakra-input.search_input {
   }
   .search__wrap .search_input {
     margin-top: 8px;
+  }
+  .relatedSearchData .search_pro_wrap{
+    width: 100%;
   }
 }

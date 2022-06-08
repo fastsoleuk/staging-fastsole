@@ -107,7 +107,7 @@ const Header = ({ state, libraries, actions }) => {
 
   // var inputValue = "";
   const [dataLoaded, setDataLoaded] = useState(false);
-
+  
   // useEffect(() => {
   //   // fetchData();
   // }, [dataLoaded]); //update by Santosh
@@ -187,9 +187,12 @@ const Header = ({ state, libraries, actions }) => {
       .search(event)
       .then(({ hits }) => {
         hits.map(item => {
+          console.log('rererererrer',item)
           const data = {
             title: item.post_title,
-            image: item?.images?.thumbnail?.url
+            image: item?.images?.thumbnail?.url,
+            st_stts: item?.taxonomies?.status[0],
+            st_links: item.permalink,
           }
           algoliaFilterData.push(data);
           setalgoliaAlldata(algoliaFilterData);
@@ -306,6 +309,10 @@ const Header = ({ state, libraries, actions }) => {
 
   menus[1].submenu = perentMenu;
 
+  const [mydescription, setDescription] = useState(true);
+    const descriptionHandler = () => {
+        setDescription(true);
+    };
   //aureate_console.log("menu data :", menus[2]);
 
   return (
@@ -706,6 +713,7 @@ const Header = ({ state, libraries, actions }) => {
                       </Button>
                     </Center>
                   </Box>
+                 
 
                   {/* </Link> */}
 
@@ -733,7 +741,7 @@ const Header = ({ state, libraries, actions }) => {
           </HStack>
         </Stack>
       </Flex>
-
+      
       <Box className="search-panel__content">
         <ChakraProvider className="modal-box">
           <Modal isOpen={isOpen} size="full" onClose={onClose}>
@@ -746,150 +754,75 @@ const Header = ({ state, libraries, actions }) => {
                   <Box w="100%">
                     <span className="search-panel__suggestions-message">Related searches</span>
                   </Box>
-                  <ListItem className="btn btn--tag btn--dark">jordan 4</ListItem>
-                  <ListItem className="btn btn--tag btn--dark">dunks</ListItem>
-                  <ListItem className="btn btn--tag btn--dark">yeezy</ListItem>
-                  <ListItem className="btn btn--tag btn--dark">jordan 1</ListItem>
-                  <ListItem className="btn btn--tag btn--dark">new balance 550</ListItem>
-                  <ListItem className="btn btn--tag btn--dark">air force 1</ListItem>
-                  <ListItem className="btn btn--tag btn--dark">jordan</ListItem>
+                  {
+                    algoliaRelatedSearchdata.length > 0 ?
+                      algoliaRelatedSearchdata.map((item, index) => {
+                        return (<ListItem key={index} onClick={item.title} className="btn btn--tag btn--dark"> {item.title} </ListItem>)
+                      })
+                      : ''
+                  }
                 </UnorderedList>
-                <Box>
+                {/* <Box>
                   <Text className="search--catname">Footwear (16599)</Text>
+                </Box> */}
+                
+                <Box spacing={10}>
+                  <Box className="relatedSearchData">
+                    {openDiv === 'open' && algoliaAlldata.length > 0 ?
+                      (algoliaAlldata.slice(0, 12)).map((item, index) => {
+                        return (
+                          <Box spacing='40px' key={index} style={{ display: "block" }} className="search_pro_wrap">
+                            <Box className="search_mainCol">
+                              <Box className="search_imageWrapper">
+                                <Link link={item.st_links} onClick={onClose}>
+                                <Image
+                                  src={item.image}
+                                  alt={item.title}
+                                  className="search_image" />
+                                <Box className="contentRight">
+                                  <Text className="search_pro_title">{item.title}</Text>
+                                  <Text className="search_pro_title">
+                                  {item.st_stts == "Coming Soon 2022" ?  <p className="chakra_text_soon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" focusable="false" class="chakra-icon css-1v3jx3o e1k4it830" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"></path></svg><span>Coming Soon 2022</span></p> : 
+                                  item.st_stts == "In stock" ? <p className="chakra_text_stock"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" focusable="false" class="chakra-icon css-2iiqxo e1k4it830" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg><span>In Stock</span></p> :
+                                  item.st_stts == "Sold Out" ? <p className="chakra_text_soon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" focusable="false" class="chakra-icon css-1v3jx3o e1k4it830" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"></path></svg><span>Sold Out</span></p> : null}
+                                  </Text>
+                                  
+                                  {/* <Text className="search_pro_price">$30.00</Text> */}
+                                </Box>
+                                </Link>
+                              </Box>
+                            </Box>
+                          </Box>
+                        )
+                      })
+                      :
+                      (state.onFocus.postData.slice(0, 12)).map((item, index) => {
+                        return (
+                          <Box spacing='40px' key={index} style={{ display: "block" }} className="search_pro_wrap">
+                            <Box className="search_mainCol" onClose={onClose}>
+                              <Box className="search_imageWrapper">
+                                <Link link={item.slug} className="search_imageWrapper" onClick={onClose}>
+                                  <Image
+                                    src={item?.featured_image?.large}
+                                    className="search_image"
+                                    alt={item.title} />
+                                  <div className="contentRight">
+                                    <Text className="search_pro_title">{item.post_title}</Text>
+                                    <Text className="search_pro_title">
+                                  {item.sneaker_status == "instock" ? <p className="chakra_text_stock"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" focusable="false" class="chakra-icon css-2iiqxo e1k4it830" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg><span>In Stock</span></p> : null}
+                                  </Text>
+                                  </div>
+                                </Link>
+                              </Box>
+                            </Box>
+                          </Box>
+                        )
+                      })
+                    }
+                  </Box>
                 </Box>
-                <SimpleGrid columns={[1, null, 3]} spacing={10}>
-                  <Box className="relatedSearchData">
-                    {openDiv === 'open' && algoliaAlldata.length > 0 ?
-                      (algoliaAlldata.slice(0, 4)).map((item, index) => {
-                        return (
-                          <SimpleGrid columns={[2, null, 3]} spacing='40px' key={index} style={{ display: "block", width: "100%" }}>
-                            <Box className="search_mainCol">
-                              <div className="search_imageWrapper">
-                                <Image
-                                  src="https://aws.fastsole.co.uk/wp-content/uploads/2022/04/Nike-SB-Dunk-Low-Green-Apple-DM0807-300-featured-image-300x193.jpg"
-                                  alt={item.title}
-                                  className="search_image" />
-                                <div className="contentRight">
-                                  <Text className="search_pro_title">{item.title}</Text>
-                                  <Text className="search_pro_price">$30.00</Text>
-                                </div>
-                              </div>
-                            </Box>
-                          </SimpleGrid>
-                        )
-                      })
-                      :
-                      (state.onFocus.postData.slice(0, 4)).map((item, index) => {
-                        return (
-                          <SimpleGrid columns={[2, null, 3]} spacing='40px' key={index} style={{ display: "block", width: "100%" }}>
-                            <Box className="search_mainCol" onClose={onClose}>
-                              <Box className="search_imageWrapper">
-                                <Link link={item.slug} className="search_imageWrapper" onClick={onClose}>
-                                  <Image
-                                    src={item?.featured_image?.large}
-                                    className="search_image"
-                                    alt={item.title} />
-                                  <div className="contentRight">
-                                    <Text className="search_pro_title">{item.post_title}</Text>
-                                    <Text className="search_pro_price">${item.price}</Text>
-                                  </div>
-                                </Link>
-                              </Box>
-                            </Box>
-                          </SimpleGrid>
-                        )
-                      })
-                    }
-                  </Box>
-                  <Box className="relatedSearchData">
-                    {openDiv === 'open' && algoliaAlldata.length > 0 ?
-                      (algoliaAlldata.slice(0, 4)).map((item, index) => {
-                        return (
-                          <SimpleGrid columns={[2, null, 3]} spacing='40px' key={index} style={{ display: "block", width: "100%" }}>
-                            <Box className="search_mainCol">
-                              <div className="search_imageWrapper">
-                                <Image
-                                  src="https://aws.fastsole.co.uk/wp-content/uploads/2022/04/Nike-SB-Dunk-Low-Green-Apple-DM0807-300-featured-image-300x193.jpg"
-                                  alt={item.title}
-                                  className="search_image" />
-                                <div className="contentRight">
-                                  <Text className="search_pro_title">{item.title}</Text>
-                                  <Text className="search_pro_price">$30.00</Text>
-                                </div>
-                              </div>
-                            </Box>
-                          </SimpleGrid>
-                        )
-                      })
-                      :
-                      (state.onFocus.postData.slice(0, 4)).map((item, index) => {
-                        return (
-                          <SimpleGrid columns={[2, null, 3]} spacing='40px' key={index} style={{ display: "block", width: "100%" }}>
-                            <Box className="search_mainCol" onClose={onClose}>
-                              <Box className="search_imageWrapper">
-                                <Link link={item.slug} className="search_imageWrapper" onClick={onClose}>
-                                  <Image
-                                    src={item?.featured_image?.large}
-                                    className="search_image"
-                                    alt={item.title} />
-                                  <div className="contentRight">
-                                    <Text className="search_pro_title">{item.post_title}</Text>
-                                    <Text className="search_pro_price">${item.price}</Text>
-                                  </div>
-                                </Link>
-                              </Box>
-                            </Box>
-                          </SimpleGrid>
-                        )
-                      })
-                    }
-                  </Box>
-                  <Box className="relatedSearchData">
-                    {openDiv === 'open' && algoliaAlldata.length > 0 ?
-                      (algoliaAlldata.slice(0, 4)).map((item, index) => {
-                        return (
-                          <SimpleGrid columns={[2, null, 3]} spacing='40px' key={index} style={{ display: "block", width: "100%" }}>
-                            <Box className="search_mainCol">
-                              <div className="search_imageWrapper">
-                                <Image
-                                  src="https://aws.fastsole.co.uk/wp-content/uploads/2022/04/Nike-SB-Dunk-Low-Green-Apple-DM0807-300-featured-image-300x193.jpg"
-                                  alt={item.title}
-                                  className="search_image" />
-                                <div className="contentRight">
-                                  <Text className="search_pro_title">{item.title}</Text>
-                                  <Text className="search_pro_price">$30.00</Text>
-                                </div>
-                              </div>
-                            </Box>
-                          </SimpleGrid>
-                        )
-                      })
-                      :
-                      (state.onFocus.postData.slice(0, 4)).map((item, index) => {
-                        return (
-                          <SimpleGrid columns={[2, null, 3]} spacing='40px' key={index} style={{ display: "block", width: "100%" }}>
-                            <Box className="search_mainCol" onClose={onClose}>
-                              <Box className="search_imageWrapper">
-                                <Link link={item.slug} className="search_imageWrapper" onClick={onClose}>
-                                  <Image
-                                    src={item?.featured_image?.large}
-                                    className="search_image"
-                                    alt={item.title} />
-                                  <div className="contentRight">
-                                    <Text className="search_pro_title">{item.post_title}</Text>
-                                    <Text className="search_pro_price">${item.price}</Text>
-                                  </div>
-                                </Link>
-                              </Box>
-                            </Box>
-                          </SimpleGrid>
-                        )
-                      })
-                    }
-                  </Box>
-                </SimpleGrid>
 
-                <Box style={{ textAlign: "center" }}><Link link="/"><Button variant='outline' className="search_viewmore_btn">View More</Button></Link></Box>
+                <Box style={{ textAlign: "center" }}><Link onClick={(e) => handleSubmit(e)}><Button variant='outline' onClick={onClose} className="search_viewmore_btn">View More</Button></Link></Box>
               </ModalBody>
             </ModalContent>
           </Modal>
