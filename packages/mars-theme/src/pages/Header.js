@@ -309,7 +309,6 @@ const Header = ({ state, libraries, actions }) => {
   //aureate_console.log("menu data :", menus[2]);
 
   return (
-
     <Box
       id="sticky-header"
       px={{ base: "6", md: "16", lg: "40" }}
