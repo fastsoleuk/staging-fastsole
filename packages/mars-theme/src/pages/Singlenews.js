@@ -69,7 +69,6 @@ const Singlenews = ({ state, actions, libraries }) => {
   const post_link = state.frontity.url + "/" + newsData.link.slice(1);
   const media = newsData && state.source.attachment[newsData.featured_media];
   //aureate_console.log("checkmedia", newsData.featured_media);
-  console.log("Newspage", newsData)
 
   const slug = newsData.slug;
 
@@ -149,7 +148,7 @@ const Singlenews = ({ state, actions, libraries }) => {
   return (
     <>
       <Head>
-        <link rel="amphtml" href={`${pageData.link}amp`} />
+        <link rel="amphtml" href={`${state.source.url}${pageData.link}amp`} />
       </Head>
       <Box mx={{ base: "6", md: "16", lg: "40" }}>
         {/* menu bradecrum */}
