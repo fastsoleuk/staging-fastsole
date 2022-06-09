@@ -107,7 +107,7 @@ const Header = ({ state, libraries, actions }) => {
 
   // var inputValue = "";
   const [dataLoaded, setDataLoaded] = useState(false);
-  
+
   // useEffect(() => {
   //   // fetchData();
   // }, [dataLoaded]); //update by Santosh
@@ -187,7 +187,6 @@ const Header = ({ state, libraries, actions }) => {
       .search(event)
       .then(({ hits }) => {
         hits.map(item => {
-          console.log('rererererrer',item)
           const data = {
             title: item.post_title,
             image: item?.images?.thumbnail?.url,
@@ -219,8 +218,17 @@ const Header = ({ state, libraries, actions }) => {
       });
   }
 
+  const setActiveOpen = () => {
+    setOpenDiv("open");
+  }
   const closePopup = () => {
     setOpenDiv("close");
+  }
+
+  const setItemTitleToInput = (event) => {
+    //console.log('title::: ', event.target.outerText)
+    setinputValue(event.target.outerText)
+    algolidaData(event.target.outerText)
   }
 
   useEffect(() => {
@@ -308,11 +316,6 @@ const Header = ({ state, libraries, actions }) => {
     });
 
   menus[1].submenu = perentMenu;
-
-  const [mydescription, setDescription] = useState(true);
-    const descriptionHandler = () => {
-        setDescription(true);
-    };
   //aureate_console.log("menu data :", menus[2]);
 
   return (
@@ -408,7 +411,7 @@ const Header = ({ state, libraries, actions }) => {
                       All Brands <ChevronDownIcon />
                     </MenuButton> */}
 
-                    <Modal
+                    {/* <Modal
                       closeOnOverlayClick={false}
                       isOpen={isOpenReportModal}
                       onClose={onCloseReportModal}
@@ -496,162 +499,9 @@ const Header = ({ state, libraries, actions }) => {
                               })}
                             </Wrap>
                           </HStack>
-
-                          {/* <Grid
-                                                        templateColumns={{
-                                                            md: "5fr 3fr 3fr",
-                                                            sm: "repeat(3, 1fr)",
-                                                        }}
-                                                        gap={6}
-                                                        mt={5}
-                                                    >
-                                                        <Box w="100%" bg="grey.500">
-                                                            <Stack direction="column">
-                                                                <Heading
-                                                                    fontSize="sm"
-                                                                    fontWeight="bold"
-                                                                    color="#3E485D"
-                                                                    mb={2}
-                                                                >
-                                                                    Brand Names
-                                                                </Heading>
-
-                                                                <Grid
-                                                                    templateColumns={{
-                                                                        md: "2fr 4fr  ",
-                                                                        base: "repeat(2, 1fr)",
-                                                                    }}
-                                                                    gap={2}
-                                                                >
-                                                                    <Box
-                                                                        pr="6"
-                                                                        borderRight="1px"
-                                                                        borderColor="blackAlpha.400"
-                                                                    >
-                                                                        {brandList.map((data) => {
-                                                                            return (
-                                                                                <Box>
-                                                                                    <Text fontSize="xs" color="#666666">
-                                                                                        {data}
-                                                                                    </Text>
-                                                                                </Box>
-                                                                            );
-                                                                        })}
-                                                                    </Box>
-                                                                    <Box
-                                                                        display="flex"
-                                                                        justifyContent="space-around"
-                                                                    >
-                                                                        <Box>
-                                                                            {brandListSubItems.map((data, index) => {
-                                                                                return (
-                                                                                    <Box>
-                                                                                        <Text color="#666666" fontSize="xs">
-                                                                                            {data}
-                                                                                        </Text>
-                                                                                    </Box>
-                                                                                );
-                                                                            })}
-                                                                        </Box>
-
-                                                                        <Box ml={5}>
-                                                                            {brandListSubItems.map((data, index) => {
-                                                                                return (
-                                                                                    <Box>
-                                                                                        <Text color="#666666" fontSize="xs">
-                                                                                            {data}
-                                                                                        </Text>
-                                                                                    </Box>
-                                                                                );
-                                                                            })}
-                                                                        </Box>
-                                                                    </Box>
-                                                                </Grid>
-                                                            </Stack>
-                                                        </Box>
-                                                        <Box w="100%">
-                                                            <Stack direction="column">
-                                                                <Heading
-                                                                    fontSize="sm"
-                                                                    fontWeight="bold"
-                                                                    color="#3E485D"
-                                                                    mb={2}
-                                                                >
-                                                                    New Release
-                                                                </Heading>
-
-                                                                {brandList.slice(0, 6).map((data) => {
-                                                                    return (
-                                                                        <Stack direction="row" mb="15px !important">
-                                                                            <Image
-                                                                                // w="70px"
-                                                                                h="40px"
-                                                                                borderRadius="md"
-                                                                                objectFit="cover"
-                                                                                src="https://wptesting.thenwg.xyz/wp-content/uploads/2021/11/Rectangle-438sd-1.png"
-                                                                                alt="Segun Adebayo"
-                                                                            />
-                                                                            <Stack direction="column">
-                                                                                <Text color="#525F7A" fontSize="xs">
-                                                                                    Air Jordan 1 mid Orange D-32476247
-                                                                                    GT-46374587
-                                                                                </Text>
-                                                                            </Stack>
-                                                                        </Stack>
-                                                                    );
-                                                                })}
-                                                                <Box>
-                                                                    <Button variant="outline" size="sm">
-                                                                        <Text fontWeight="normal" fontSize="12px">
-                                                                            View All
-                                                                        </Text>
-                                                                    </Button>
-                                                                </Box>
-                                                            </Stack>
-                                                        </Box>
-                                                        <Box w="100%">
-                                                            <Stack direction="column">
-                                                                <Heading
-                                                                    fontSize="sm"
-                                                                    fontWeight="bold"
-                                                                    color="#3E485D"
-                                                                    mb={2}
-                                                                >
-                                                                    Cooming Soon
-                                                                </Heading>
-                                                                {brandList.slice(0, 6).map((data) => {
-                                                                    return (
-                                                                        <Stack direction="row" mb="15px !important">
-                                                                            <Image
-                                                                                // w="70px"
-                                                                                h="40px"
-                                                                                borderRadius="md"
-                                                                                objectFit="cover"
-                                                                                src="https://wptesting.thenwg.xyz/wp-content/uploads/2021/11/Rectangle-438h.png"
-                                                                            />
-                                                                            <Stack direction="column">
-                                                                                <Text color="#525F7A" fontSize="xs">
-                                                                                    Air Jordan 1 mid Orange D-32476247
-                                                                                    GT-46374587
-                                                                                </Text>
-                                                                            </Stack>
-                                                                        </Stack>
-                                                                    );
-                                                                })}
-
-                                                                <Box>
-                                                                    <Button variant="outline" size="sm">
-                                                                        <Text fontWeight="normal" fontSize="12px">
-                                                                            View All
-                                                                        </Text>
-                                                                    </Button>
-                                                                </Box>
-                                                            </Stack>
-                                                        </Box>
-                                                    </Grid> */}
                         </ModalBody>
                       </ModalContent>
-                    </Modal>
+                    </Modal> */}
                   </Menu>
                 </Center>
                 {/* <Box
@@ -664,15 +514,13 @@ const Header = ({ state, libraries, actions }) => {
 
                 <form className="search__form_main" onSubmit={handleSubmit}>
                   <Box className="search__wrap">
-
                     <Icon
                       as={FaSearch}
                       boxSize="5"
                       color={"black"}
-                      onClick={onOpen}
                       className="search__icon"
                     />
-                    <Input
+                    <input
                       type="text"
                       fontFamily="Open Sans"
                       border="unset"
@@ -681,7 +529,7 @@ const Header = ({ state, libraries, actions }) => {
                       placeholder={showValue}
                       value={inputValue}
                       onFocus={(event) => {
-                        setOpenDiv("open");
+                        setActiveOpen()
                       }}
                       className="search_input"
                       onChange={(event) => {
@@ -690,7 +538,6 @@ const Header = ({ state, libraries, actions }) => {
                         setshowValue(event.target.value);
                         setinputValue(event.target.value);
                       }}
-                      onClick={onOpen}
                       variant="unstyled"
                       w={{ md: "50", lg: "60" }}
                     />
@@ -712,8 +559,103 @@ const Header = ({ state, libraries, actions }) => {
                         </Text>
                       </Button>
                     </Center>
+                    {/* <h1>Popup/Modal Windows without JavaScript</h1> */}
+
                   </Box>
-                 
+
+                  <div id="popup1" class={`overlay search__form_main_popup search__form_main ${openDiv === "open" ? 'active' : ''}`}>
+                    <div class="popup search__wrap">
+                      <a class="close background_close" href="javascript:void(0);" onClick={closePopup}></a>
+                      <a class="close" href="javascript:void(0);" onClick={closePopup}>&times;</a>
+                      <div class="content">
+                        <div className="search-panel__content">
+                          <div className="modal-box">
+
+                            {/* <ModalOverlay className="search__overlay_content" onClose={onClose}/> */}
+
+
+
+                            <div className="aux">
+                              <UnorderedList className="search-panel__suggestions" pt={[25, 30]}>
+                                <Box w="100%">
+                                  <span className="search-panel__suggestions-message">Related searches</span>
+                                </Box>
+                                {
+                                  algoliaRelatedSearchdata.length > 0 ?
+                                    algoliaRelatedSearchdata.map((item, index) => {
+                                      return (<ListItem key={index} className="btn btn--tag btn--dark"> <span onClick={(e) => setItemTitleToInput(e)}>{item.title} </span></ListItem>)
+                                    })
+                                    : ''
+                                }
+                              </UnorderedList>
+                              <Box spacing={10}>
+                                <Box className="relatedSearchData">
+                                  {openDiv === 'open' && algoliaAlldata.length > 0 ?
+                                    (algoliaAlldata.slice(0, 12)).map((item, index) => {
+                                      return (
+                                        <Box spacing='40px' key={index} style={{ display: "block" }} className="search_pro_wrap">
+                                          <Box className="search_mainCol">
+                                            <Box className="search_imageWrapper">
+                                              <Link link={item.st_links} onClick={closePopup}>
+                                                <Image
+                                                  src={item.image}
+                                                  alt={item.title}
+                                                  className="search_image" />
+                                                <Box className="contentRight">
+                                                  <Text className="search_pro_title">{item.title}</Text>
+                                                  <Text className="search_pro_title">
+                                                    {item.st_stts == "Coming Soon 2022" ? <p className="chakra_text_soon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" focusable="false" class="chakra-icon css-1v3jx3o e1k4it830" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"></path></svg><span>Coming Soon 2022</span></p> :
+                                                      item.st_stts == "In stock" ? <p className="chakra_text_stock"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" focusable="false" class="chakra-icon css-2iiqxo e1k4it830" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg><span>In Stock</span></p> :
+                                                        item.st_stts == "Sold Out" ? <p className="chakra_text_soon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" focusable="false" class="chakra-icon css-1v3jx3o e1k4it830" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"></path></svg><span>Sold Out</span></p> : null}
+                                                  </Text>
+                                                </Box>
+                                              </Link>
+                                            </Box>
+                                          </Box>
+                                        </Box>
+                                      )
+                                    })
+                                    :
+                                    (state.onFocus.postData.slice(0, 12)).map((item, index) => {
+                                      return (
+                                        <Box spacing='40px' key={index} style={{ display: "block" }} className="search_pro_wrap">
+                                          <Box className="search_mainCol" onClick={closePopup}>
+                                            <Box className="search_imageWrapper">
+                                              <Link link={item.slug} className="search_imageWrapper" onClick={closePopup}>
+                                                <Image
+                                                  src={item?.featured_image?.large}
+                                                  className="search_image"
+                                                  alt={item.title} />
+                                                <div className="contentRight">
+                                                  <Text className="search_pro_title">{item.post_title}</Text>
+                                                  <Text className="search_pro_title">
+                                                    {item.sneaker_status == "instock" ? <p className="chakra_text_stock"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" focusable="false" class="chakra-icon css-2iiqxo e1k4it830" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg><span>In Stock</span></p> : null}
+                                                  </Text>
+                                                </div>
+                                              </Link>
+                                            </Box>
+                                          </Box>
+                                        </Box>
+                                      )
+                                    })
+                                  }
+                                </Box>
+                              </Box>
+
+                              <Box style={{ textAlign: "center" }}>
+                                <Link onClick={(e) => handleSubmit(e)}>
+                                  <Button variant='outline' onClick={closePopup} className="search_viewmore_btn">View More</Button>
+                                </Link>
+                              </Box>
+                            </div>
+
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
 
                   {/* </Link> */}
 
@@ -741,7 +683,7 @@ const Header = ({ state, libraries, actions }) => {
           </HStack>
         </Stack>
       </Flex>
-      
+
       <Box className="search-panel__content">
         <ChakraProvider className="modal-box">
           <Modal isOpen={isOpen} size="full" onClose={onClose}>
@@ -762,10 +704,6 @@ const Header = ({ state, libraries, actions }) => {
                       : ''
                   }
                 </UnorderedList>
-                {/* <Box>
-                  <Text className="search--catname">Footwear (16599)</Text>
-                </Box> */}
-                
                 <Box spacing={10}>
                   <Box className="relatedSearchData">
                     {openDiv === 'open' && algoliaAlldata.length > 0 ?
@@ -775,20 +713,18 @@ const Header = ({ state, libraries, actions }) => {
                             <Box className="search_mainCol">
                               <Box className="search_imageWrapper">
                                 <Link link={item.st_links} onClick={onClose}>
-                                <Image
-                                  src={item.image}
-                                  alt={item.title}
-                                  className="search_image" />
-                                <Box className="contentRight">
-                                  <Text className="search_pro_title">{item.title}</Text>
-                                  <Text className="search_pro_title">
-                                  {item.st_stts == "Coming Soon 2022" ?  <p className="chakra_text_soon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" focusable="false" class="chakra-icon css-1v3jx3o e1k4it830" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"></path></svg><span>Coming Soon 2022</span></p> : 
-                                  item.st_stts == "In stock" ? <p className="chakra_text_stock"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" focusable="false" class="chakra-icon css-2iiqxo e1k4it830" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg><span>In Stock</span></p> :
-                                  item.st_stts == "Sold Out" ? <p className="chakra_text_soon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" focusable="false" class="chakra-icon css-1v3jx3o e1k4it830" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"></path></svg><span>Sold Out</span></p> : null}
-                                  </Text>
-                                  
-                                  {/* <Text className="search_pro_price">$30.00</Text> */}
-                                </Box>
+                                  <Image
+                                    src={item.image}
+                                    alt={item.title}
+                                    className="search_image" />
+                                  <Box className="contentRight">
+                                    <Text className="search_pro_title">{item.title}</Text>
+                                    <Text className="search_pro_title">
+                                      {item.st_stts == "Coming Soon 2022" ? <p className="chakra_text_soon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" focusable="false" class="chakra-icon css-1v3jx3o e1k4it830" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"></path></svg><span>Coming Soon 2022</span></p> :
+                                        item.st_stts == "In stock" ? <p className="chakra_text_stock"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" focusable="false" class="chakra-icon css-2iiqxo e1k4it830" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg><span>In Stock</span></p> :
+                                          item.st_stts == "Sold Out" ? <p className="chakra_text_soon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" focusable="false" class="chakra-icon css-1v3jx3o e1k4it830" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"></path></svg><span>Sold Out</span></p> : null}
+                                    </Text>
+                                  </Box>
                                 </Link>
                               </Box>
                             </Box>
@@ -809,8 +745,8 @@ const Header = ({ state, libraries, actions }) => {
                                   <div className="contentRight">
                                     <Text className="search_pro_title">{item.post_title}</Text>
                                     <Text className="search_pro_title">
-                                  {item.sneaker_status == "instock" ? <p className="chakra_text_stock"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" focusable="false" class="chakra-icon css-2iiqxo e1k4it830" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg><span>In Stock</span></p> : null}
-                                  </Text>
+                                      {item.sneaker_status == "instock" ? <p className="chakra_text_stock"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" focusable="false" class="chakra-icon css-2iiqxo e1k4it830" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg><span>In Stock</span></p> : null}
+                                    </Text>
                                   </div>
                                 </Link>
                               </Box>
@@ -822,7 +758,7 @@ const Header = ({ state, libraries, actions }) => {
                   </Box>
                 </Box>
 
-                <Box style={{ textAlign: "center" }}><Link onClick={(e) => handleSubmit(e)}><Button variant='outline' onClick={onClose} className="search_viewmore_btn">View More</Button></Link></Box>
+                <Box style={{ textAlign: "center" }}><Link onClick={(e) => handleSubmit(e)}><Button variant='outline' onClick={closePopup} className="search_viewmore_btn">View More</Button></Link></Box>
               </ModalBody>
             </ModalContent>
           </Modal>
