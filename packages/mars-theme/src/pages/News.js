@@ -124,7 +124,7 @@ const News = ({ state, actions, libraries }) => {
   const pageData = state.source.get(state.router.link);
   let newlink = '';
   if(pageData.link.includes("/sneaker-news/page/")){
-    newlink = link.replace("/page", "\/amp\/page");
+    newlink = pageData.link.replace("/page", "\/amp\/page");
   }else{
     newlink = pageData.link + "amp";
   }
