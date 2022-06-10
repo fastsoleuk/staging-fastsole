@@ -220,9 +220,18 @@ const Header = ({ state, libraries, actions }) => {
 
   const setActiveOpen = () => {
     setOpenDiv("open");
+    document.body.style.overflow = "hidden";
   }
   const closePopup = () => {
     setOpenDiv("close");
+    document.body.style.overflow = "scroll";
+  }
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      setOpenDiv("close");
+      console.log('do validate')
+    }
   }
 
   const setItemTitleToInput = (event) => {
@@ -359,7 +368,7 @@ const Header = ({ state, libraries, actions }) => {
 
             <Link
               link="/"
-              onClick={onClose}
+              onClick={closePopup}
             // _focus={{ boxShadow: "none" }}
             // display={{ base: "block", md: "inline-flex" }}
             >
@@ -538,6 +547,7 @@ const Header = ({ state, libraries, actions }) => {
                         setshowValue(event.target.value);
                         setinputValue(event.target.value);
                       }}
+                      onKeyDown={handleKeyDown}
                       variant="unstyled"
                       w={{ md: "50", lg: "60" }}
                     />
@@ -553,6 +563,9 @@ const Header = ({ state, libraries, actions }) => {
                         h="50"
                         w="32"
                         _focus={"outline:none;"}
+                        onFocus={(event) => {
+                          closePopup()
+                        }}
                       >
                         <Text fontWeight="500" fontSize="xs">
                           Find Item
@@ -585,22 +598,37 @@ const Header = ({ state, libraries, actions }) => {
                                     algoliaRelatedSearchdata.map((item, index) => {
                                       return (<ListItem key={index} className="btn btn--tag btn--dark"> <span onClick={(e) => setItemTitleToInput(e)}>{item.title} </span></ListItem>)
                                     })
-                                    : ''
+                                    :
+                                    (
+                                      <>
+                                        <ListItem className="btn btn--tag btn--dark"><span onClick={(e) => setItemTitleToInput(e)}>nike air</span></ListItem>
+                                        <ListItem className="btn btn--tag btn--dark"><span onClick={(e) => setItemTitleToInput(e)}>jordan</span></ListItem>
+                                        <ListItem className="btn btn--tag btn--dark"><span onClick={(e) => setItemTitleToInput(e)}>air force</span></ListItem>
+                                        <ListItem className="btn btn--tag btn--dark"><span onClick={(e) => setItemTitleToInput(e)}>acronym</span></ListItem>
+                                        <ListItem className="btn btn--tag btn--dark"><span onClick={(e) => setItemTitleToInput(e)}>asics</span></ListItem>
+                                        <ListItem className="btn btn--tag btn--dark"><span onClick={(e) => setItemTitleToInput(e)}>triple</span></ListItem>
+                                        <ListItem className="btn btn--tag btn--dark"><span onClick={(e) => setItemTitleToInput(e)}>reebok</span></ListItem>
+                                        <ListItem className="btn btn--tag btn--dark"><span onClick={(e) => setItemTitleToInput(e)}>womens</span></ListItem>
+                                      </>
+                                    )
                                 }
                               </UnorderedList>
                               <Box spacing={10}>
                                 <Box className="relatedSearchData">
+                                  {console.log('dsdsdsdsd', state)}
                                   {openDiv === 'open' && algoliaAlldata.length > 0 ?
-                                    (algoliaAlldata.slice(0, 12)).map((item, index) => {
+                                    (algoliaAlldata.slice(0, 15)).map((item, index) => {
                                       return (
                                         <Box spacing='40px' key={index} style={{ display: "block" }} className="search_pro_wrap">
-                                          <Box className="search_mainCol">
+                                          <Box className="search_mainCol" onClick={closePopup}>
                                             <Box className="search_imageWrapper">
                                               <Link link={item.st_links} onClick={closePopup}>
+                                                <Box className="search_pro_image">
                                                 <Image
                                                   src={item.image}
                                                   alt={item.title}
                                                   className="search_image" />
+                                                </Box>
                                                 <Box className="contentRight">
                                                   <Text className="search_pro_title">{item.title}</Text>
                                                   <Text className="search_pro_title">
@@ -616,16 +644,18 @@ const Header = ({ state, libraries, actions }) => {
                                       )
                                     })
                                     :
-                                    (state.onFocus.postData.slice(0, 12)).map((item, index) => {
+                                    (state.onFocus.postData.slice(0, 15)).map((item, index) => {
                                       return (
                                         <Box spacing='40px' key={index} style={{ display: "block" }} className="search_pro_wrap">
                                           <Box className="search_mainCol" onClick={closePopup}>
                                             <Box className="search_imageWrapper">
                                               <Link link={item.slug} className="search_imageWrapper" onClick={closePopup}>
-                                                <Image
+                                               <Box className="search_pro_image">
+                                               <Image
                                                   src={item?.featured_image?.large}
                                                   className="search_image"
                                                   alt={item.title} />
+                                               </Box>
                                                 <div className="contentRight">
                                                   <Text className="search_pro_title">{item.post_title}</Text>
                                                   <Text className="search_pro_title">
