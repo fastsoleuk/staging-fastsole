@@ -227,10 +227,9 @@ const Header = ({ state, libraries, actions }) => {
     document.body.style.overflow = "scroll";
   }
 
-  const handleKeyDown = (event) => {
-    if (event.key === 'Enter') {
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
       setOpenDiv("close");
-      console.log('do validate')
     }
   }
 
