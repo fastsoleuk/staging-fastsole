@@ -34,6 +34,7 @@ import {
   FaCircle,
   FaSlidersH,
 } from "react-icons/fa";
+import Link from "@frontity/components/link";
 import Commonproductdata from "../component/Commonproductdata";
 import SearchResult from "../component/SearchResult";
 // import Filtermobile from "../component/Filtermobile";
@@ -196,8 +197,8 @@ function SearchResultForNike({ state, actions, libraries }) {
             fontSize="xs"
             lineHeight="26px"
           >
-            Home
-            <Icon as={FaChevronRight} boxSize={2} mx={2} /> Nike
+            <Link link="/">Home</Link>
+            <Icon as={FaChevronRight} boxSize={2} mx={2} /> {finalTitle}
           </Text>
         </Stack>
 
@@ -213,7 +214,6 @@ function SearchResultForNike({ state, actions, libraries }) {
             fontSize="16px"
             fontFamily="inherit"
             mr={5}
-            fontSize="xs"
           >
             Related Search
           </Text>
