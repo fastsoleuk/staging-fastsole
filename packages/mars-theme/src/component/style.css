@@ -695,7 +695,15 @@ form.search__form_main .search__wrap input:focus-visible {
 }
 .search__form_main_popup .search-panel__content .chakra_text_soon span,
 .search__form_main_popup .search-panel__content .chakra_text_stock span {
-  padding-left: 27px;
+  padding-left: 30px;
+}
+.search__form_main_popup .popup .content {
+  min-height: 100vh; 
+  max-height: unset; 
+  width: 100%;  
+}
+.search__form_main_popup .popup .content  .search-panel__content{
+  box-shadow: none;
 }
 
 @media screen and (max-width: 991px) {

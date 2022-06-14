@@ -224,12 +224,13 @@ const Header = ({ state, libraries, actions }) => {
   }
   const closePopup = () => {
     setOpenDiv("close");
-    document.body.style.overflow = "scroll";
+    document.body.style.overflow = "unset";
   }
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
-      setOpenDiv("close");
+      setOpenDiv("close")
+      closePopup()
     }
   }
 
@@ -671,11 +672,18 @@ const Header = ({ state, libraries, actions }) => {
                                 </Box>
                               </Box>
 
-                              <Box style={{ textAlign: "center" }}>
-                                <Link onClick={(e) => handleSubmit(e)}>
-                                  <Button variant='outline' onClick={closePopup} className="search_viewmore_btn">View More</Button>
-                                </Link>
-                              </Box>
+                              {inputValue !== "" ?
+                                <Box style={{ textAlign: "center" }}>
+                                  <Link onClick={(e) => handleSubmit(e)}>
+                                    <Button variant='outline' onClick={closePopup} className="search_viewmore_btn">View More</Button>
+                                  </Link>
+                                </Box> :
+                                <Box style={{ textAlign: "center" }}>
+                                  <Link link="/">
+                                    <Button variant='outline' onClick={closePopup} className="search_viewmore_btn">View More</Button>
+                                  </Link>
+                                </Box>
+                              }
                             </div>
 
 
