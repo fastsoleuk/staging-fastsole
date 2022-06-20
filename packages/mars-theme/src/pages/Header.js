@@ -544,8 +544,8 @@ const Header = ({ state, libraries, actions }) => {
                       onChange={(event) => {
                         event.preventDefault();
                         algolidaData(event.target.value)
-                        setshowValue(event.target.value);
-                        setinputValue(event.target.value);
+                        setshowValue(event.target.value)
+                        setinputValue(event.target.value)
                       }}
                       onKeyDown={handleKeyDown}
                       variant="unstyled"
@@ -672,7 +672,7 @@ const Header = ({ state, libraries, actions }) => {
                                 </Box>
                               </Box>
 
-                              {inputValue !== "" ?
+                              {inputValue.trim().length !== 0 ?
                                 <Box style={{ textAlign: "center" }}>
                                   <Link onClick={(e) => handleSubmit(e)}>
                                     <Button variant='outline' onClick={closePopup} className="search_viewmore_btn">View More</Button>
