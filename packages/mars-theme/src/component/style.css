@@ -758,7 +758,7 @@ span.search_result_name_with_count {
     box-shadow: none;
   }
   .search_viewmore_btn{
-    margin-bottom: 60px;
+    margin-bottom: 100px;
   }
 }
 @media screen and (max-width: 575px) {
