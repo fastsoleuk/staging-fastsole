@@ -553,14 +553,23 @@ p.chakra_text_soon span {
   top: 20px;
   right: 30px;
   transition: all 200ms;
-  font-size: 30px;
   font-weight: bold;
   text-decoration: none;
   color: #333;
+  background: #f4f4f4;
+  width: 34px;
+  height: 34px;
+  border-radius: 34px;
+  line-height: 33px;
+  font-size: 21px;
+  margin-top: 5px;
 }
 .popup .close:hover {
   color: #333333;
 }
+/* .search_input:focus {
+  caret-color: transparent;  
+} */
 .popup .content {
   max-height: 30%;
   overflow: auto;
@@ -747,6 +756,9 @@ span.search_result_name_with_count {
   }
   .sticky-header button.chakra-button:focus {
     box-shadow: none;
+  }
+  .search_viewmore_btn{
+    margin-bottom: 60px;
   }
 }
 @media screen and (max-width: 575px) {
