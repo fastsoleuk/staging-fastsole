@@ -96,8 +96,8 @@ const Header = ({ state, libraries, actions }) => {
   } = useDisclosure();
 
   const firstField = React.useRef();
-  const [inputValue, setinputValue] = useState(" ");
-  const [showValue, setshowValue] = useState("Search here.");
+  const [inputValue, setinputValue] = useState("");
+  const [showValue, setshowValue] = useState("Search here");
   const [headerValue, setheaderValue] = useState(" ");
 
   const [algoliaAlldata, setalgoliaAlldata] = useState([]);
@@ -217,7 +217,7 @@ const Header = ({ state, libraries, actions }) => {
         console.log(err);
       });
   }
-
+  //console.log('22222',algoliaRelatedSearchdata)
   const setActiveOpen = () => {
     setOpenDiv("open");
     document.body.style.overflow = "hidden";
@@ -563,6 +563,7 @@ const Header = ({ state, libraries, actions }) => {
                         h="50"
                         w="32"
                         _focus={"outline:none;"}
+                        className="search_submit_btn"
                         onFocus={(event) => {
                           closePopup()
                         }}
@@ -612,10 +613,18 @@ const Header = ({ state, libraries, actions }) => {
                                       </>
                                     )
                                 }
+                                
                               </UnorderedList>
+                                
+
                               <Box spacing={10}>
+                              <Box>
+                                <span className="search_result_name_with_count">
+                                  {inputValue.trim().length !== 0 ? `"${inputValue}" results about ${algoliaAlldata.length}` : null}
+                                </span>
+                                </Box>
                                 <Box className="relatedSearchData">
-                                  {console.log('dsdsdsdsd', state)}
+                                  {/* {console.log('dsdsdsdsd', state)} */}
                                   {openDiv === 'open' && algoliaAlldata.length > 0 ?
                                     (algoliaAlldata.slice(0, 15)).map((item, index) => {
                                       return (
@@ -624,10 +633,10 @@ const Header = ({ state, libraries, actions }) => {
                                             <Box className="search_imageWrapper">
                                               <Link link={item.st_links} onClick={closePopup}>
                                                 <Box className="search_pro_image">
-                                                <Image
-                                                  src={item.image}
-                                                  alt={item.title}
-                                                  className="search_image" />
+                                                  <Image
+                                                    src={item.image}
+                                                    alt={item.title}
+                                                    className="search_image" />
                                                 </Box>
                                                 <Box className="contentRight">
                                                   <Text className="search_pro_title">{item.title}</Text>
@@ -650,12 +659,12 @@ const Header = ({ state, libraries, actions }) => {
                                           <Box className="search_mainCol" onClick={closePopup}>
                                             <Box className="search_imageWrapper">
                                               <Link link={item.slug} className="search_imageWrapper" onClick={closePopup}>
-                                               <Box className="search_pro_image">
-                                               <Image
-                                                  src={item?.featured_image?.large}
-                                                  className="search_image"
-                                                  alt={item.title} />
-                                               </Box>
+                                                <Box className="search_pro_image">
+                                                  <Image
+                                                    src={item?.featured_image?.large}
+                                                    className="search_image"
+                                                    alt={item.title} />
+                                                </Box>
                                                 <div className="contentRight">
                                                   <Text className="search_pro_title">{item.post_title}</Text>
                                                   <Text className="search_pro_title">
@@ -731,6 +740,7 @@ const Header = ({ state, libraries, actions }) => {
               <ModalBody className="aux">
                 <UnorderedList className="search-panel__suggestions" pt={[25, 30]}>
                   <Box w="100%">
+
                     <span className="search-panel__suggestions-message">Related searches</span>
                   </Box>
                   {

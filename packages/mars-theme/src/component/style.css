@@ -431,6 +431,9 @@ textarea.wpcf7-form-control.wpcf7-textarea:focus-visible {
   border-radius: 10px;
   border: 1px solid #ccc;
 }
+.search_submit_btn{
+  margin: -1px;
+}
 .search__wrap {
   display: flex;
 }
@@ -704,6 +707,14 @@ form.search__form_main .search__wrap input:focus-visible {
 }
 .search__form_main_popup .popup .content  .search-panel__content{
   box-shadow: none;
+}
+span.search_result_name_with_count {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  margin-right: 15px;
+  text-align: left;
+  margin-bottom: 15px;
 }
 
 @media screen and (max-width: 991px) {

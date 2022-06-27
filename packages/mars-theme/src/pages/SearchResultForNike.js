@@ -25,6 +25,7 @@ import {
   RangeSliderThumb,
   Wrap,
   WrapItem,
+  Link,
 } from "@chakra-ui/react";
 import { connect, Head } from "frontity";
 import React, { useState, useEffect } from "react";
@@ -34,7 +35,6 @@ import {
   FaCircle,
   FaSlidersH,
 } from "react-icons/fa";
-import Link from "@frontity/components/link";
 import Commonproductdata from "../component/Commonproductdata";
 import SearchResult from "../component/SearchResult";
 // import Filtermobile from "../component/Filtermobile";
@@ -197,7 +197,7 @@ function SearchResultForNike({ state, actions, libraries }) {
             fontSize="xs"
             lineHeight="26px"
           >
-            <Link link="/">Home</Link>
+            <Link to="/">Home</Link>
             <Icon as={FaChevronRight} boxSize={2} mx={2} /> {finalTitle}
           </Text>
         </Stack>
