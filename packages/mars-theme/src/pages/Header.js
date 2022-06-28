@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext, useContext } from "react";
+import React, { useState, useEffect, createContext, useContext, useRef } from "react";
 import {
   Box,
   Flex,
@@ -180,7 +180,10 @@ const Header = ({ state, libraries, actions }) => {
   const algolidaData = async (event) => {
     //console.log('event', event);
     const algoliasearch = require("algoliasearch");
-    const client = algoliasearch('YZTG39ONR6', 'b2f2580375535fe8b3bd2b978582358b');
+    // const client = algoliasearch('YZTG39ONR6', 'b2f2580375535fe8b3bd2b978582358b');
+    // const POST_SNEAKER = client.initIndex('wp_posts_sneaker');
+    // const RELATED_SNEAKER = client.initIndex('wp_posts_sneaker_query_suggestions');
+    const client = algoliasearch('UX5RAU9WII', '4409bb969e69d0b670c6400d828e7b5b');
     const POST_SNEAKER = client.initIndex('wp_posts_sneaker');
     const RELATED_SNEAKER = client.initIndex('wp_posts_sneaker_query_suggestions');
     await POST_SNEAKER
@@ -231,6 +234,7 @@ const Header = ({ state, libraries, actions }) => {
     if (e.key === 'Enter') {
       setOpenDiv("close")
       closePopup()
+      //e.target.blur();
     }
   }
 
@@ -613,15 +617,15 @@ const Header = ({ state, libraries, actions }) => {
                                       </>
                                     )
                                 }
-                                
+
                               </UnorderedList>
-                                
+
 
                               <Box spacing={10}>
-                              <Box>
-                                <span className="search_result_name_with_count">
-                                  {inputValue.trim().length !== 0 ? `"${inputValue}" results about ${algoliaAlldata.length}` : null}
-                                </span>
+                                <Box>
+                                  <span className="search_result_name_with_count">
+                                    {inputValue.trim().length !== 0 ? `"${inputValue}" results about ${algoliaAlldata.length}` : null}
+                                  </span>
                                 </Box>
                                 <Box className="relatedSearchData">
                                   {/* {console.log('dsdsdsdsd', state)} */}
