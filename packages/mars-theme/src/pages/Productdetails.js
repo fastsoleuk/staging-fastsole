@@ -271,7 +271,7 @@ const Productdetails = ({ state, libraries, actions }) => {
     <>
       {seoData !== undefined && seoData !== null ? (
         <Head>
-        <link rel="amphtml" href={`${seoData.meta.ogurl}amp`} />
+          <link rel="amphtml" href={`${seoData.meta.ogurl}amp`} />
           {seoData.meta && <title>{seoData.meta.title}</title>}
           <meta
             data-rh="true"
@@ -822,9 +822,6 @@ const Productdetails = ({ state, libraries, actions }) => {
           </Box>
         </Box>
       }
-
-
-
     </>
   );
 };

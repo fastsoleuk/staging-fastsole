@@ -686,7 +686,7 @@ div#popup1 .search-panel__content{
   overflow: scroll;
   overflow-x: hidden;
   overflow-y: auto;
-  min-height: 600px;
+  min-height: 700px;
   max-height: 250px;
 }
 .react-multiple-carousel__arrow,
