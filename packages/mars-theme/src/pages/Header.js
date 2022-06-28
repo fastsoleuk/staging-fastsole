@@ -183,7 +183,7 @@ const Header = ({ state, libraries, actions }) => {
     // const client = algoliasearch('YZTG39ONR6', 'b2f2580375535fe8b3bd2b978582358b');
     // const POST_SNEAKER = client.initIndex('wp_posts_sneaker');
     // const RELATED_SNEAKER = client.initIndex('wp_posts_sneaker_query_suggestions');
-    const client = algoliasearch('UX5RAU9WII', '62f1445ff0efcdb928d9b93703b6b073');
+    const client = algoliasearch('UX5RAU9WII', 'd9a2fd56e210efc671dc150c23a1db68');
     const POST_SNEAKER = client.initIndex('wp_posts_sneaker');
     const RELATED_SNEAKER = client.initIndex('wp_posts_sneaker_query_suggestions');
     await POST_SNEAKER
