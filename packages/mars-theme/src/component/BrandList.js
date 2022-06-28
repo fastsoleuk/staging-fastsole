@@ -9,33 +9,33 @@ const BrandList = ({ state, libraries, actions }) => {
     {
       slug: "/sneaker-release-dates/brands/nike",
       image:
-        "https://wptesting.thenwg.xyz/wp-content/uploads/2021/11/Rectangle-417-1.png",
+        "https://aws.fastsole.co.uk/wp-content/uploads/2022/06/Rectangle-417-1.png",
     },
 
     {
       slug: "/sneaker-release-dates/brands/adidas",
       image:
-        "https://wptesting.thenwg.xyz/wp-content/uploads/2021/11/Rectangle-422.png",
+        "https://aws.fastsole.co.uk/wp-content/uploads/2022/06/Rectangle-422.png",
     },
     {
       slug: "/sneaker-release-dates/brands/puma",
       image:
-        "https://wptesting.thenwg.xyz/wp-content/uploads/2021/11/Rectangle-419-1.png",
+        "https://aws.fastsole.co.uk/wp-content/uploads/2022/06/Rectangle-419-1.png",
     },
     {
       slug: "/sneaker-release-dates/brands/jordan",
       image:
-        "https://wptesting.thenwg.xyz/wp-content/uploads/2021/11/Rectangle-421-1.png",
+        "https://aws.fastsole.co.uk/wp-content/uploads/2022/06/Rectangle-421-1.png",
     },
     {
       slug: "/sneaker-release-dates/brands/converse/",
       image:
-        "https://wptesting.thenwg.xyz/wp-content/uploads/2021/11/Rectangle-420-1.png",
+        "https://aws.fastsole.co.uk/wp-content/uploads/2022/06/Rectangle-420-1.png",
     },
     {
       slug: "/sneaker-release-dates/brands/new-balance",
       image:
-        "https://dev2.fastsole.co.uk/wp-content/uploads/2022/05/balanace.png",
+        "https://aws.fastsole.co.uk/wp-content/uploads/2022/05/balanace.png",
     },
   ];
   // const slug = `/sneaker-release-dates/brands/${result}`;
