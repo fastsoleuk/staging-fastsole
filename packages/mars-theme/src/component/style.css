@@ -682,6 +682,13 @@ form.search__form_main .search__wrap input:focus-visible {
 .search__form_main_popup .search-panel__content .modal-box {
   border-top: 1px solid #ccc;
 }
+div#popup1 .search-panel__content{
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 600px;
+  max-height: 250px;
+}
 .react-multiple-carousel__arrow,
 .subs__btn {
   z-index: 1;
