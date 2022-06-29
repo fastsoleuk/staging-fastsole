@@ -183,7 +183,7 @@ const Header = ({ state, libraries, actions }) => {
     // const client = algoliasearch('YZTG39ONR6', 'b2f2580375535fe8b3bd2b978582358b');
     // const POST_SNEAKER = client.initIndex('wp_posts_sneaker');
     // const RELATED_SNEAKER = client.initIndex('wp_posts_sneaker_query_suggestions');
-    const client = algoliasearch('UX5RAU9WII', '4409bb969e69d0b670c6400d828e7b5b');
+    const client = algoliasearch('UX5RAU9WII', 'd9a2fd56e210efc671dc150c23a1db68');
     const POST_SNEAKER = client.initIndex('wp_posts_sneaker');
     const RELATED_SNEAKER = client.initIndex('wp_posts_sneaker_query_suggestions');
     await POST_SNEAKER
@@ -469,7 +469,6 @@ const Header = ({ state, libraries, actions }) => {
                               className="search__inputb"
                             />
                           </InputGroup>
-
                           <HStack
                             flexDirection={{ base: "column", md: "row" }}
                             alignItems={{
@@ -844,7 +843,6 @@ const Header = ({ state, libraries, actions }) => {
                 })
                 : ''
             }
-
           </UnorderedList>
         </div>
         {openDiv === 'open' && algoliaAlldata.length > 0 ?
@@ -887,9 +885,7 @@ const Header = ({ state, libraries, actions }) => {
               </SimpleGrid>
             )
           })
-
         }
-
         <Button colorScheme='teal' size='md'>
           View All
         </Button>

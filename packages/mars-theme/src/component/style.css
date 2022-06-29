@@ -740,6 +740,12 @@ input.hiddentext:focus {
   outline: 0;
 }
 
+@media  screen and (max-width: 1366px) {
+  div#popup1 .search-panel__content{
+    min-height: 700px;
+  }
+}
+
 @media screen and (max-width: 991px) {
   form.search__form_main .search__wrap input {
     width: 164px;
