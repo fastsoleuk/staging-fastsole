@@ -582,6 +582,18 @@ p.chakra_text_soon span {
 .datepkricon{
   z-index: 1 !important;
 }
+@supports (-webkit-touch-callout: none) {
+  .search_image {
+    transform: rotate3d(1, 1, 1, 324deg);
+  }
+}
+@media only screen 
+  and (max-device-width: 767px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    .search_image {
+      transform: rotate3d(1, 1, 1, 324deg);
+    }
+}
 /**/
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .search_image {
