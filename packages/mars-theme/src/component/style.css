@@ -449,6 +449,9 @@ input.chakra-input.search_input {
   margin-top: 17px;
   margin-left: 10px;
 }
+p.chakra_text_stock svg {
+  margin-left: 3px !important;
+}
 .search_pro_image {
   min-width: 140px;
   text-align: center;
@@ -492,6 +495,10 @@ p.chakra_text_stock span {
 }
 p.chakra_text_soon span {
   margin-top: 10px;
+}
+.search_pro_price {
+  text-align: left;
+  padding-top: 5px;
 }
 /**/
 .box {
@@ -719,7 +726,7 @@ form.search__form_main .search__wrap input:focus-visible {
 }
 .search__form_main_popup .search-panel__content .chakra_text_soon span,
 .search__form_main_popup .search-panel__content .chakra_text_stock span {
-  padding-left: 30px;
+  padding-left: 25px;
 }
 .search__form_main_popup .popup .content {
   max-height: unset; 

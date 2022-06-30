@@ -192,6 +192,7 @@ const Header = ({ state, libraries, actions }) => {
         hits.map(item => {
           const data = {
             title: item.post_title,
+            price: item._sf_price,
             image: item?.images?.medium?.url,
             st_stts: item?.taxonomies?.status[0],
             st_links: item.permalink,
@@ -220,7 +221,7 @@ const Header = ({ state, libraries, actions }) => {
         console.log(err);
       });
   }
-  //console.log('22222',algoliaRelatedSearchdata)
+  //console.log('22222',algoliaFilterData)
   const setActiveOpen = () => {
     setOpenDiv("open");
     document.body.style.overflow = "hidden";
@@ -627,9 +628,9 @@ const Header = ({ state, libraries, actions }) => {
                                   </span>
                                 </Box>
                                 <Box className="relatedSearchData">
-
                                   {openDiv === 'open' && algoliaAlldata.length > 0 ?
                                     (algoliaAlldata.slice(0, 15)).map((item, index) => {
+                                      console.log("rrrrrr",item)
                                       return (
                                         <Box spacing='40px' key={index} style={{ display: "block" }} className="search_pro_wrap">
                                           <Box className="search_mainCol" onClick={closePopup}>
@@ -643,6 +644,7 @@ const Header = ({ state, libraries, actions }) => {
                                                 </Box>
                                                 <Box className="contentRight">
                                                   <Text className="search_pro_title">{item.title}</Text>
+                                                  <Text className="search_pro_price">£{item.price}</Text>
                                                   <Text className="search_pro_title">
                                                     {item.st_stts == "Coming Soon 2022" ? <p className="chakra_text_soon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" focusable="false" class="chakra-icon css-1v3jx3o e1k4it830" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"></path></svg><span>Coming Soon 2022</span></p> :
                                                       item.st_stts == "In stock" ? <p className="chakra_text_stock"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" focusable="false" class="chakra-icon css-2iiqxo e1k4it830" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg><span>In Stock</span></p> :
@@ -670,6 +672,7 @@ const Header = ({ state, libraries, actions }) => {
                                                 </Box>
                                                 <div className="contentRight">
                                                   <Text className="search_pro_title">{item.post_title}</Text>
+                                                  <Text className="search_pro_price">£{item.price}</Text>
                                                   <Text className="search_pro_title">
                                                     {item.sneaker_status == "instock" ? <p className="chakra_text_stock"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" focusable="false" class="chakra-icon css-2iiqxo e1k4it830" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg><span>In Stock</span></p> : null}
                                                   </Text>
