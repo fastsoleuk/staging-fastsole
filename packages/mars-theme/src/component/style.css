@@ -759,6 +759,9 @@ input.hiddentext:focus {
   }
 }
 @media screen and (max-width: 767px) {
+  .relatedSearchData .search_pro_wrap {
+    width: 100%;
+  }
   form.search__form_main .search__wrap input {
     width: 135px;
     /* margin-top: 6px; */
