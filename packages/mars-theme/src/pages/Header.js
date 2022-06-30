@@ -192,7 +192,7 @@ const Header = ({ state, libraries, actions }) => {
         hits.map(item => {
           const data = {
             title: item.post_title,
-            image: item?.images?.thumbnail?.url,
+            image: item?.images?.medium?.url,
             st_stts: item?.taxonomies?.status[0],
             st_links: item.permalink,
           }
@@ -627,7 +627,7 @@ const Header = ({ state, libraries, actions }) => {
                                   </span>
                                 </Box>
                                 <Box className="relatedSearchData">
-                                  {/* {console.log('dsdsdsdsd', state)} */}
+
                                   {openDiv === 'open' && algoliaAlldata.length > 0 ?
                                     (algoliaAlldata.slice(0, 15)).map((item, index) => {
                                       return (
@@ -664,7 +664,7 @@ const Header = ({ state, libraries, actions }) => {
                                               <Link link={item.slug} className="search_imageWrapper" onClick={closePopup}>
                                                 <Box className="search_pro_image">
                                                   <Image
-                                                    src={item?.featured_image?.large}
+                                                    src={item?.featured_image?.medium}
                                                     className="search_image"
                                                     alt={item.title} />
                                                 </Box>
