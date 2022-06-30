@@ -391,10 +391,7 @@ textarea.wpcf7-form-control.wpcf7-textarea:focus-visible {
   object-fit: cover;
   max-height: 96px;
   max-width: 140px;
-  -webkit-transform: rotate3d(1, 1, 1, 324deg);
-  -moz-transform: rotate3d(1, 1, 1, 324deg);
-  -ms-transform: rotate3d(1, 1, 1, 324deg);
-  transform: rotate3d(1, 1, 1, 324deg);
+  transform:rotate(345deg);
 }
 .search__closeBtn {
   background: #f1f1f1;
@@ -581,18 +578,6 @@ p.chakra_text_soon span {
 }
 .datepkricon{
   z-index: 1 !important;
-}
-@supports (-webkit-touch-callout: none) {
-  .search_image {
-    transform: rotate3d(1, 1, 1, 324deg);
-  }
-}
-@media only screen 
-  and (max-device-width: 767px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
-    .search_image {
-      transform: rotate3d(1, 1, 1, 324deg);
-    }
 }
 /**/
 @media only screen and (min-width: 320px) and (max-width: 767px) {
