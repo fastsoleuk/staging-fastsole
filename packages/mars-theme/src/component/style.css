@@ -339,7 +339,6 @@ textarea.wpcf7-form-control.wpcf7-textarea:focus-visible {
 .aux {
   width: 80%;
   margin: 0 auto;
-  padding-bottom: 40px;
 }
 .search-panel__suggestions {
   display: flex;
@@ -457,8 +456,7 @@ input.chakra-input.search_input {
   justify-content: center;
 }
 .search__wrap button {
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+  border-radius: 0px;
 }
 .relatedSearchData {
   display: flex;
@@ -577,6 +575,9 @@ p.chakra_text_soon span {
 .subs__btn {
   z-index: -2;
 }
+.datepkricon{
+  z-index: 1 !important;
+}
 /**/
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .search_image {
@@ -628,6 +629,9 @@ p.chakra_text_soon span {
 /* 09-06-2022  */
 .search__form_main_popup {
   top: 100px;
+  height: calc(100% - 100px);
+  overflow-y: auto;
+  background: #fff;
 }
 /* .search__form_main .box{
   display: none;
@@ -682,13 +686,13 @@ form.search__form_main .search__wrap input:focus-visible {
 .search__form_main_popup .search-panel__content .modal-box {
   border-top: 1px solid #ccc;
 }
-div#popup1 .search-panel__content{
+/* div#popup1 .search-panel__content{
   overflow: scroll;
   overflow-x: hidden;
   overflow-y: auto;
   min-height: 700px;
   max-height: 250px;
-}
+} */
 .react-multiple-carousel__arrow,
 .subs__btn {
   z-index: 1;
@@ -717,7 +721,6 @@ div#popup1 .search-panel__content{
   padding-left: 30px;
 }
 .search__form_main_popup .popup .content {
-  min-height: 100vh; 
   max-height: unset; 
   width: 100%;  
 }
@@ -740,11 +743,11 @@ input.hiddentext:focus {
   outline: 0;
 }
 
-@media  screen and (max-width: 1366px) {
+/* @media  screen and (max-width: 1366px) {
   div#popup1 .search-panel__content{
     min-height: 600px;
   }
-}
+} */
 
 @media screen and (max-width: 991px) {
   form.search__form_main .search__wrap input {
@@ -766,6 +769,7 @@ input.hiddentext:focus {
   }
   .search__form_main_popup {
     top: 60px;
+    height: calc(100% - 60px);
   }
   .search__form_main_popup .popup .content {
     max-height: 100%;
@@ -778,11 +782,12 @@ input.hiddentext:focus {
     box-shadow: none;
   }
   .search_viewmore_btn{
-    margin-bottom: 100px;
+    margin-bottom: 0;
   }
 }
 @media screen and (max-width: 575px) {
   .search__form_main_popup {
     top: 40px;
+    height: calc(100% - 40px);
   }
 }

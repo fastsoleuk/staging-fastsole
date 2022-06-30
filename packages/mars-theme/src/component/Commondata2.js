@@ -212,7 +212,7 @@ const Commondata2 = ({ state, actions, libraries }) => {
     const response = await libraries.source.api.get({
       endpoint: `/wl/v1/sneaker-release-dates-test/${slug}`,
     });
-    //aureate_console.log("endpoint :", `/wl/v1/sneaker-release-dates-test/${slug}`);
+    console.log("endpoint :", `/wl/v1/sneaker-release-dates-test/${slug}`);
     const result = await response.json();
     actions.sneakerReleaseDates.toggleLoading();
     actions.sneakerReleaseDates.updatePostData(result);
@@ -1017,8 +1017,8 @@ const Commondata2 = ({ state, actions, libraries }) => {
                   }}
                   my={2}
                 >
-                  <Input pr="2.5rem" type="text" placeholder="pick a date" />
-                  <InputRightElement width="2.5rem">
+                  <Input pr="2.5rem" type="text" placeholder="pick a date"/>
+                  <InputRightElement width="2.5rem" className="datepkricon">
                     <MdDateRange style={{ color: "gray" }} />
                   </InputRightElement>
                 </InputGroup>

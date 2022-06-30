@@ -599,7 +599,7 @@ const Header = ({ state, libraries, actions }) => {
                                 </Box>
                                 {
                                   algoliaRelatedSearchdata.length > 0 ?
-                                    algoliaRelatedSearchdata.map((item, index) => {
+                                    (algoliaRelatedSearchdata.slice(0, 10)).map((item, index) => {
                                       return (<ListItem key={index} className="btn btn--tag btn--dark"> <span onClick={(e) => setItemTitleToInput(e)}>{item.title} </span></ListItem>)
                                     })
                                     :
