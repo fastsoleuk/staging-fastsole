@@ -391,7 +391,7 @@ textarea.wpcf7-form-control.wpcf7-textarea:focus-visible {
   object-fit: cover;
   max-height: 96px;
   max-width: 140px;
-  transform:rotate(345deg);
+  transform:rotate(350deg);
 }
 .search__closeBtn {
   background: #f1f1f1;
