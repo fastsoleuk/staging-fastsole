@@ -452,6 +452,9 @@ input.chakra-input.search_input {
 p.chakra_text_stock svg {
   margin-left: 3px !important;
 }
+p.chakra_text_soon .chakra-icon {
+  margin-left: 4px;
+}
 .search_pro_image {
   min-width: 140px;
   text-align: center;
