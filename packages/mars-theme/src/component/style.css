@@ -450,10 +450,10 @@ input.chakra-input.search_input {
   margin-left: 10px;
 }
 p.chakra_text_stock svg {
-  margin-left: 3px !important;
+  margin-left: 0px !important;
 }
 p.chakra_text_soon .chakra-icon {
-  margin-left: 4px;
+  margin-left: 0px;
 }
 .search_pro_image {
   min-width: 140px;
@@ -729,7 +729,7 @@ form.search__form_main .search__wrap input:focus-visible {
 }
 .search__form_main_popup .search-panel__content .chakra_text_soon span,
 .search__form_main_popup .search-panel__content .chakra_text_stock span {
-  padding-left: 25px;
+  padding-left: 20px;
 }
 .search__form_main_popup .popup .content {
   max-height: unset; 
