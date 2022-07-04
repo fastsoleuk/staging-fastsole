@@ -344,12 +344,13 @@ const Header = ({ state, libraries, actions }) => {
         py={{ base: 2 }}
         px={{ base: 4 }}
         align={"center"}
+        className="mobile_head"
       >
         <Flex
           flex={{ base: 1, md: "auto" }}
           ml={{ base: -2 }}
           display={{ base: "flex", md: "none" }}
-          style={{ flex: 'unset' }}
+          // style={{ flex: 'unset' }}
         >
           <IconButton
             onClick={!isOpendrawer ? onOpendrawer : onClosedrawer}
@@ -555,7 +556,7 @@ const Header = ({ state, libraries, actions }) => {
                       variant="unstyled"
                       w={{ md: "50", lg: "60" }}
                     />
-                    <Center>
+                    <Center className="subbtn">
                       <Button
                         type="submit"
                         display={{ base: "none", md: "block" }}
