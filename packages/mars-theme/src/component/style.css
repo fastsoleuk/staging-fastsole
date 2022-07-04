@@ -659,13 +659,7 @@ p.chakra_text_soon span {
 /* .search__form_main .box{
   display: none;
 } */
-form.search__form_main .search-top input {
-  width: 51px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 51px;
-}
+
 form.search__form_main .search__wrap input {
   background-color: #f3f4f7;
   width: 250px;
@@ -806,13 +800,17 @@ input.hiddentext:focus {
     margin-top: 11px;
     margin-left: 13px;
   }
-  form.search__form_main .search__wrap input {
-    width: 1px;
+  form.search__form_main .search-top input {
+    width: 51px;
+    height: 51px;
     margin: 0;
     padding: 0;
     background: none;
     font-size: 0;
     color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
   .search__form_main {
     width: auto;
