@@ -645,6 +645,10 @@ p.chakra_text_soon span {
 .search__form_main .search-top button  {
     border-radius: 0px 7px 7px 0;
 }
+.search-top{
+  padding: 15px;
+    margin: -13px;
+}
 .search__form_main_popup {
   top: 100px;
   height: calc(100% - 100px);
