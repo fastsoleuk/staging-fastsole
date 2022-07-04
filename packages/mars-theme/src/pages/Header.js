@@ -526,7 +526,7 @@ const Header = ({ state, libraries, actions }) => {
                 /> */}
 
                 <form className="search__form_main" onSubmit={handleSubmit}>
-                  <Box className="search__wrap">
+                  <Box className="search__wrap search-top">
                     <Icon
                       as={FaSearch}
                       boxSize="5"
@@ -581,7 +581,7 @@ const Header = ({ state, libraries, actions }) => {
 
                   </Box>
 
-                  <div id="popup1" class={`overlay search__form_main_popup search__form_main ${openDiv === "open" ? 'active' : ''}`}>
+                  <div id="popup1" class={`overlay search__form_main_popup popup-box search__form_main ${openDiv === "open" ? 'active' : ''}`}>
                     <div class="popup search__wrap">
                       <a class="close background_close" href="javascript:void(0);" onClick={closePopup}></a>
                       <a class="close" href="javascript:void(0);" onClick={closePopup}>&times;</a>
@@ -591,7 +591,60 @@ const Header = ({ state, libraries, actions }) => {
 
                             {/* <ModalOverlay className="search__overlay_content" onClose={onClose}/> */}
 
+                            <Box className="search__wrap searchtop">
+                              <Icon
+                                as={FaSearch}
+                                boxSize="5"
+                                color={"black"}
+                                className="search__icon"
+                              />
+                              <input
+                                type="text"
+                                fontFamily="Open Sans"
+                                border="unset"
+                                fontSize="xs"
+                                color="#9DA7BE"
+                                placeholder={showValue}
+                                value={inputValue}
+                                onFocus={(event) => {
+                                  setActiveOpen()
+                                }}
+                                className="search_input"
+                                onChange={(event) => {
+                                  event.preventDefault();
+                                  algolidaData(event.target.value)
+                                  setshowValue(event.target.value)
+                                  setinputValue(event.target.value)
+                                }}
+                                onKeyDown={handleKeyDown}
+                                variant="unstyled"
+                                w={{ md: "50", lg: "60" }}
+                              />
+                              <Center>
+                                <Button
+                                  type="submit"
+                                  display={{ base: "none", md: "block" }}
+                                  onClick={(e) => handleSubmit(e)}
+                                  bg="#3E485D"
+                                  colorScheme="#3E485D"
+                                  color="#FFFFFF"
+                                  variant="solid"
+                                  h="50"
+                                  w="32"
+                                  _focus={"outline:none;"}
+                                  className="search_submit_btn"
+                                  onFocus={(event) => {
+                                    closePopup()
+                                  }}
+                                >
+                                  <Text fontWeight="500" fontSize="xs">
+                                    Find Item
+                                  </Text>
+                                </Button>
+                              </Center>
+                              {/* <h1>Popup/Modal Windows without JavaScript</h1> */}
 
+                            </Box>
 
                             <div className="aux">
                               <UnorderedList className="search-panel__suggestions" pt={[25, 30]}>
@@ -630,7 +683,7 @@ const Header = ({ state, libraries, actions }) => {
                                 <Box className="relatedSearchData">
                                   {openDiv === 'open' && algoliaAlldata.length > 0 ?
                                     (algoliaAlldata.slice(0, 15)).map((item, index) => {
-                                      console.log("rrrrrr",item)
+                                      console.log("rrrrrr", item)
                                       return (
                                         <Box spacing='40px' key={index} style={{ display: "block" }} className="search_pro_wrap">
                                           <Box className="search_mainCol" onClick={closePopup}>
