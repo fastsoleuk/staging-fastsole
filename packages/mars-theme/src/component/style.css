@@ -803,7 +803,7 @@ input.hiddentext:focus {
     margin: 0;
     padding: 0;
     background: none;
-    font-size: 0;
+    opacity: 0;
     color: #fff;
     position: absolute;
     left: 0;
