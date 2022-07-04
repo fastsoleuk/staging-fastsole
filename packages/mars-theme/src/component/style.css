@@ -783,6 +783,9 @@ input.hiddentext:focus {
   }
 }
 @media screen and (max-width: 767px) {
+  .search-panel__content ul{
+    padding: 7px 0 0 0;
+  }
   .mobile_head {
     padding: 0 40px !important;
   }
@@ -818,6 +821,9 @@ input.hiddentext:focus {
   .search__form_main {
     width: auto;
   }
+  .popup .content{
+    overflow: auto;
+  }
   .relatedSearchData .search_pro_wrap {
     width: 100%;
   }
@@ -827,38 +833,69 @@ input.hiddentext:focus {
     border: 0;
     width: 95%;
     margin: auto;
-    border-radius: 10px;
-    overflow: hidden;
   }
   .search__form_main_popup .search-panel__content .modal-box {
     border-top: 0;
     border-radius: 8px;
-    overflow: hidden;
-    padding: 45px 20px 20px 20px;
+    background: none;
+    padding:20px;
+  }
+  .search__wrap .search_pro_price, .search__wrap .chakra_text_stock, .search__wrap .chakra_text_soon{
+    display: none;
   }
   .logo p {
     z-index: 0;
   }
-  .popup-box .popup .close {
-    top: 5px;
+  .search-panel__suggestions > div{
+    display: none;
+  }
+  .search-panel__suggestions{
+    flex-wrap: nowrap;
+  }
+  .search_imageWrapper {
+    margin-right: 0;}
+  .search_pro_title {
+    padding-top: 0;
+    font-size: 14px;
+    line-height: 17px;
+}
+  .search_pro_image{
+min-width: 90px;
+  }
+  .contentRight {
+    margin-left: 10px;
+}
+  .search_image {
+    max-height: 96px;
+    max-width: 90px;}
+  .popup-box .popup .close:nth-child(2)  {
+    top: 1px;
     right: 13px;
     font-weight: 500;
-    color: #000;
+    color: #fff;
+    top: -5px;
+    right: -5px;
     background: none;
     font-size: 28px;
     margin-top: 0;
+    background: #000;
+    width: 24px;
+    height: 24px;
+    border-radius: 34px;
+    line-height: 23px;
   }
   .search-panel__content {
     border-radius: 8px;
   }
-  .search__form_main_popup {
-    width: 100%;
-  }
+ 
   .search__form_main_popup {
     top: 0;
     height: 100%;
-    padding: 50px 0;
+    width: 100%;
+    padding:15px 0;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    overflow: inherit;
   }
   .search__form_main_popup .popup .content {
     max-height: 100%;
