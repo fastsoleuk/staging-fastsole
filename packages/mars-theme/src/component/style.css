@@ -781,6 +781,15 @@ input.hiddentext:focus {
   form.search__form_main .search__wrap input {
     width: 164px;
   }
+  .search__wrap svg {
+    margin-top: 5px;
+  }
+  .search-top{
+    margin: -11px;
+  }
+  .search_pro_title{
+    padding-top: 15px;
+  }
 }
 @media screen and (max-width: 767px) {
   .search-panel__content ul{
