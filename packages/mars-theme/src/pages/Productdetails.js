@@ -205,6 +205,7 @@ const Productdetails = ({ state, libraries, actions }) => {
   // create stock status
 
   const prodStatus = seoData.main.releaseTimeDate.stock;
+  console.log("prodStatus======"+prodStatus);
   if (prodStatus !== undefined && prodStatus !== null) {
     if (prodStatus == "instock") {
       var status = (
@@ -271,6 +272,9 @@ const Productdetails = ({ state, libraries, actions }) => {
     <>
       {seoData !== undefined && seoData !== null ? (
         <Head>
+          <meta http-equiv='cache-control' content='no-cache' />
+<meta http-equiv='expires' content='0' />
+<meta http-equiv='pragma' content='no-cache' />
           <link rel="amphtml" href={`${seoData.meta.ogurl}amp`} />
           {seoData.meta && <title>{seoData.meta.title}</title>}
           <meta
