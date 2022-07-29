@@ -41,6 +41,22 @@ const Productdetails = ({ state, libraries, actions }) => {
   const [isMobile] = useMediaQuery("(max-width: 400px)");
   const pageData = state.source.get(state.router.link);
   const seoData = pageData.schemaData && pageData.schemaData;
+  console.log("seoData====");
+  console.log(state.router.link);
+  const link = state.router.link;
+  const newslug = link.split("/");
+  console.log(newslug);
+  const fetchData = async () => {
+    const response = await libraries.source.api.get({
+      endpoint: "/wl/v1/posts/"+ newslug[4]+ "?" + Math.random(),
+    });
+
+    const result = await response.json();
+    console.log("result========");
+    console.log(result);
+   
+    // setprodData(state.newsSchema.postData);
+  };
   //console.log("SneakersPage", pageData);
 
   // all custom state
@@ -58,6 +74,11 @@ const Productdetails = ({ state, libraries, actions }) => {
   };
 
   useEffect(() => {
+    fetchData();
+    //fetchData();
+   /* const result_new = await response.json();
+    console.log("my new result======");
+    console.log(result_new);*/
     if (isLoad) {
       //console.log("Javascript Testing ", "page loaded");
 
@@ -203,9 +224,18 @@ const Productdetails = ({ state, libraries, actions }) => {
   }, [""]);
 
   // create stock status
-
+/*  const fetchData = async () => {
+    const response = await libraries.source.api.get({
+       endpoint: "/wl/v1/posts/"+ newslug[4]+ "?" + Math.random(),
+    });*/
+/*const fetchData = async () => {
+    const response = await libraries.source.api.get({
+       endpoint: "/wl/v1/posts/air-jordan-4-sail-cement-grey-womens-dq4909-100?123456",
+    });*/
+  
   const prodStatus = seoData.main.releaseTimeDate.stock;
   console.log("prodStatus======"+prodStatus);
+  
   if (prodStatus !== undefined && prodStatus !== null) {
     if (prodStatus == "instock") {
       var status = (
