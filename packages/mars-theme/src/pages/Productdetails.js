@@ -74,7 +74,7 @@ const Productdetails = ({ state, libraries, actions }) => {
   };
 
   useEffect(() => {
-    //fetchData();
+    fetchData();
     //fetchData();
    /* const result_new = await response.json();
     console.log("my new result======");
